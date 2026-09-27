@@ -1,0 +1,2092 @@
+[
+  {
+    "log_id": "LOG-0001",
+    "interface_id": "IFACE-023",
+    "incident_id": "INC-0001",
+    "timestamp": "2025-04-19T16:09:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0001-937",
+    "error_code": "SSL_HANDSHAKE_FAILED",
+    "raw_text": "[ERROR] IFACE-023 SSL_HANDSHAKE_FAILED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0002",
+    "interface_id": "IFACE-023",
+    "incident_id": "INC-0001",
+    "timestamp": "2025-04-19T02:26:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0001-146",
+    "error_code": "CERT_UNTRUSTED",
+    "raw_text": "[ERROR] IFACE-023 CERT_UNTRUSTED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0003",
+    "interface_id": "IFACE-041",
+    "incident_id": "INC-0002",
+    "timestamp": "2026-07-26T12:01:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0002-902",
+    "error_code": "SFTP_AUTH_FAILED",
+    "raw_text": "[ERROR] IFACE-041 SFTP_AUTH_FAILED: simulated failure detail for sftp credential failure scenario."
+  },
+  {
+    "log_id": "LOG-0004",
+    "interface_id": "IFACE-041",
+    "incident_id": "INC-0002",
+    "timestamp": "2026-07-26T21:36:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0002-095",
+    "error_code": "SFTP_AUTH_FAILED",
+    "raw_text": "[ERROR] IFACE-041 SFTP_AUTH_FAILED: simulated failure detail for sftp credential failure scenario."
+  },
+  {
+    "log_id": "LOG-0005",
+    "interface_id": "IFACE-041",
+    "incident_id": "INC-0002",
+    "timestamp": "2026-07-26T17:19:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0002-464",
+    "error_code": "SFTP_KEY_REJECTED",
+    "raw_text": "[WARN] IFACE-041 SFTP_KEY_REJECTED: simulated failure detail for sftp credential failure scenario."
+  },
+  {
+    "log_id": "LOG-0006",
+    "interface_id": "IFACE-041",
+    "incident_id": "INC-0002",
+    "timestamp": "2026-07-26T19:59:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0002-283",
+    "error_code": "CERT_UNTRUSTED",
+    "raw_text": "[WARN] IFACE-041 CERT_UNTRUSTED: unrelated transient warning (red herring)."
+  },
+  {
+    "log_id": "LOG-0007",
+    "interface_id": "IFACE-022",
+    "incident_id": "INC-0003",
+    "timestamp": "2026-08-04T14:40:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0003-658",
+    "error_code": "IDEMPOTENCY_CONFLICT",
+    "raw_text": "[ERROR] IFACE-022 IDEMPOTENCY_CONFLICT: simulated failure detail for duplicate message scenario."
+  },
+  {
+    "log_id": "LOG-0008",
+    "interface_id": "IFACE-022",
+    "incident_id": "INC-0003",
+    "timestamp": "2026-08-04T04:46:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0003-057",
+    "error_code": "IDEMPOTENCY_CONFLICT",
+    "raw_text": "[ERROR] IFACE-022 IDEMPOTENCY_CONFLICT: simulated failure detail for duplicate message scenario."
+  },
+  {
+    "log_id": "LOG-0009",
+    "interface_id": "IFACE-039",
+    "incident_id": "INC-0004",
+    "timestamp": "2025-10-20T21:31:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0004-177",
+    "error_code": "GATEWAY_TIMEOUT_504",
+    "raw_text": "[ERROR] IFACE-039 GATEWAY_TIMEOUT_504: simulated failure detail for timeout scenario."
+  },
+  {
+    "log_id": "LOG-0010",
+    "interface_id": "IFACE-039",
+    "incident_id": "INC-0004",
+    "timestamp": "2025-10-20T18:08:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0004-448",
+    "error_code": "READ_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-039 READ_TIMEOUT: simulated failure detail for timeout scenario."
+  },
+  {
+    "log_id": "LOG-0011",
+    "interface_id": "IFACE-039",
+    "incident_id": "INC-0004",
+    "timestamp": "2025-10-20T00:54:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0004-064",
+    "error_code": "SSL_HANDSHAKE_FAILED",
+    "raw_text": "[WARN] IFACE-039 SSL_HANDSHAKE_FAILED: unrelated transient warning (red herring)."
+  },
+  {
+    "log_id": "LOG-0012",
+    "interface_id": "IFACE-014",
+    "incident_id": "INC-0005",
+    "timestamp": "2026-08-31T23:29:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0005-933",
+    "error_code": "IDEMPOTENCY_CONFLICT",
+    "raw_text": "[ERROR] IFACE-014 IDEMPOTENCY_CONFLICT: simulated failure detail for duplicate message scenario."
+  },
+  {
+    "log_id": "LOG-0013",
+    "interface_id": "IFACE-006",
+    "incident_id": "INC-0006",
+    "timestamp": "2026-09-20T08:10:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0006-224",
+    "error_code": "SERVICE_UNAVAILABLE_503",
+    "raw_text": "[ERROR] IFACE-006 SERVICE_UNAVAILABLE_503: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0014",
+    "interface_id": "IFACE-006",
+    "incident_id": "INC-0006",
+    "timestamp": "2026-09-20T22:23:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0006-431",
+    "error_code": "SERVICE_UNAVAILABLE_503",
+    "raw_text": "[ERROR] IFACE-006 SERVICE_UNAVAILABLE_503: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0015",
+    "interface_id": "IFACE-033",
+    "incident_id": "INC-0007",
+    "timestamp": "2026-01-17T08:35:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0007-413",
+    "error_code": "CERT_EXPIRED",
+    "raw_text": "[ERROR] IFACE-033 CERT_EXPIRED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0016",
+    "interface_id": "IFACE-033",
+    "incident_id": "INC-0007",
+    "timestamp": "2026-01-17T01:26:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0007-623",
+    "error_code": "CERT_UNTRUSTED",
+    "raw_text": "[ERROR] IFACE-033 CERT_UNTRUSTED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0017",
+    "interface_id": "IFACE-033",
+    "incident_id": "INC-0007",
+    "timestamp": "2026-01-17T14:21:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0007-923",
+    "error_code": "SSL_HANDSHAKE_FAILED",
+    "raw_text": "[WARN] IFACE-033 SSL_HANDSHAKE_FAILED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0018",
+    "interface_id": "IFACE-029",
+    "incident_id": "INC-0008",
+    "timestamp": "2026-01-11T17:56:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0008-276",
+    "error_code": "IDEMPOTENCY_CONFLICT",
+    "raw_text": "[ERROR] IFACE-029 IDEMPOTENCY_CONFLICT: simulated failure detail for duplicate message scenario."
+  },
+  {
+    "log_id": "LOG-0019",
+    "interface_id": "IFACE-029",
+    "incident_id": "INC-0008",
+    "timestamp": "2026-01-11T12:36:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0008-113",
+    "error_code": "DUPLICATE_MESSAGE_ID",
+    "raw_text": "[ERROR] IFACE-029 DUPLICATE_MESSAGE_ID: simulated failure detail for duplicate message scenario."
+  },
+  {
+    "log_id": "LOG-0020",
+    "interface_id": "IFACE-029",
+    "incident_id": "INC-0008",
+    "timestamp": "2026-01-11T17:17:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0008-250",
+    "error_code": "DUPLICATE_MESSAGE_ID",
+    "raw_text": "[ERROR] IFACE-029 DUPLICATE_MESSAGE_ID: simulated failure detail for duplicate message scenario."
+  },
+  {
+    "log_id": "LOG-0021",
+    "interface_id": "IFACE-033",
+    "incident_id": "INC-0009",
+    "timestamp": "2025-12-23T09:04:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0009-967",
+    "error_code": "ORA-12170",
+    "raw_text": "[ERROR] IFACE-033 ORA-12170: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0022",
+    "interface_id": "IFACE-013",
+    "incident_id": "INC-0010",
+    "timestamp": "2026-05-19T01:58:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0010-883",
+    "error_code": "SFTP_KEY_REJECTED",
+    "raw_text": "[ERROR] IFACE-013 SFTP_KEY_REJECTED: simulated failure detail for sftp credential failure scenario."
+  },
+  {
+    "log_id": "LOG-0023",
+    "interface_id": "IFACE-013",
+    "incident_id": "INC-0010",
+    "timestamp": "2026-05-19T19:40:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0010-903",
+    "error_code": "SFTP_AUTH_FAILED",
+    "raw_text": "[ERROR] IFACE-013 SFTP_AUTH_FAILED: simulated failure detail for sftp credential failure scenario."
+  },
+  {
+    "log_id": "LOG-0024",
+    "interface_id": "IFACE-013",
+    "incident_id": "INC-0010",
+    "timestamp": "2026-05-19T22:13:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0010-158",
+    "error_code": "SFTP_AUTH_FAILED",
+    "raw_text": "[ERROR] IFACE-013 SFTP_AUTH_FAILED: simulated failure detail for sftp credential failure scenario."
+  },
+  {
+    "log_id": "LOG-0025",
+    "interface_id": "IFACE-020",
+    "incident_id": "INC-0011",
+    "timestamp": "2026-04-09T13:22:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0011-431",
+    "error_code": "INVALID_XML",
+    "raw_text": "[ERROR] IFACE-020 INVALID_XML: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0026",
+    "interface_id": "IFACE-020",
+    "incident_id": "INC-0011",
+    "timestamp": "2026-04-09T20:17:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0011-233",
+    "error_code": "PAYLOAD_TOO_LARGE",
+    "raw_text": "[ERROR] IFACE-020 PAYLOAD_TOO_LARGE: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0027",
+    "interface_id": "IFACE-013",
+    "incident_id": "INC-0012",
+    "timestamp": "2025-09-18T17:33:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0012-078",
+    "error_code": "ORA-12170",
+    "raw_text": "[ERROR] IFACE-013 ORA-12170: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0028",
+    "interface_id": "IFACE-013",
+    "incident_id": "INC-0012",
+    "timestamp": "2025-09-18T15:32:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0012-302",
+    "error_code": "DB_CONN_REFUSED",
+    "raw_text": "[ERROR] IFACE-013 DB_CONN_REFUSED: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0029",
+    "interface_id": "IFACE-047",
+    "incident_id": "INC-0013",
+    "timestamp": "2026-09-08T20:09:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0013-018",
+    "error_code": "SERVICE_UNAVAILABLE_503",
+    "raw_text": "[ERROR] IFACE-047 SERVICE_UNAVAILABLE_503: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0030",
+    "interface_id": "IFACE-047",
+    "incident_id": "INC-0013",
+    "timestamp": "2026-09-08T19:04:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0013-457",
+    "error_code": "SERVICE_UNAVAILABLE_503",
+    "raw_text": "[WARN] IFACE-047 SERVICE_UNAVAILABLE_503: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0031",
+    "interface_id": "IFACE-036",
+    "incident_id": "INC-0014",
+    "timestamp": "2026-07-17T17:23:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0014-788",
+    "error_code": "CERT_EXPIRED",
+    "raw_text": "[ERROR] IFACE-036 CERT_EXPIRED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0032",
+    "interface_id": "IFACE-036",
+    "incident_id": "INC-0014",
+    "timestamp": "2026-07-17T15:47:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0014-524",
+    "error_code": "CERT_EXPIRED",
+    "raw_text": "[ERROR] IFACE-036 CERT_EXPIRED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0033",
+    "interface_id": "IFACE-018",
+    "incident_id": "INC-0015",
+    "timestamp": "2026-02-16T10:51:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0015-470",
+    "error_code": "LOGIN_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-018 LOGIN_TIMEOUT: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0034",
+    "interface_id": "IFACE-018",
+    "incident_id": "INC-0015",
+    "timestamp": "2026-02-16T10:12:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0015-374",
+    "error_code": "LOGIN_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-018 LOGIN_TIMEOUT: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0035",
+    "interface_id": "IFACE-018",
+    "incident_id": "INC-0015",
+    "timestamp": "2026-02-16T22:43:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0015-489",
+    "error_code": "POOL_EXHAUSTED",
+    "raw_text": "[ERROR] IFACE-018 POOL_EXHAUSTED: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0036",
+    "interface_id": "IFACE-026",
+    "incident_id": "INC-0016",
+    "timestamp": "2026-02-18T17:10:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0016-243",
+    "error_code": "SSL_HANDSHAKE_FAILED",
+    "raw_text": "[ERROR] IFACE-026 SSL_HANDSHAKE_FAILED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0037",
+    "interface_id": "IFACE-026",
+    "incident_id": "INC-0016",
+    "timestamp": "2026-02-18T08:17:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0016-692",
+    "error_code": "SSL_HANDSHAKE_FAILED",
+    "raw_text": "[ERROR] IFACE-026 SSL_HANDSHAKE_FAILED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0038",
+    "interface_id": "IFACE-044",
+    "incident_id": "INC-0017",
+    "timestamp": "2026-06-19T18:26:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0017-420",
+    "error_code": "SCHEMA_VALIDATION_FAILED",
+    "raw_text": "[ERROR] IFACE-044 SCHEMA_VALIDATION_FAILED: simulated failure detail for mapping error scenario."
+  },
+  {
+    "log_id": "LOG-0039",
+    "interface_id": "IFACE-044",
+    "incident_id": "INC-0017",
+    "timestamp": "2026-06-19T10:26:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0017-630",
+    "error_code": "SCHEMA_VALIDATION_FAILED",
+    "raw_text": "[ERROR] IFACE-044 SCHEMA_VALIDATION_FAILED: simulated failure detail for mapping error scenario."
+  },
+  {
+    "log_id": "LOG-0040",
+    "interface_id": "IFACE-050",
+    "incident_id": "INC-0018",
+    "timestamp": "2026-05-03T07:19:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0018-099",
+    "error_code": "SSL_HANDSHAKE_FAILED",
+    "raw_text": "[ERROR] IFACE-050 SSL_HANDSHAKE_FAILED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0041",
+    "interface_id": "IFACE-050",
+    "incident_id": "INC-0018",
+    "timestamp": "2026-05-03T14:09:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0018-514",
+    "error_code": "CERT_UNTRUSTED",
+    "raw_text": "[WARN] IFACE-050 CERT_UNTRUSTED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0042",
+    "interface_id": "IFACE-050",
+    "incident_id": "INC-0018",
+    "timestamp": "2026-05-03T09:23:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0018-954",
+    "error_code": "SSL_HANDSHAKE_FAILED",
+    "raw_text": "[ERROR] IFACE-050 SSL_HANDSHAKE_FAILED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0043",
+    "interface_id": "IFACE-048",
+    "incident_id": "INC-0019",
+    "timestamp": "2026-07-29T16:28:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0019-137",
+    "error_code": "ORA-12170",
+    "raw_text": "[ERROR] IFACE-048 ORA-12170: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0044",
+    "interface_id": "IFACE-048",
+    "incident_id": "INC-0019",
+    "timestamp": "2026-07-29T22:43:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0019-654",
+    "error_code": "LOGIN_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-048 LOGIN_TIMEOUT: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0045",
+    "interface_id": "IFACE-042",
+    "incident_id": "INC-0020",
+    "timestamp": "2025-10-04T01:59:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0020-710",
+    "error_code": "INVALID_XML",
+    "raw_text": "[ERROR] IFACE-042 INVALID_XML: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0046",
+    "interface_id": "IFACE-042",
+    "incident_id": "INC-0020",
+    "timestamp": "2025-10-04T02:21:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0020-384",
+    "error_code": "PAYLOAD_TOO_LARGE",
+    "raw_text": "[ERROR] IFACE-042 PAYLOAD_TOO_LARGE: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0047",
+    "interface_id": "IFACE-042",
+    "incident_id": "INC-0020",
+    "timestamp": "2025-10-04T22:32:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0020-029",
+    "error_code": "INVALID_XML",
+    "raw_text": "[ERROR] IFACE-042 INVALID_XML: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0048",
+    "interface_id": "IFACE-042",
+    "incident_id": "INC-0020",
+    "timestamp": "2025-10-04T00:50:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0020-140",
+    "error_code": "MISSING_MANDATORY_FIELD",
+    "raw_text": "[ERROR] IFACE-042 MISSING_MANDATORY_FIELD: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0049",
+    "interface_id": "IFACE-006",
+    "incident_id": "INC-0021",
+    "timestamp": "2026-01-11T22:45:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0021-875",
+    "error_code": "CERT_UNTRUSTED",
+    "raw_text": "[WARN] IFACE-006 CERT_UNTRUSTED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0050",
+    "interface_id": "IFACE-006",
+    "incident_id": "INC-0021",
+    "timestamp": "2026-01-11T12:48:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0021-484",
+    "error_code": "CERT_UNTRUSTED",
+    "raw_text": "[ERROR] IFACE-006 CERT_UNTRUSTED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0051",
+    "interface_id": "IFACE-006",
+    "incident_id": "INC-0021",
+    "timestamp": "2026-01-11T20:23:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0021-335",
+    "error_code": "SSL_HANDSHAKE_FAILED",
+    "raw_text": "[WARN] IFACE-006 SSL_HANDSHAKE_FAILED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0052",
+    "interface_id": "IFACE-006",
+    "incident_id": "INC-0021",
+    "timestamp": "2026-01-11T16:37:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0021-676",
+    "error_code": "CERT_EXPIRED",
+    "raw_text": "[WARN] IFACE-006 CERT_EXPIRED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0053",
+    "interface_id": "IFACE-006",
+    "incident_id": "INC-0021",
+    "timestamp": "2026-01-11T10:44:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0021-108",
+    "error_code": "PROCESSING_TIMEOUT",
+    "raw_text": "[WARN] IFACE-006 PROCESSING_TIMEOUT: unrelated transient warning (red herring)."
+  },
+  {
+    "log_id": "LOG-0054",
+    "interface_id": "IFACE-035",
+    "incident_id": "INC-0022",
+    "timestamp": "2025-08-13T12:17:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0022-766",
+    "error_code": "AUTH_REJECTED",
+    "raw_text": "[ERROR] IFACE-035 AUTH_REJECTED: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0055",
+    "interface_id": "IFACE-035",
+    "incident_id": "INC-0022",
+    "timestamp": "2025-08-13T05:15:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0022-353",
+    "error_code": "AUTH_REJECTED",
+    "raw_text": "[ERROR] IFACE-035 AUTH_REJECTED: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0056",
+    "interface_id": "IFACE-035",
+    "incident_id": "INC-0022",
+    "timestamp": "2025-08-13T18:49:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0022-226",
+    "error_code": "403",
+    "raw_text": "[ERROR] IFACE-035 403: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0057",
+    "interface_id": "IFACE-035",
+    "incident_id": "INC-0022",
+    "timestamp": "2025-08-13T06:45:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0022-245",
+    "error_code": "403",
+    "raw_text": "[ERROR] IFACE-035 403: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0058",
+    "interface_id": "IFACE-027",
+    "incident_id": "INC-0023",
+    "timestamp": "2025-10-07T07:58:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0023-906",
+    "error_code": "SCHEMA_VALIDATION_FAILED",
+    "raw_text": "[WARN] IFACE-027 SCHEMA_VALIDATION_FAILED: simulated failure detail for mapping error scenario."
+  },
+  {
+    "log_id": "LOG-0059",
+    "interface_id": "IFACE-027",
+    "incident_id": "INC-0023",
+    "timestamp": "2025-10-07T05:39:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0023-885",
+    "error_code": "SCHEMA_VALIDATION_FAILED",
+    "raw_text": "[WARN] IFACE-027 SCHEMA_VALIDATION_FAILED: simulated failure detail for mapping error scenario."
+  },
+  {
+    "log_id": "LOG-0060",
+    "interface_id": "IFACE-018",
+    "incident_id": "INC-0024",
+    "timestamp": "2026-07-01T11:11:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0024-561",
+    "error_code": "MAPPING_EXCEPTION",
+    "raw_text": "[ERROR] IFACE-018 MAPPING_EXCEPTION: simulated failure detail for mapping error scenario."
+  },
+  {
+    "log_id": "LOG-0061",
+    "interface_id": "IFACE-018",
+    "incident_id": "INC-0024",
+    "timestamp": "2026-07-01T21:12:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0024-693",
+    "error_code": "XSLT_ERROR",
+    "raw_text": "[ERROR] IFACE-018 XSLT_ERROR: simulated failure detail for mapping error scenario."
+  },
+  {
+    "log_id": "LOG-0062",
+    "interface_id": "IFACE-011",
+    "incident_id": "INC-0025",
+    "timestamp": "2025-08-21T11:02:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0025-379",
+    "error_code": "ENDPOINT_NOT_FOUND_404",
+    "raw_text": "[ERROR] IFACE-011 ENDPOINT_NOT_FOUND_404: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0063",
+    "interface_id": "IFACE-011",
+    "incident_id": "INC-0025",
+    "timestamp": "2025-08-21T09:04:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0025-473",
+    "error_code": "ENDPOINT_NOT_FOUND_404",
+    "raw_text": "[ERROR] IFACE-011 ENDPOINT_NOT_FOUND_404: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0064",
+    "interface_id": "IFACE-015",
+    "incident_id": "INC-0026",
+    "timestamp": "2025-06-17T09:51:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0026-899",
+    "error_code": "SFTP_AUTH_FAILED",
+    "raw_text": "[WARN] IFACE-015 SFTP_AUTH_FAILED: simulated failure detail for sftp credential failure scenario."
+  },
+  {
+    "log_id": "LOG-0065",
+    "interface_id": "IFACE-049",
+    "incident_id": "INC-0027",
+    "timestamp": "2025-04-10T22:48:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0027-146",
+    "error_code": "SERVICE_UNAVAILABLE_503",
+    "raw_text": "[ERROR] IFACE-049 SERVICE_UNAVAILABLE_503: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0066",
+    "interface_id": "IFACE-021",
+    "incident_id": "INC-0028",
+    "timestamp": "2026-08-25T22:11:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0028-923",
+    "error_code": "PROCESSING_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-021 PROCESSING_TIMEOUT: simulated failure detail for message processing failure scenario."
+  },
+  {
+    "log_id": "LOG-0067",
+    "interface_id": "IFACE-021",
+    "incident_id": "INC-0028",
+    "timestamp": "2026-08-25T18:48:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0028-926",
+    "error_code": "QUEUE_BLOCKED",
+    "raw_text": "[ERROR] IFACE-021 QUEUE_BLOCKED: simulated failure detail for message processing failure scenario."
+  },
+  {
+    "log_id": "LOG-0068",
+    "interface_id": "IFACE-046",
+    "incident_id": "INC-0029",
+    "timestamp": "2026-05-09T21:17:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0029-218",
+    "error_code": "SFTP_KEY_REJECTED",
+    "raw_text": "[ERROR] IFACE-046 SFTP_KEY_REJECTED: simulated failure detail for sftp credential failure scenario."
+  },
+  {
+    "log_id": "LOG-0069",
+    "interface_id": "IFACE-046",
+    "incident_id": "INC-0029",
+    "timestamp": "2026-05-09T11:00:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0029-502",
+    "error_code": "SFTP_AUTH_FAILED",
+    "raw_text": "[ERROR] IFACE-046 SFTP_AUTH_FAILED: simulated failure detail for sftp credential failure scenario."
+  },
+  {
+    "log_id": "LOG-0070",
+    "interface_id": "IFACE-024",
+    "incident_id": "INC-0030",
+    "timestamp": "2026-01-17T10:21:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0030-863",
+    "error_code": "ENDPOINT_NOT_FOUND_404",
+    "raw_text": "[WARN] IFACE-024 ENDPOINT_NOT_FOUND_404: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0071",
+    "interface_id": "IFACE-024",
+    "incident_id": "INC-0030",
+    "timestamp": "2026-01-17T12:00:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0030-874",
+    "error_code": "ENDPOINT_NOT_FOUND_404",
+    "raw_text": "[ERROR] IFACE-024 ENDPOINT_NOT_FOUND_404: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0072",
+    "interface_id": "IFACE-039",
+    "incident_id": "INC-0031",
+    "timestamp": "2025-04-08T02:27:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0031-142",
+    "error_code": "GATEWAY_TIMEOUT_504",
+    "raw_text": "[ERROR] IFACE-039 GATEWAY_TIMEOUT_504: simulated failure detail for timeout scenario."
+  },
+  {
+    "log_id": "LOG-0073",
+    "interface_id": "IFACE-039",
+    "incident_id": "INC-0031",
+    "timestamp": "2025-04-08T18:31:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0031-300",
+    "error_code": "GATEWAY_TIMEOUT_504",
+    "raw_text": "[ERROR] IFACE-039 GATEWAY_TIMEOUT_504: simulated failure detail for timeout scenario."
+  },
+  {
+    "log_id": "LOG-0074",
+    "interface_id": "IFACE-007",
+    "incident_id": "INC-0032",
+    "timestamp": "2025-04-12T02:12:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0032-617",
+    "error_code": "HOST_UNREACHABLE",
+    "raw_text": "[ERROR] IFACE-007 HOST_UNREACHABLE: simulated failure detail for connectivity failure scenario."
+  },
+  {
+    "log_id": "LOG-0075",
+    "interface_id": "IFACE-042",
+    "incident_id": "INC-0033",
+    "timestamp": "2025-06-20T19:24:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0033-733",
+    "error_code": "INVALID_XML",
+    "raw_text": "[ERROR] IFACE-042 INVALID_XML: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0076",
+    "interface_id": "IFACE-042",
+    "incident_id": "INC-0033",
+    "timestamp": "2025-06-20T22:06:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0033-711",
+    "error_code": "PAYLOAD_TOO_LARGE",
+    "raw_text": "[ERROR] IFACE-042 PAYLOAD_TOO_LARGE: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0077",
+    "interface_id": "IFACE-013",
+    "incident_id": "INC-0034",
+    "timestamp": "2025-06-04T22:25:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0034-042",
+    "error_code": "QUEUE_BLOCKED",
+    "raw_text": "[WARN] IFACE-013 QUEUE_BLOCKED: simulated failure detail for message processing failure scenario."
+  },
+  {
+    "log_id": "LOG-0078",
+    "interface_id": "IFACE-013",
+    "incident_id": "INC-0034",
+    "timestamp": "2025-06-04T11:40:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0034-872",
+    "error_code": "MESSAGE_STUCK",
+    "raw_text": "[ERROR] IFACE-013 MESSAGE_STUCK: simulated failure detail for message processing failure scenario."
+  },
+  {
+    "log_id": "LOG-0079",
+    "interface_id": "IFACE-013",
+    "incident_id": "INC-0034",
+    "timestamp": "2025-06-04T06:54:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0034-569",
+    "error_code": "MESSAGE_STUCK",
+    "raw_text": "[ERROR] IFACE-013 MESSAGE_STUCK: simulated failure detail for message processing failure scenario."
+  },
+  {
+    "log_id": "LOG-0080",
+    "interface_id": "IFACE-013",
+    "incident_id": "INC-0034",
+    "timestamp": "2025-06-04T18:17:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0034-311",
+    "error_code": "QUEUE_BLOCKED",
+    "raw_text": "[ERROR] IFACE-013 QUEUE_BLOCKED: simulated failure detail for message processing failure scenario."
+  },
+  {
+    "log_id": "LOG-0081",
+    "interface_id": "IFACE-029",
+    "incident_id": "INC-0035",
+    "timestamp": "2025-05-31T13:06:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0035-855",
+    "error_code": "SFTP_AUTH_FAILED",
+    "raw_text": "[ERROR] IFACE-029 SFTP_AUTH_FAILED: simulated failure detail for sftp credential failure scenario."
+  },
+  {
+    "log_id": "LOG-0082",
+    "interface_id": "IFACE-029",
+    "incident_id": "INC-0036",
+    "timestamp": "2025-09-04T18:43:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0036-431",
+    "error_code": "SCHEMA_VALIDATION_FAILED",
+    "raw_text": "[ERROR] IFACE-029 SCHEMA_VALIDATION_FAILED: simulated failure detail for mapping error scenario."
+  },
+  {
+    "log_id": "LOG-0083",
+    "interface_id": "IFACE-029",
+    "incident_id": "INC-0036",
+    "timestamp": "2025-09-04T12:33:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0036-647",
+    "error_code": "XSLT_ERROR",
+    "raw_text": "[WARN] IFACE-029 XSLT_ERROR: simulated failure detail for mapping error scenario."
+  },
+  {
+    "log_id": "LOG-0084",
+    "interface_id": "IFACE-038",
+    "incident_id": "INC-0037",
+    "timestamp": "2026-08-26T09:34:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0037-071",
+    "error_code": "POOL_EXHAUSTED",
+    "raw_text": "[ERROR] IFACE-038 POOL_EXHAUSTED: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0085",
+    "interface_id": "IFACE-038",
+    "incident_id": "INC-0037",
+    "timestamp": "2026-08-26T00:04:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0037-343",
+    "error_code": "POOL_EXHAUSTED",
+    "raw_text": "[ERROR] IFACE-038 POOL_EXHAUSTED: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0086",
+    "interface_id": "IFACE-038",
+    "incident_id": "INC-0037",
+    "timestamp": "2026-08-26T20:26:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0037-191",
+    "error_code": "POOL_EXHAUSTED",
+    "raw_text": "[ERROR] IFACE-038 POOL_EXHAUSTED: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0087",
+    "interface_id": "IFACE-023",
+    "incident_id": "INC-0038",
+    "timestamp": "2026-08-08T05:44:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0038-494",
+    "error_code": "POOL_EXHAUSTED",
+    "raw_text": "[ERROR] IFACE-023 POOL_EXHAUSTED: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0088",
+    "interface_id": "IFACE-023",
+    "incident_id": "INC-0038",
+    "timestamp": "2026-08-08T16:49:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0038-852",
+    "error_code": "POOL_EXHAUSTED",
+    "raw_text": "[ERROR] IFACE-023 POOL_EXHAUSTED: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0089",
+    "interface_id": "IFACE-025",
+    "incident_id": "INC-0039",
+    "timestamp": "2025-07-25T11:58:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0039-936",
+    "error_code": "SFTP_KEY_REJECTED",
+    "raw_text": "[ERROR] IFACE-025 SFTP_KEY_REJECTED: simulated failure detail for sftp credential failure scenario."
+  },
+  {
+    "log_id": "LOG-0090",
+    "interface_id": "IFACE-025",
+    "incident_id": "INC-0039",
+    "timestamp": "2025-07-25T08:54:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0039-735",
+    "error_code": "SFTP_KEY_REJECTED",
+    "raw_text": "[ERROR] IFACE-025 SFTP_KEY_REJECTED: simulated failure detail for sftp credential failure scenario."
+  },
+  {
+    "log_id": "LOG-0091",
+    "interface_id": "IFACE-025",
+    "incident_id": "INC-0039",
+    "timestamp": "2025-07-25T12:28:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0039-799",
+    "error_code": "DUPLICATE_MESSAGE_ID",
+    "raw_text": "[WARN] IFACE-025 DUPLICATE_MESSAGE_ID: unrelated transient warning (red herring)."
+  },
+  {
+    "log_id": "LOG-0092",
+    "interface_id": "IFACE-024",
+    "incident_id": "INC-0040",
+    "timestamp": "2026-08-20T02:12:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0040-311",
+    "error_code": "QUEUE_BLOCKED",
+    "raw_text": "[ERROR] IFACE-024 QUEUE_BLOCKED: simulated failure detail for message processing failure scenario."
+  },
+  {
+    "log_id": "LOG-0093",
+    "interface_id": "IFACE-024",
+    "incident_id": "INC-0040",
+    "timestamp": "2026-08-20T04:32:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0040-705",
+    "error_code": "PROCESSING_TIMEOUT",
+    "raw_text": "[WARN] IFACE-024 PROCESSING_TIMEOUT: simulated failure detail for message processing failure scenario."
+  },
+  {
+    "log_id": "LOG-0094",
+    "interface_id": "IFACE-027",
+    "incident_id": "INC-0041",
+    "timestamp": "2025-07-04T13:33:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0041-111",
+    "error_code": "401",
+    "raw_text": "[ERROR] IFACE-027 401: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0095",
+    "interface_id": "IFACE-027",
+    "incident_id": "INC-0041",
+    "timestamp": "2025-07-04T01:28:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0041-315",
+    "error_code": "TOKEN_EXPIRED",
+    "raw_text": "[WARN] IFACE-027 TOKEN_EXPIRED: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0096",
+    "interface_id": "IFACE-027",
+    "incident_id": "INC-0042",
+    "timestamp": "2025-12-19T16:47:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0042-067",
+    "error_code": "DUPLICATE_MESSAGE_ID",
+    "raw_text": "[ERROR] IFACE-027 DUPLICATE_MESSAGE_ID: simulated failure detail for duplicate message scenario."
+  },
+  {
+    "log_id": "LOG-0097",
+    "interface_id": "IFACE-027",
+    "incident_id": "INC-0042",
+    "timestamp": "2025-12-19T11:02:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0042-161",
+    "error_code": "IDEMPOTENCY_CONFLICT",
+    "raw_text": "[ERROR] IFACE-027 IDEMPOTENCY_CONFLICT: simulated failure detail for duplicate message scenario."
+  },
+  {
+    "log_id": "LOG-0098",
+    "interface_id": "IFACE-027",
+    "incident_id": "INC-0042",
+    "timestamp": "2025-12-19T02:15:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0042-759",
+    "error_code": "DUPLICATE_MESSAGE_ID",
+    "raw_text": "[ERROR] IFACE-027 DUPLICATE_MESSAGE_ID: simulated failure detail for duplicate message scenario."
+  },
+  {
+    "log_id": "LOG-0099",
+    "interface_id": "IFACE-027",
+    "incident_id": "INC-0042",
+    "timestamp": "2025-12-19T18:57:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0042-516",
+    "error_code": "IDEMPOTENCY_CONFLICT",
+    "raw_text": "[ERROR] IFACE-027 IDEMPOTENCY_CONFLICT: simulated failure detail for duplicate message scenario."
+  },
+  {
+    "log_id": "LOG-0100",
+    "interface_id": "IFACE-020",
+    "incident_id": "INC-0043",
+    "timestamp": "2026-09-13T12:56:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0043-626",
+    "error_code": "SCHEMA_VALIDATION_FAILED",
+    "raw_text": "[ERROR] IFACE-020 SCHEMA_VALIDATION_FAILED: simulated failure detail for mapping error scenario."
+  },
+  {
+    "log_id": "LOG-0101",
+    "interface_id": "IFACE-020",
+    "incident_id": "INC-0044",
+    "timestamp": "2026-02-28T14:50:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0044-109",
+    "error_code": "POOL_EXHAUSTED",
+    "raw_text": "[ERROR] IFACE-020 POOL_EXHAUSTED: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0102",
+    "interface_id": "IFACE-020",
+    "incident_id": "INC-0044",
+    "timestamp": "2026-02-28T00:42:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0044-738",
+    "error_code": "ORA-12170",
+    "raw_text": "[ERROR] IFACE-020 ORA-12170: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0103",
+    "interface_id": "IFACE-039",
+    "incident_id": "INC-0045",
+    "timestamp": "2025-06-09T15:22:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0045-681",
+    "error_code": "MISSING_MANDATORY_FIELD",
+    "raw_text": "[ERROR] IFACE-039 MISSING_MANDATORY_FIELD: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0104",
+    "interface_id": "IFACE-039",
+    "incident_id": "INC-0045",
+    "timestamp": "2025-06-09T15:32:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0045-132",
+    "error_code": "MISSING_MANDATORY_FIELD",
+    "raw_text": "[WARN] IFACE-039 MISSING_MANDATORY_FIELD: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0105",
+    "interface_id": "IFACE-047",
+    "incident_id": "INC-0046",
+    "timestamp": "2026-04-22T19:30:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0046-693",
+    "error_code": "READ_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-047 READ_TIMEOUT: simulated failure detail for timeout scenario."
+  },
+  {
+    "log_id": "LOG-0106",
+    "interface_id": "IFACE-047",
+    "incident_id": "INC-0046",
+    "timestamp": "2026-04-22T10:05:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0046-126",
+    "error_code": "CONNECT_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-047 CONNECT_TIMEOUT: simulated failure detail for timeout scenario."
+  },
+  {
+    "log_id": "LOG-0107",
+    "interface_id": "IFACE-047",
+    "incident_id": "INC-0046",
+    "timestamp": "2026-04-22T20:47:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0046-151",
+    "error_code": "INVALID_XML",
+    "raw_text": "[WARN] IFACE-047 INVALID_XML: unrelated transient warning (red herring)."
+  },
+  {
+    "log_id": "LOG-0108",
+    "interface_id": "IFACE-048",
+    "incident_id": "INC-0047",
+    "timestamp": "2025-06-21T23:50:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0047-719",
+    "error_code": "403",
+    "raw_text": "[ERROR] IFACE-048 403: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0109",
+    "interface_id": "IFACE-048",
+    "incident_id": "INC-0047",
+    "timestamp": "2025-06-21T17:27:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0047-739",
+    "error_code": "401",
+    "raw_text": "[ERROR] IFACE-048 401: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0110",
+    "interface_id": "IFACE-029",
+    "incident_id": "INC-0048",
+    "timestamp": "2026-07-07T18:40:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0048-333",
+    "error_code": "READ_TIMEOUT",
+    "raw_text": "[WARN] IFACE-029 READ_TIMEOUT: simulated failure detail for timeout scenario."
+  },
+  {
+    "log_id": "LOG-0111",
+    "interface_id": "IFACE-029",
+    "incident_id": "INC-0048",
+    "timestamp": "2026-07-07T08:29:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0048-444",
+    "error_code": "READ_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-029 READ_TIMEOUT: simulated failure detail for timeout scenario."
+  },
+  {
+    "log_id": "LOG-0112",
+    "interface_id": "IFACE-029",
+    "incident_id": "INC-0048",
+    "timestamp": "2026-07-07T20:42:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0048-182",
+    "error_code": "POOL_EXHAUSTED",
+    "raw_text": "[WARN] IFACE-029 POOL_EXHAUSTED: unrelated transient warning (red herring)."
+  },
+  {
+    "log_id": "LOG-0113",
+    "interface_id": "IFACE-007",
+    "incident_id": "INC-0049",
+    "timestamp": "2025-10-08T23:15:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0049-860",
+    "error_code": "CERT_EXPIRED",
+    "raw_text": "[ERROR] IFACE-007 CERT_EXPIRED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0114",
+    "interface_id": "IFACE-039",
+    "incident_id": "INC-0050",
+    "timestamp": "2026-06-05T21:39:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0050-536",
+    "error_code": "POOL_EXHAUSTED",
+    "raw_text": "[ERROR] IFACE-039 POOL_EXHAUSTED: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0115",
+    "interface_id": "IFACE-039",
+    "incident_id": "INC-0050",
+    "timestamp": "2026-06-05T00:04:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0050-460",
+    "error_code": "LOGIN_TIMEOUT",
+    "raw_text": "[WARN] IFACE-039 LOGIN_TIMEOUT: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0116",
+    "interface_id": "IFACE-039",
+    "incident_id": "INC-0050",
+    "timestamp": "2026-06-05T04:55:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0050-604",
+    "error_code": "DB_CONN_REFUSED",
+    "raw_text": "[WARN] IFACE-039 DB_CONN_REFUSED: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0117",
+    "interface_id": "IFACE-029",
+    "incident_id": "INC-0051",
+    "timestamp": "2026-07-21T04:19:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0051-185",
+    "error_code": "401",
+    "raw_text": "[ERROR] IFACE-029 401: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0118",
+    "interface_id": "IFACE-029",
+    "incident_id": "INC-0051",
+    "timestamp": "2026-07-21T06:41:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0051-634",
+    "error_code": "AUTH_REJECTED",
+    "raw_text": "[ERROR] IFACE-029 AUTH_REJECTED: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0119",
+    "interface_id": "IFACE-038",
+    "incident_id": "INC-0052",
+    "timestamp": "2026-05-29T01:11:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0052-127",
+    "error_code": "DNS_RESOLUTION_FAILED",
+    "raw_text": "[ERROR] IFACE-038 DNS_RESOLUTION_FAILED: simulated failure detail for connectivity failure scenario."
+  },
+  {
+    "log_id": "LOG-0120",
+    "interface_id": "IFACE-038",
+    "incident_id": "INC-0052",
+    "timestamp": "2026-05-29T15:11:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0052-331",
+    "error_code": "HOST_UNREACHABLE",
+    "raw_text": "[ERROR] IFACE-038 HOST_UNREACHABLE: simulated failure detail for connectivity failure scenario."
+  },
+  {
+    "log_id": "LOG-0121",
+    "interface_id": "IFACE-038",
+    "incident_id": "INC-0052",
+    "timestamp": "2026-05-29T13:33:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0052-485",
+    "error_code": "HOST_UNREACHABLE",
+    "raw_text": "[ERROR] IFACE-038 HOST_UNREACHABLE: simulated failure detail for connectivity failure scenario."
+  },
+  {
+    "log_id": "LOG-0122",
+    "interface_id": "IFACE-038",
+    "incident_id": "INC-0052",
+    "timestamp": "2026-05-29T15:44:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0052-713",
+    "error_code": "HOST_UNREACHABLE",
+    "raw_text": "[ERROR] IFACE-038 HOST_UNREACHABLE: simulated failure detail for connectivity failure scenario."
+  },
+  {
+    "log_id": "LOG-0123",
+    "interface_id": "IFACE-030",
+    "incident_id": "INC-0053",
+    "timestamp": "2025-04-10T04:53:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0053-826",
+    "error_code": "PAYLOAD_TOO_LARGE",
+    "raw_text": "[ERROR] IFACE-030 PAYLOAD_TOO_LARGE: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0124",
+    "interface_id": "IFACE-030",
+    "incident_id": "INC-0053",
+    "timestamp": "2025-04-10T01:52:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0053-582",
+    "error_code": "PAYLOAD_TOO_LARGE",
+    "raw_text": "[ERROR] IFACE-030 PAYLOAD_TOO_LARGE: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0125",
+    "interface_id": "IFACE-038",
+    "incident_id": "INC-0054",
+    "timestamp": "2025-08-23T08:59:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0054-066",
+    "error_code": "TOKEN_EXPIRED",
+    "raw_text": "[ERROR] IFACE-038 TOKEN_EXPIRED: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0126",
+    "interface_id": "IFACE-038",
+    "incident_id": "INC-0054",
+    "timestamp": "2025-08-23T20:13:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0054-542",
+    "error_code": "TOKEN_EXPIRED",
+    "raw_text": "[WARN] IFACE-038 TOKEN_EXPIRED: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0127",
+    "interface_id": "IFACE-038",
+    "incident_id": "INC-0054",
+    "timestamp": "2025-08-23T07:42:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0054-160",
+    "error_code": "AUTH_REJECTED",
+    "raw_text": "[ERROR] IFACE-038 AUTH_REJECTED: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0128",
+    "interface_id": "IFACE-038",
+    "incident_id": "INC-0054",
+    "timestamp": "2025-08-23T05:21:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0054-629",
+    "error_code": "DB_CONN_REFUSED",
+    "raw_text": "[WARN] IFACE-038 DB_CONN_REFUSED: unrelated transient warning (red herring)."
+  },
+  {
+    "log_id": "LOG-0129",
+    "interface_id": "IFACE-023",
+    "incident_id": "INC-0055",
+    "timestamp": "2026-06-01T23:42:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0055-394",
+    "error_code": "SSL_HANDSHAKE_FAILED",
+    "raw_text": "[ERROR] IFACE-023 SSL_HANDSHAKE_FAILED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0130",
+    "interface_id": "IFACE-023",
+    "incident_id": "INC-0055",
+    "timestamp": "2026-06-01T11:36:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0055-447",
+    "error_code": "SSL_HANDSHAKE_FAILED",
+    "raw_text": "[ERROR] IFACE-023 SSL_HANDSHAKE_FAILED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0131",
+    "interface_id": "IFACE-023",
+    "incident_id": "INC-0055",
+    "timestamp": "2026-06-01T16:47:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0055-851",
+    "error_code": "CERT_EXPIRED",
+    "raw_text": "[WARN] IFACE-023 CERT_EXPIRED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0132",
+    "interface_id": "IFACE-023",
+    "incident_id": "INC-0055",
+    "timestamp": "2026-06-01T13:55:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0055-433",
+    "error_code": "CERT_UNTRUSTED",
+    "raw_text": "[ERROR] IFACE-023 CERT_UNTRUSTED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0133",
+    "interface_id": "IFACE-039",
+    "incident_id": "INC-0056",
+    "timestamp": "2025-12-04T12:12:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0056-921",
+    "error_code": "DB_CONN_REFUSED",
+    "raw_text": "[ERROR] IFACE-039 DB_CONN_REFUSED: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0134",
+    "interface_id": "IFACE-039",
+    "incident_id": "INC-0056",
+    "timestamp": "2025-12-04T14:24:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0056-999",
+    "error_code": "ORA-12170",
+    "raw_text": "[ERROR] IFACE-039 ORA-12170: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0135",
+    "interface_id": "IFACE-039",
+    "incident_id": "INC-0056",
+    "timestamp": "2025-12-04T00:44:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0056-181",
+    "error_code": "ORA-12170",
+    "raw_text": "[ERROR] IFACE-039 ORA-12170: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0136",
+    "interface_id": "IFACE-018",
+    "incident_id": "INC-0057",
+    "timestamp": "2025-07-30T08:25:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0057-041",
+    "error_code": "DNS_RESOLUTION_FAILED",
+    "raw_text": "[ERROR] IFACE-018 DNS_RESOLUTION_FAILED: simulated failure detail for connectivity failure scenario."
+  },
+  {
+    "log_id": "LOG-0137",
+    "interface_id": "IFACE-018",
+    "incident_id": "INC-0057",
+    "timestamp": "2025-07-30T05:04:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0057-366",
+    "error_code": "CONN_REFUSED",
+    "raw_text": "[ERROR] IFACE-018 CONN_REFUSED: simulated failure detail for connectivity failure scenario."
+  },
+  {
+    "log_id": "LOG-0138",
+    "interface_id": "IFACE-011",
+    "incident_id": "INC-0058",
+    "timestamp": "2025-05-25T04:54:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0058-962",
+    "error_code": "HOST_UNREACHABLE",
+    "raw_text": "[WARN] IFACE-011 HOST_UNREACHABLE: simulated failure detail for connectivity failure scenario."
+  },
+  {
+    "log_id": "LOG-0139",
+    "interface_id": "IFACE-011",
+    "incident_id": "INC-0058",
+    "timestamp": "2025-05-25T15:32:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0058-121",
+    "error_code": "HOST_UNREACHABLE",
+    "raw_text": "[ERROR] IFACE-011 HOST_UNREACHABLE: simulated failure detail for connectivity failure scenario."
+  },
+  {
+    "log_id": "LOG-0140",
+    "interface_id": "IFACE-011",
+    "incident_id": "INC-0058",
+    "timestamp": "2025-05-25T05:44:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0058-387",
+    "error_code": "DNS_RESOLUTION_FAILED",
+    "raw_text": "[ERROR] IFACE-011 DNS_RESOLUTION_FAILED: simulated failure detail for connectivity failure scenario."
+  },
+  {
+    "log_id": "LOG-0141",
+    "interface_id": "IFACE-011",
+    "incident_id": "INC-0058",
+    "timestamp": "2025-05-25T01:22:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0058-660",
+    "error_code": "DNS_RESOLUTION_FAILED",
+    "raw_text": "[WARN] IFACE-011 DNS_RESOLUTION_FAILED: simulated failure detail for connectivity failure scenario."
+  },
+  {
+    "log_id": "LOG-0142",
+    "interface_id": "IFACE-012",
+    "incident_id": "INC-0059",
+    "timestamp": "2026-04-17T01:04:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0059-310",
+    "error_code": "PAYLOAD_TOO_LARGE",
+    "raw_text": "[ERROR] IFACE-012 PAYLOAD_TOO_LARGE: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0143",
+    "interface_id": "IFACE-012",
+    "incident_id": "INC-0059",
+    "timestamp": "2026-04-17T17:33:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0059-564",
+    "error_code": "PAYLOAD_TOO_LARGE",
+    "raw_text": "[ERROR] IFACE-012 PAYLOAD_TOO_LARGE: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0144",
+    "interface_id": "IFACE-016",
+    "incident_id": "INC-0060",
+    "timestamp": "2026-02-03T00:27:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0060-841",
+    "error_code": "PROCESSING_TIMEOUT",
+    "raw_text": "[WARN] IFACE-016 PROCESSING_TIMEOUT: simulated failure detail for message processing failure scenario."
+  },
+  {
+    "log_id": "LOG-0145",
+    "interface_id": "IFACE-016",
+    "incident_id": "INC-0060",
+    "timestamp": "2026-02-03T23:44:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0060-158",
+    "error_code": "MESSAGE_STUCK",
+    "raw_text": "[WARN] IFACE-016 MESSAGE_STUCK: simulated failure detail for message processing failure scenario."
+  },
+  {
+    "log_id": "LOG-0146",
+    "interface_id": "IFACE-016",
+    "incident_id": "INC-0060",
+    "timestamp": "2026-02-03T03:00:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0060-762",
+    "error_code": "MESSAGE_STUCK",
+    "raw_text": "[ERROR] IFACE-016 MESSAGE_STUCK: simulated failure detail for message processing failure scenario."
+  },
+  {
+    "log_id": "LOG-0147",
+    "interface_id": "IFACE-016",
+    "incident_id": "INC-0060",
+    "timestamp": "2026-02-03T22:03:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0060-227",
+    "error_code": "DNS_RESOLUTION_FAILED",
+    "raw_text": "[WARN] IFACE-016 DNS_RESOLUTION_FAILED: unrelated transient warning (red herring)."
+  },
+  {
+    "log_id": "LOG-0148",
+    "interface_id": "IFACE-045",
+    "incident_id": "INC-0061",
+    "timestamp": "2025-07-17T15:49:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0061-288",
+    "error_code": "READ_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-045 READ_TIMEOUT: simulated failure detail for timeout scenario."
+  },
+  {
+    "log_id": "LOG-0149",
+    "interface_id": "IFACE-023",
+    "incident_id": "INC-0062",
+    "timestamp": "2025-11-13T06:13:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0062-787",
+    "error_code": "SERVICE_UNAVAILABLE_503",
+    "raw_text": "[ERROR] IFACE-023 SERVICE_UNAVAILABLE_503: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0150",
+    "interface_id": "IFACE-023",
+    "incident_id": "INC-0062",
+    "timestamp": "2025-11-13T15:35:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0062-276",
+    "error_code": "ENDPOINT_NOT_FOUND_404",
+    "raw_text": "[ERROR] IFACE-023 ENDPOINT_NOT_FOUND_404: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0151",
+    "interface_id": "IFACE-023",
+    "incident_id": "INC-0062",
+    "timestamp": "2025-11-13T04:45:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0062-339",
+    "error_code": "SERVICE_UNAVAILABLE_503",
+    "raw_text": "[ERROR] IFACE-023 SERVICE_UNAVAILABLE_503: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0152",
+    "interface_id": "IFACE-038",
+    "incident_id": "INC-0063",
+    "timestamp": "2025-04-25T23:46:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0063-610",
+    "error_code": "PAYLOAD_TOO_LARGE",
+    "raw_text": "[ERROR] IFACE-038 PAYLOAD_TOO_LARGE: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0153",
+    "interface_id": "IFACE-038",
+    "incident_id": "INC-0063",
+    "timestamp": "2025-04-25T17:15:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0063-412",
+    "error_code": "MISSING_MANDATORY_FIELD",
+    "raw_text": "[ERROR] IFACE-038 MISSING_MANDATORY_FIELD: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0154",
+    "interface_id": "IFACE-038",
+    "incident_id": "INC-0063",
+    "timestamp": "2025-04-25T18:28:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0063-277",
+    "error_code": "INVALID_XML",
+    "raw_text": "[ERROR] IFACE-038 INVALID_XML: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0155",
+    "interface_id": "IFACE-038",
+    "incident_id": "INC-0063",
+    "timestamp": "2025-04-25T10:31:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0063-005",
+    "error_code": "SFTP_AUTH_FAILED",
+    "raw_text": "[WARN] IFACE-038 SFTP_AUTH_FAILED: unrelated transient warning (red herring)."
+  },
+  {
+    "log_id": "LOG-0156",
+    "interface_id": "IFACE-009",
+    "incident_id": "INC-0064",
+    "timestamp": "2025-11-12T03:10:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0064-165",
+    "error_code": "GATEWAY_TIMEOUT_504",
+    "raw_text": "[ERROR] IFACE-009 GATEWAY_TIMEOUT_504: simulated failure detail for timeout scenario."
+  },
+  {
+    "log_id": "LOG-0157",
+    "interface_id": "IFACE-009",
+    "incident_id": "INC-0064",
+    "timestamp": "2025-11-12T14:56:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0064-226",
+    "error_code": "READ_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-009 READ_TIMEOUT: simulated failure detail for timeout scenario."
+  },
+  {
+    "log_id": "LOG-0158",
+    "interface_id": "IFACE-009",
+    "incident_id": "INC-0064",
+    "timestamp": "2025-11-12T13:29:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0064-334",
+    "error_code": "CONNECT_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-009 CONNECT_TIMEOUT: simulated failure detail for timeout scenario."
+  },
+  {
+    "log_id": "LOG-0159",
+    "interface_id": "IFACE-009",
+    "incident_id": "INC-0064",
+    "timestamp": "2025-11-12T06:53:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0064-022",
+    "error_code": "GATEWAY_TIMEOUT_504",
+    "raw_text": "[ERROR] IFACE-009 GATEWAY_TIMEOUT_504: simulated failure detail for timeout scenario."
+  },
+  {
+    "log_id": "LOG-0160",
+    "interface_id": "IFACE-002",
+    "incident_id": "INC-0065",
+    "timestamp": "2026-03-23T08:52:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0065-094",
+    "error_code": "ORA-12170",
+    "raw_text": "[ERROR] IFACE-002 ORA-12170: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0161",
+    "interface_id": "IFACE-002",
+    "incident_id": "INC-0065",
+    "timestamp": "2026-03-23T23:42:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0065-954",
+    "error_code": "DB_CONN_REFUSED",
+    "raw_text": "[WARN] IFACE-002 DB_CONN_REFUSED: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0162",
+    "interface_id": "IFACE-026",
+    "incident_id": "INC-0066",
+    "timestamp": "2025-06-21T15:49:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0066-894",
+    "error_code": "DB_CONN_REFUSED",
+    "raw_text": "[ERROR] IFACE-026 DB_CONN_REFUSED: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0163",
+    "interface_id": "IFACE-026",
+    "incident_id": "INC-0066",
+    "timestamp": "2025-06-21T11:30:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0066-400",
+    "error_code": "LOGIN_TIMEOUT",
+    "raw_text": "[WARN] IFACE-026 LOGIN_TIMEOUT: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0164",
+    "interface_id": "IFACE-036",
+    "incident_id": "INC-0067",
+    "timestamp": "2026-05-08T04:41:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0067-702",
+    "error_code": "PROCESSING_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-036 PROCESSING_TIMEOUT: simulated failure detail for message processing failure scenario."
+  },
+  {
+    "log_id": "LOG-0165",
+    "interface_id": "IFACE-036",
+    "incident_id": "INC-0067",
+    "timestamp": "2026-05-08T02:39:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0067-881",
+    "error_code": "PROCESSING_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-036 PROCESSING_TIMEOUT: simulated failure detail for message processing failure scenario."
+  },
+  {
+    "log_id": "LOG-0166",
+    "interface_id": "IFACE-038",
+    "incident_id": "INC-0068",
+    "timestamp": "2025-05-05T18:12:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0068-111",
+    "error_code": "SCHEMA_VALIDATION_FAILED",
+    "raw_text": "[ERROR] IFACE-038 SCHEMA_VALIDATION_FAILED: simulated failure detail for mapping error scenario."
+  },
+  {
+    "log_id": "LOG-0167",
+    "interface_id": "IFACE-030",
+    "incident_id": "INC-0069",
+    "timestamp": "2026-03-03T19:22:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0069-801",
+    "error_code": "DNS_RESOLUTION_FAILED",
+    "raw_text": "[ERROR] IFACE-030 DNS_RESOLUTION_FAILED: simulated failure detail for connectivity failure scenario."
+  },
+  {
+    "log_id": "LOG-0168",
+    "interface_id": "IFACE-030",
+    "incident_id": "INC-0069",
+    "timestamp": "2026-03-03T02:28:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0069-369",
+    "error_code": "HOST_UNREACHABLE",
+    "raw_text": "[ERROR] IFACE-030 HOST_UNREACHABLE: simulated failure detail for connectivity failure scenario."
+  },
+  {
+    "log_id": "LOG-0169",
+    "interface_id": "IFACE-009",
+    "incident_id": "INC-0070",
+    "timestamp": "2025-12-23T17:10:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0070-047",
+    "error_code": "READ_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-009 READ_TIMEOUT: simulated failure detail for timeout scenario."
+  },
+  {
+    "log_id": "LOG-0170",
+    "interface_id": "IFACE-009",
+    "incident_id": "INC-0070",
+    "timestamp": "2025-12-23T14:46:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0070-259",
+    "error_code": "CONNECT_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-009 CONNECT_TIMEOUT: simulated failure detail for timeout scenario."
+  },
+  {
+    "log_id": "LOG-0171",
+    "interface_id": "IFACE-032",
+    "incident_id": "INC-0071",
+    "timestamp": "2025-08-26T07:45:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0071-058",
+    "error_code": "SFTP_AUTH_FAILED",
+    "raw_text": "[ERROR] IFACE-032 SFTP_AUTH_FAILED: simulated failure detail for sftp credential failure scenario."
+  },
+  {
+    "log_id": "LOG-0172",
+    "interface_id": "IFACE-032",
+    "incident_id": "INC-0071",
+    "timestamp": "2025-08-26T08:16:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0071-974",
+    "error_code": "SFTP_AUTH_FAILED",
+    "raw_text": "[ERROR] IFACE-032 SFTP_AUTH_FAILED: simulated failure detail for sftp credential failure scenario."
+  },
+  {
+    "log_id": "LOG-0173",
+    "interface_id": "IFACE-032",
+    "incident_id": "INC-0071",
+    "timestamp": "2025-08-26T05:54:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0071-901",
+    "error_code": "SFTP_AUTH_FAILED",
+    "raw_text": "[WARN] IFACE-032 SFTP_AUTH_FAILED: simulated failure detail for sftp credential failure scenario."
+  },
+  {
+    "log_id": "LOG-0174",
+    "interface_id": "IFACE-032",
+    "incident_id": "INC-0071",
+    "timestamp": "2025-08-26T03:53:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0071-376",
+    "error_code": "SFTP_KEY_REJECTED",
+    "raw_text": "[ERROR] IFACE-032 SFTP_KEY_REJECTED: simulated failure detail for sftp credential failure scenario."
+  },
+  {
+    "log_id": "LOG-0175",
+    "interface_id": "IFACE-049",
+    "incident_id": "INC-0072",
+    "timestamp": "2026-06-26T15:11:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0072-132",
+    "error_code": "SCHEMA_VALIDATION_FAILED",
+    "raw_text": "[WARN] IFACE-049 SCHEMA_VALIDATION_FAILED: simulated failure detail for mapping error scenario."
+  },
+  {
+    "log_id": "LOG-0176",
+    "interface_id": "IFACE-044",
+    "incident_id": "INC-0073",
+    "timestamp": "2025-08-04T02:46:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0073-097",
+    "error_code": "MISSING_MANDATORY_FIELD",
+    "raw_text": "[ERROR] IFACE-044 MISSING_MANDATORY_FIELD: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0177",
+    "interface_id": "IFACE-044",
+    "incident_id": "INC-0073",
+    "timestamp": "2025-08-04T02:18:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0073-953",
+    "error_code": "INVALID_XML",
+    "raw_text": "[WARN] IFACE-044 INVALID_XML: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0178",
+    "interface_id": "IFACE-015",
+    "incident_id": "INC-0074",
+    "timestamp": "2026-01-30T21:46:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0074-804",
+    "error_code": "DUPLICATE_MESSAGE_ID",
+    "raw_text": "[ERROR] IFACE-015 DUPLICATE_MESSAGE_ID: simulated failure detail for duplicate message scenario."
+  },
+  {
+    "log_id": "LOG-0179",
+    "interface_id": "IFACE-011",
+    "incident_id": "INC-0075",
+    "timestamp": "2026-04-20T05:42:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0075-549",
+    "error_code": "SERVICE_UNAVAILABLE_503",
+    "raw_text": "[ERROR] IFACE-011 SERVICE_UNAVAILABLE_503: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0180",
+    "interface_id": "IFACE-011",
+    "incident_id": "INC-0075",
+    "timestamp": "2026-04-20T20:21:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0075-854",
+    "error_code": "SERVICE_UNAVAILABLE_503",
+    "raw_text": "[ERROR] IFACE-011 SERVICE_UNAVAILABLE_503: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0181",
+    "interface_id": "IFACE-011",
+    "incident_id": "INC-0075",
+    "timestamp": "2026-04-20T03:27:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0075-324",
+    "error_code": "ENDPOINT_NOT_FOUND_404",
+    "raw_text": "[ERROR] IFACE-011 ENDPOINT_NOT_FOUND_404: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0182",
+    "interface_id": "IFACE-011",
+    "incident_id": "INC-0075",
+    "timestamp": "2026-04-20T05:46:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0075-221",
+    "error_code": "CERT_UNTRUSTED",
+    "raw_text": "[WARN] IFACE-011 CERT_UNTRUSTED: unrelated transient warning (red herring)."
+  },
+  {
+    "log_id": "LOG-0183",
+    "interface_id": "IFACE-013",
+    "incident_id": "INC-0076",
+    "timestamp": "2025-08-14T02:48:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0076-680",
+    "error_code": "SERVICE_UNAVAILABLE_503",
+    "raw_text": "[ERROR] IFACE-013 SERVICE_UNAVAILABLE_503: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0184",
+    "interface_id": "IFACE-013",
+    "incident_id": "INC-0076",
+    "timestamp": "2025-08-14T16:18:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0076-281",
+    "error_code": "ENDPOINT_NOT_FOUND_404",
+    "raw_text": "[WARN] IFACE-013 ENDPOINT_NOT_FOUND_404: simulated failure detail for endpoint unavailable scenario."
+  },
+  {
+    "log_id": "LOG-0185",
+    "interface_id": "IFACE-034",
+    "incident_id": "INC-0077",
+    "timestamp": "2025-04-11T02:48:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0077-190",
+    "error_code": "LOGIN_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-034 LOGIN_TIMEOUT: simulated failure detail for database connection failure scenario."
+  },
+  {
+    "log_id": "LOG-0186",
+    "interface_id": "IFACE-034",
+    "incident_id": "INC-0077",
+    "timestamp": "2025-04-11T17:08:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0077-090",
+    "error_code": "401",
+    "raw_text": "[WARN] IFACE-034 401: unrelated transient warning (red herring)."
+  },
+  {
+    "log_id": "LOG-0187",
+    "interface_id": "IFACE-006",
+    "incident_id": "INC-0078",
+    "timestamp": "2026-07-12T10:43:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0078-490",
+    "error_code": "PROCESSING_TIMEOUT",
+    "raw_text": "[WARN] IFACE-006 PROCESSING_TIMEOUT: simulated failure detail for message processing failure scenario."
+  },
+  {
+    "log_id": "LOG-0188",
+    "interface_id": "IFACE-006",
+    "incident_id": "INC-0078",
+    "timestamp": "2026-07-12T02:16:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0078-262",
+    "error_code": "QUEUE_BLOCKED",
+    "raw_text": "[ERROR] IFACE-006 QUEUE_BLOCKED: simulated failure detail for message processing failure scenario."
+  },
+  {
+    "log_id": "LOG-0189",
+    "interface_id": "IFACE-020",
+    "incident_id": "INC-0079",
+    "timestamp": "2026-04-15T09:21:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0079-432",
+    "error_code": "TOKEN_EXPIRED",
+    "raw_text": "[ERROR] IFACE-020 TOKEN_EXPIRED: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0190",
+    "interface_id": "IFACE-020",
+    "incident_id": "INC-0079",
+    "timestamp": "2026-04-15T13:58:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0079-253",
+    "error_code": "AUTH_REJECTED",
+    "raw_text": "[ERROR] IFACE-020 AUTH_REJECTED: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0191",
+    "interface_id": "IFACE-020",
+    "incident_id": "INC-0079",
+    "timestamp": "2026-04-15T20:21:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0079-731",
+    "error_code": "401",
+    "raw_text": "[WARN] IFACE-020 401: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0192",
+    "interface_id": "IFACE-006",
+    "incident_id": "INC-0080",
+    "timestamp": "2026-06-21T02:47:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0080-333",
+    "error_code": "401",
+    "raw_text": "[ERROR] IFACE-006 401: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0193",
+    "interface_id": "IFACE-006",
+    "incident_id": "INC-0080",
+    "timestamp": "2026-06-21T14:01:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0080-590",
+    "error_code": "AUTH_REJECTED",
+    "raw_text": "[ERROR] IFACE-006 AUTH_REJECTED: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0194",
+    "interface_id": "IFACE-006",
+    "incident_id": "INC-0080",
+    "timestamp": "2026-06-21T21:13:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0080-773",
+    "error_code": "TOKEN_EXPIRED",
+    "raw_text": "[ERROR] IFACE-006 TOKEN_EXPIRED: simulated failure detail for auth failure scenario."
+  },
+  {
+    "log_id": "LOG-0195",
+    "interface_id": "IFACE-001",
+    "incident_id": "INC-0081",
+    "timestamp": "2025-10-01T08:08:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0081-967",
+    "error_code": "SSL_HANDSHAKE_FAILED",
+    "raw_text": "[WARN] IFACE-001 SSL_HANDSHAKE_FAILED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0196",
+    "interface_id": "IFACE-001",
+    "incident_id": "INC-0081",
+    "timestamp": "2025-10-01T13:30:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0081-270",
+    "error_code": "SSL_HANDSHAKE_FAILED",
+    "raw_text": "[ERROR] IFACE-001 SSL_HANDSHAKE_FAILED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0197",
+    "interface_id": "IFACE-001",
+    "incident_id": "INC-0081",
+    "timestamp": "2025-10-01T05:37:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0081-922",
+    "error_code": "SSL_HANDSHAKE_FAILED",
+    "raw_text": "[ERROR] IFACE-001 SSL_HANDSHAKE_FAILED: simulated failure detail for cert expiry scenario."
+  },
+  {
+    "log_id": "LOG-0198",
+    "interface_id": "IFACE-022",
+    "incident_id": "INC-0082",
+    "timestamp": "2025-06-21T01:57:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0082-106",
+    "error_code": "SCHEMA_VALIDATION_FAILED",
+    "raw_text": "[ERROR] IFACE-022 SCHEMA_VALIDATION_FAILED: simulated failure detail for mapping error scenario."
+  },
+  {
+    "log_id": "LOG-0199",
+    "interface_id": "IFACE-022",
+    "incident_id": "INC-0082",
+    "timestamp": "2025-06-21T22:38:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0082-499",
+    "error_code": "XSLT_ERROR",
+    "raw_text": "[ERROR] IFACE-022 XSLT_ERROR: simulated failure detail for mapping error scenario."
+  },
+  {
+    "log_id": "LOG-0200",
+    "interface_id": "IFACE-032",
+    "incident_id": "INC-0083",
+    "timestamp": "2025-06-29T22:56:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0083-342",
+    "error_code": "INVALID_XML",
+    "raw_text": "[WARN] IFACE-032 INVALID_XML: simulated failure detail for malformed payload scenario."
+  },
+  {
+    "log_id": "LOG-0201",
+    "interface_id": "IFACE-101",
+    "incident_id": "INC-0101",
+    "timestamp": "2026-09-27T07:01:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0101-001",
+    "error_code": "CONN_REFUSED",
+    "raw_text": "[ERROR] IFACE-101 CONN_REFUSED: connection to partner endpoint refused intermittently"
+  },
+  {
+    "log_id": "LOG-0202",
+    "interface_id": "IFACE-101",
+    "incident_id": "INC-0101",
+    "timestamp": "2026-09-27T07:03:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0101-002",
+    "error_code": "SCHEMA_VALIDATION_FAILED",
+    "raw_text": "[WARN] IFACE-101 SCHEMA_VALIDATION_FAILED: response payload missing expected field 'OrderConfirmationId' (possibly unrelated -- red herring under investigation)"
+  },
+  {
+    "log_id": "LOG-0203",
+    "interface_id": "IFACE-101",
+    "incident_id": "INC-0101",
+    "timestamp": "2026-09-27T07:05:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0101-003",
+    "error_code": "CONN_REFUSED",
+    "raw_text": "[ERROR] IFACE-101 CONN_REFUSED: second connection attempt also refused"
+  },
+  {
+    "log_id": "LOG-0204",
+    "interface_id": "IFACE-102",
+    "incident_id": "INC-0102",
+    "timestamp": "2026-09-27T08:01:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0102-001",
+    "error_code": "READ_TIMEOUT",
+    "raw_text": "[ERROR] IFACE-102 READ_TIMEOUT: response exceeded configured timeout"
+  },
+  {
+    "log_id": "LOG-0205",
+    "interface_id": "IFACE-102",
+    "incident_id": "INC-0102",
+    "timestamp": "2026-09-27T08:02:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0102-002",
+    "error_code": "401",
+    "raw_text": "[WARN] IFACE-102 401: isolated unauthorized response, possibly unrelated -- red herring under investigation"
+  },
+  {
+    "log_id": "LOG-0206",
+    "interface_id": "IFACE-102",
+    "incident_id": "INC-0102",
+    "timestamp": "2026-09-27T08:05:00Z",
+    "level": "ERROR",
+    "message_id": "MSG-0102-003",
+    "error_code": "GATEWAY_TIMEOUT_504",
+    "raw_text": "[ERROR] IFACE-102 GATEWAY_TIMEOUT_504: gateway timed out waiting on downstream response"
+  },
+  {
+    "log_id": "LOG-0207",
+    "interface_id": "IFACE-103",
+    "incident_id": "INC-0103",
+    "timestamp": "2026-09-27T08:50:00Z",
+    "level": "INFO",
+    "message_id": "MSG-0103-001",
+    "error_code": "MESSAGE_STUCK",
+    "raw_text": "[INFO] IFACE-103 MSG-0103-001 appears stuck in processing queue"
+  },
+  {
+    "log_id": "LOG-0208",
+    "interface_id": "IFACE-103",
+    "incident_id": "INC-0103",
+    "timestamp": "2026-09-27T08:52:00Z",
+    "level": "WARN",
+    "message_id": "MSG-0103-001",
+    "error_code": "DUPLICATE_MESSAGE_ID",
+    "raw_text": "[WARN] IFACE-103 DUPLICATE_MESSAGE_ID: MSG-0103-001 already processed once before this restart"
+  },
+  {
+    "log_id": "LOG-0209",
+    "interface_id": "IFACE-103",
+    "incident_id": "INC-0103",
+    "timestamp": "2026-09-27T08:44:00Z",
+    "level": "INFO",
+    "message_id": "MSG-0103-001",
+    "error_code": "CONFIG_CHANGE",
+    "raw_text": "[INFO] IFACE-103 channel was restarted manually by on-call prior to this incident being raised"
+  }
+]

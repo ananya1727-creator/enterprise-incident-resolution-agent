@@ -1,0 +1,392 @@
+[
+  {
+    "config_id": "CFG-041",
+    "interface_id": "IFACE-041",
+    "auth_type": "basic",
+    "endpoint_url": "sim://jdbc/iface-041",
+    "timeout_ms": 15000,
+    "retry_policy": {
+      "max_retries": 3,
+      "backoff_seconds": 30
+    },
+    "adapter_version": "1.7.7",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-016",
+    "interface_id": "IFACE-016",
+    "auth_type": "certificate",
+    "endpoint_url": "https://sim-endpoint.internal/iface-016",
+    "timeout_ms": 15000,
+    "retry_policy": {
+      "max_retries": 5,
+      "backoff_seconds": 5
+    },
+    "adapter_version": "1.6.1",
+    "cert_bound": true
+  },
+  {
+    "config_id": "CFG-036",
+    "interface_id": "IFACE-036",
+    "auth_type": "sftp_password",
+    "endpoint_url": "sim://sftp/iface-036",
+    "timeout_ms": 30000,
+    "retry_policy": {
+      "max_retries": 3,
+      "backoff_seconds": 5
+    },
+    "adapter_version": "2.0.1",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-003",
+    "interface_id": "IFACE-003",
+    "auth_type": "oauth2",
+    "endpoint_url": "sim://idoc/iface-003",
+    "timeout_ms": 5000,
+    "retry_policy": {
+      "max_retries": 0,
+      "backoff_seconds": 30
+    },
+    "adapter_version": "2.2.7",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-028",
+    "interface_id": "IFACE-028",
+    "auth_type": "basic",
+    "endpoint_url": "sim://idoc/iface-028",
+    "timeout_ms": 30000,
+    "retry_policy": {
+      "max_retries": 5,
+      "backoff_seconds": 5
+    },
+    "adapter_version": "1.9.1",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-023",
+    "interface_id": "IFACE-023",
+    "auth_type": "certificate",
+    "endpoint_url": "sim://as2/iface-023",
+    "timeout_ms": 15000,
+    "retry_policy": {
+      "max_retries": 3,
+      "backoff_seconds": 60
+    },
+    "adapter_version": "2.5.1",
+    "cert_bound": true
+  },
+  {
+    "config_id": "CFG-039",
+    "interface_id": "IFACE-039",
+    "auth_type": "api_key",
+    "endpoint_url": "https://sim-endpoint.internal/iface-039",
+    "timeout_ms": 30000,
+    "retry_policy": {
+      "max_retries": 0,
+      "backoff_seconds": 30
+    },
+    "adapter_version": "3.6.6",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-002",
+    "interface_id": "IFACE-002",
+    "auth_type": "certificate",
+    "endpoint_url": "sim://as2/iface-002",
+    "timeout_ms": 15000,
+    "retry_policy": {
+      "max_retries": 5,
+      "backoff_seconds": 30
+    },
+    "adapter_version": "1.9.5",
+    "cert_bound": true
+  },
+  {
+    "config_id": "CFG-049",
+    "interface_id": "IFACE-049",
+    "auth_type": "certificate",
+    "endpoint_url": "https://sim-endpoint.internal/iface-049",
+    "timeout_ms": 15000,
+    "retry_policy": {
+      "max_retries": 3,
+      "backoff_seconds": 60
+    },
+    "adapter_version": "2.8.6",
+    "cert_bound": true
+  },
+  {
+    "config_id": "CFG-035",
+    "interface_id": "IFACE-035",
+    "auth_type": "sftp_password",
+    "endpoint_url": "sim://sftp/iface-035",
+    "timeout_ms": 60000,
+    "retry_policy": {
+      "max_retries": 0,
+      "backoff_seconds": 30
+    },
+    "adapter_version": "2.7.3",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-010",
+    "interface_id": "IFACE-010",
+    "auth_type": "certificate",
+    "endpoint_url": "sim://as2/iface-010",
+    "timeout_ms": 30000,
+    "retry_policy": {
+      "max_retries": 0,
+      "backoff_seconds": 5
+    },
+    "adapter_version": "3.5.5",
+    "cert_bound": true
+  },
+  {
+    "config_id": "CFG-037",
+    "interface_id": "IFACE-037",
+    "auth_type": "basic",
+    "endpoint_url": "sim://jdbc/iface-037",
+    "timeout_ms": 30000,
+    "retry_policy": {
+      "max_retries": 3,
+      "backoff_seconds": 30
+    },
+    "adapter_version": "2.7.5",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-024",
+    "interface_id": "IFACE-024",
+    "auth_type": "basic",
+    "endpoint_url": "https://sim-endpoint.internal/iface-024",
+    "timeout_ms": 60000,
+    "retry_policy": {
+      "max_retries": 0,
+      "backoff_seconds": 30
+    },
+    "adapter_version": "3.3.4",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-043",
+    "interface_id": "IFACE-043",
+    "auth_type": "sftp_key",
+    "endpoint_url": "sim://sftp/iface-043",
+    "timeout_ms": 30000,
+    "retry_policy": {
+      "max_retries": 1,
+      "backoff_seconds": 60
+    },
+    "adapter_version": "3.2.5",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-015",
+    "interface_id": "IFACE-015",
+    "auth_type": "basic",
+    "endpoint_url": "sim://jdbc/iface-015",
+    "timeout_ms": 10000,
+    "retry_policy": {
+      "max_retries": 3,
+      "backoff_seconds": 15
+    },
+    "adapter_version": "2.7.0",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-033",
+    "interface_id": "IFACE-033",
+    "auth_type": "sftp_key",
+    "endpoint_url": "sim://sftp/iface-033",
+    "timeout_ms": 30000,
+    "retry_policy": {
+      "max_retries": 3,
+      "backoff_seconds": 60
+    },
+    "adapter_version": "3.4.4",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-020",
+    "interface_id": "IFACE-020",
+    "auth_type": "certificate",
+    "endpoint_url": "https://sim-endpoint.internal/iface-020",
+    "timeout_ms": 5000,
+    "retry_policy": {
+      "max_retries": 1,
+      "backoff_seconds": 60
+    },
+    "adapter_version": "3.0.3",
+    "cert_bound": true
+  },
+  {
+    "config_id": "CFG-044",
+    "interface_id": "IFACE-044",
+    "auth_type": "api_key",
+    "endpoint_url": "https://sim-endpoint.internal/iface-044",
+    "timeout_ms": 5000,
+    "retry_policy": {
+      "max_retries": 3,
+      "backoff_seconds": 5
+    },
+    "adapter_version": "3.5.4",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-045",
+    "interface_id": "IFACE-045",
+    "auth_type": "sftp_key",
+    "endpoint_url": "sim://sftp/iface-045",
+    "timeout_ms": 15000,
+    "retry_policy": {
+      "max_retries": 0,
+      "backoff_seconds": 15
+    },
+    "adapter_version": "2.6.6",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-001",
+    "interface_id": "IFACE-001",
+    "auth_type": "sftp_key",
+    "endpoint_url": "sim://sftp/iface-001",
+    "timeout_ms": 15000,
+    "retry_policy": {
+      "max_retries": 0,
+      "backoff_seconds": 60
+    },
+    "adapter_version": "1.4.1",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-022",
+    "interface_id": "IFACE-022",
+    "auth_type": "api_key",
+    "endpoint_url": "https://sim-endpoint.internal/iface-022",
+    "timeout_ms": 60000,
+    "retry_policy": {
+      "max_retries": 3,
+      "backoff_seconds": 5
+    },
+    "adapter_version": "1.5.8",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-040",
+    "interface_id": "IFACE-040",
+    "auth_type": "certificate",
+    "endpoint_url": "https://sim-endpoint.internal/iface-040",
+    "timeout_ms": 5000,
+    "retry_policy": {
+      "max_retries": 1,
+      "backoff_seconds": 5
+    },
+    "adapter_version": "3.8.9",
+    "cert_bound": true
+  },
+  {
+    "config_id": "CFG-038",
+    "interface_id": "IFACE-038",
+    "auth_type": "basic",
+    "endpoint_url": "sim://jdbc/iface-038",
+    "timeout_ms": 15000,
+    "retry_policy": {
+      "max_retries": 3,
+      "backoff_seconds": 30
+    },
+    "adapter_version": "2.1.2",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-008",
+    "interface_id": "IFACE-008",
+    "auth_type": "basic",
+    "endpoint_url": "sim://jdbc/iface-008",
+    "timeout_ms": 60000,
+    "retry_policy": {
+      "max_retries": 1,
+      "backoff_seconds": 5
+    },
+    "adapter_version": "3.1.4",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-004",
+    "interface_id": "IFACE-004",
+    "auth_type": "oauth2",
+    "endpoint_url": "https://sim-endpoint.internal/iface-004",
+    "timeout_ms": 15000,
+    "retry_policy": {
+      "max_retries": 3,
+      "backoff_seconds": 60
+    },
+    "adapter_version": "2.0.6",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-046",
+    "interface_id": "IFACE-046",
+    "auth_type": "sftp_password",
+    "endpoint_url": "sim://sftp/iface-046",
+    "timeout_ms": 10000,
+    "retry_policy": {
+      "max_retries": 5,
+      "backoff_seconds": 5
+    },
+    "adapter_version": "2.0.8",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-021",
+    "interface_id": "IFACE-021",
+    "auth_type": "sftp_password",
+    "endpoint_url": "sim://sftp/iface-021",
+    "timeout_ms": 15000,
+    "retry_policy": {
+      "max_retries": 1,
+      "backoff_seconds": 60
+    },
+    "adapter_version": "2.9.9",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-048",
+    "interface_id": "IFACE-048",
+    "auth_type": "sftp_password",
+    "endpoint_url": "sim://sftp/iface-048",
+    "timeout_ms": 15000,
+    "retry_policy": {
+      "max_retries": 3,
+      "backoff_seconds": 60
+    },
+    "adapter_version": "1.5.6",
+    "cert_bound": false
+  },
+  {
+    "config_id": "CFG-027",
+    "interface_id": "IFACE-027",
+    "auth_type": "certificate",
+    "endpoint_url": "sim://as2/iface-027",
+    "timeout_ms": 5000,
+    "retry_policy": {
+      "max_retries": 1,
+      "backoff_seconds": 60
+    },
+    "adapter_version": "3.2.6",
+    "cert_bound": true
+  },
+  {
+    "config_id": "CFG-009",
+    "interface_id": "IFACE-009",
+    "auth_type": "sftp_password",
+    "endpoint_url": "sim://sftp/iface-009",
+    "timeout_ms": 15000,
+    "retry_policy": {
+      "max_retries": 0,
+      "backoff_seconds": 15
+    },
+    "adapter_version": "2.4.9",
+    "cert_bound": false
+  }
+]

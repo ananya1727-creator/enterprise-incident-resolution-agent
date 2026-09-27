@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Incident Resolution Agent -- Operations Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Incident Resolution Agent</h1>
+    <nav>
+      <button data-view="queue" class="active">Incident Queue</button>
+      <button data-view="investigation">Investigation</button>
+      <button data-view="approvals">Human Approval Center <span id="approval-count-badge"></span></button>
+      <button data-view="analytics">Analytics</button>
+      <button data-view="performance">Agent Performance</button>
+    </nav>
+  </header>
+  <main>
+    <section id="view-queue" class="view active"></section>
+    <section id="view-investigation" class="view"></section>
+    <section id="view-approvals" class="view"></section>
+    <section id="view-analytics" class="view"></section>
+    <section id="view-performance" class="view"></section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

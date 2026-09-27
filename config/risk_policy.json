@@ -1,0 +1,8 @@
+{
+  "_comment": "Explicit, human-owned override list for MEDIUM-risk actions. A MEDIUM-risk tool requires human approval UNLESS it is listed here with true, meaning this simulated environment has explicitly decided that action is safe to run autonomously. Nothing in agent/ ever writes to this file -- it is read-only policy input, not agent-controlled state.",
+  "medium_risk_safe_overrides": {
+    "retry_message": true,
+    "refresh_connection": true,
+    "restart_interface": false
+  }
+}

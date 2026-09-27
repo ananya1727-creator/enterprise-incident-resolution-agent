@@ -1,0 +1,668 @@
+[
+  {
+    "interface_id": "IFACE-001",
+    "name": "SAP-to-Coupa-SFTP-001",
+    "source_system": "SAP S/4HANA",
+    "target_system": "Coupa Procurement",
+    "message_type": "SFTP",
+    "sla_tier": "P4",
+    "owning_team": "HR Systems Team",
+    "known_fragility_flags": [
+      "high_volume"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-002",
+    "name": "SAP-to-IRS-AS2-002",
+    "source_system": "SAP ERP ECC6",
+    "target_system": "IRS FIRE System",
+    "message_type": "AS2",
+    "sla_tier": "P3",
+    "owning_team": "SAP Basis Team",
+    "known_fragility_flags": [
+      "cert_expires_soon"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-003",
+    "name": "SAP-to-Wells-IDoc-003",
+    "source_system": "SAP SuccessFactors EC",
+    "target_system": "Wells Fargo Lockbox SFTP",
+    "message_type": "IDoc",
+    "sla_tier": "P3",
+    "owning_team": "Integration COE",
+    "known_fragility_flags": [
+      "legacy_adapter",
+      "manual_failover_only"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-004",
+    "name": "SAP-to-Oracle-REST-004",
+    "source_system": "SAP SuccessFactors EC",
+    "target_system": "Oracle Finance DB",
+    "message_type": "REST",
+    "sla_tier": "P1",
+    "owning_team": "Partner Connectivity Team",
+    "known_fragility_flags": [
+      "cert_expires_soon",
+      "deprecated_auth_scheme"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-005",
+    "name": "SAP-to-Workday-SOAP-005",
+    "source_system": "SAP CPI",
+    "target_system": "Workday HCM",
+    "message_type": "SOAP",
+    "sla_tier": "P3",
+    "owning_team": "Order Management Team",
+    "known_fragility_flags": [
+      "legacy_adapter"
+    ],
+    "decommissioned": true
+  },
+  {
+    "interface_id": "IFACE-006",
+    "name": "SAP-to-Global-AS2-006",
+    "source_system": "SAP S/4HANA",
+    "target_system": "Global Logistics Partner Portal",
+    "message_type": "AS2",
+    "sla_tier": "P1",
+    "owning_team": "Order Management Team",
+    "known_fragility_flags": [
+      "cert_expires_soon",
+      "single_node_no_ha"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-007",
+    "name": "SAP-to-SuccessFactors-IDoc-007",
+    "source_system": "SAP CPI",
+    "target_system": "SuccessFactors Employee Central",
+    "message_type": "IDoc",
+    "sla_tier": "P3",
+    "owning_team": "SAP Basis Team",
+    "known_fragility_flags": [],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-008",
+    "name": "SAP-to-DHL-JDBC-008",
+    "source_system": "SAP CPI",
+    "target_system": "DHL Shipment API",
+    "message_type": "JDBC",
+    "sla_tier": "P4",
+    "owning_team": "SAP Basis Team",
+    "known_fragility_flags": [],
+    "decommissioned": true
+  },
+  {
+    "interface_id": "IFACE-009",
+    "name": "SAP-to-Coupa-SFTP-009",
+    "source_system": "SAP CPI",
+    "target_system": "Coupa Procurement",
+    "message_type": "SFTP",
+    "sla_tier": "P3",
+    "owning_team": "HR Systems Team",
+    "known_fragility_flags": [],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-010",
+    "name": "SAP-to-Global-AS2-010",
+    "source_system": "SAP PO 7.5",
+    "target_system": "Global Logistics Partner Portal",
+    "message_type": "AS2",
+    "sla_tier": "P2",
+    "owning_team": "Finance Systems Team",
+    "known_fragility_flags": [
+      "high_volume",
+      "cert_expires_soon"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-011",
+    "name": "SAP-to-Acme-SFTP-011",
+    "source_system": "SAP ERP ECC6",
+    "target_system": "Acme Freight EDI Gateway",
+    "message_type": "SFTP",
+    "sla_tier": "P3",
+    "owning_team": "Finance Systems Team",
+    "known_fragility_flags": [
+      "known_flaky_partner"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-012",
+    "name": "SAP-to-Wells-IDoc-012",
+    "source_system": "SAP CPI",
+    "target_system": "Wells Fargo Lockbox SFTP",
+    "message_type": "IDoc",
+    "sla_tier": "P3",
+    "owning_team": "SAP Basis Team",
+    "known_fragility_flags": [
+      "manual_failover_only"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-013",
+    "name": "SAP-to-ADP-IDoc-013",
+    "source_system": "SAP ERP ECC6",
+    "target_system": "ADP Payroll",
+    "message_type": "IDoc",
+    "sla_tier": "P2",
+    "owning_team": "Partner Connectivity Team",
+    "known_fragility_flags": [
+      "manual_failover_only"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-014",
+    "name": "SAP-to-Workday-SOAP-014",
+    "source_system": "SAP PO 7.5",
+    "target_system": "Workday HCM",
+    "message_type": "SOAP",
+    "sla_tier": "P1",
+    "owning_team": "Partner Connectivity Team",
+    "known_fragility_flags": [
+      "single_node_no_ha",
+      "high_volume"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-015",
+    "name": "SAP-to-ADP-JDBC-015",
+    "source_system": "SAP CPI",
+    "target_system": "ADP Payroll",
+    "message_type": "JDBC",
+    "sla_tier": "P4",
+    "owning_team": "Finance Systems Team",
+    "known_fragility_flags": [],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-016",
+    "name": "SAP-to-ADP-REST-016",
+    "source_system": "SAP S/4HANA",
+    "target_system": "ADP Payroll",
+    "message_type": "REST",
+    "sla_tier": "P2",
+    "owning_team": "Integration COE",
+    "known_fragility_flags": [
+      "known_flaky_partner"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-017",
+    "name": "SAP-to-Partner-AS2-017",
+    "source_system": "SAP CPI",
+    "target_system": "Partner Co-op EDI Hub",
+    "message_type": "AS2",
+    "sla_tier": "P3",
+    "owning_team": "Data Platform Team",
+    "known_fragility_flags": [
+      "known_flaky_partner"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-018",
+    "name": "SAP-to-Northwind-SOAP-018",
+    "source_system": "SAP PO 7.5",
+    "target_system": "Northwind Distributors AS2 Endpoint",
+    "message_type": "SOAP",
+    "sla_tier": "P3",
+    "owning_team": "Integration COE",
+    "known_fragility_flags": [
+      "deprecated_auth_scheme"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-019",
+    "name": "SAP-to-Acme-AS2-019",
+    "source_system": "SAP S/4HANA",
+    "target_system": "Acme Freight EDI Gateway",
+    "message_type": "AS2",
+    "sla_tier": "P1",
+    "owning_team": "Order Management Team",
+    "known_fragility_flags": [
+      "single_node_no_ha",
+      "known_flaky_partner"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-020",
+    "name": "SAP-to-ADP-SOAP-020",
+    "source_system": "SAP CPI",
+    "target_system": "ADP Payroll",
+    "message_type": "SOAP",
+    "sla_tier": "P3",
+    "owning_team": "Order Management Team",
+    "known_fragility_flags": [
+      "legacy_adapter",
+      "deprecated_auth_scheme"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-021",
+    "name": "SAP-to-Partner-SFTP-021",
+    "source_system": "SAP S/4HANA",
+    "target_system": "Partner Co-op EDI Hub",
+    "message_type": "SFTP",
+    "sla_tier": "P2",
+    "owning_team": "Data Platform Team",
+    "known_fragility_flags": [
+      "deprecated_auth_scheme"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-022",
+    "name": "SAP-to-Ariba-SOAP-022",
+    "source_system": "SAP PO 7.5",
+    "target_system": "Ariba Network",
+    "message_type": "SOAP",
+    "sla_tier": "P2",
+    "owning_team": "HR Systems Team",
+    "known_fragility_flags": [
+      "high_volume"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-023",
+    "name": "SAP-to-Bank-AS2-023",
+    "source_system": "SAP PO 7.5",
+    "target_system": "Bank of America Payment Gateway",
+    "message_type": "AS2",
+    "sla_tier": "P1",
+    "owning_team": "Finance Systems Team",
+    "known_fragility_flags": [],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-024",
+    "name": "SAP-to-Salesforce-REST-024",
+    "source_system": "SAP ERP ECC6",
+    "target_system": "Salesforce Sales Cloud",
+    "message_type": "REST",
+    "sla_tier": "P4",
+    "owning_team": "HR Systems Team",
+    "known_fragility_flags": [
+      "cert_expires_soon"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-025",
+    "name": "SAP-to-Global-SFTP-025",
+    "source_system": "SAP SuccessFactors EC",
+    "target_system": "Global Logistics Partner Portal",
+    "message_type": "SFTP",
+    "sla_tier": "P4",
+    "owning_team": "Finance Systems Team",
+    "known_fragility_flags": [
+      "manual_failover_only"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-026",
+    "name": "SAP-to-DHL-SFTP-026",
+    "source_system": "SAP PO 7.5",
+    "target_system": "DHL Shipment API",
+    "message_type": "SFTP",
+    "sla_tier": "P2",
+    "owning_team": "HR Systems Team",
+    "known_fragility_flags": [
+      "manual_failover_only",
+      "single_node_no_ha"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-027",
+    "name": "SAP-to-Ariba-AS2-027",
+    "source_system": "SAP ERP ECC6",
+    "target_system": "Ariba Network",
+    "message_type": "AS2",
+    "sla_tier": "P3",
+    "owning_team": "Integration COE",
+    "known_fragility_flags": [
+      "cert_expires_soon"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-028",
+    "name": "SAP-to-ADP-IDoc-028",
+    "source_system": "SAP S/4HANA",
+    "target_system": "ADP Payroll",
+    "message_type": "IDoc",
+    "sla_tier": "P3",
+    "owning_team": "Order Management Team",
+    "known_fragility_flags": [
+      "legacy_adapter"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-029",
+    "name": "SAP-to-Partner-AS2-029",
+    "source_system": "SAP ERP ECC6",
+    "target_system": "Partner Co-op EDI Hub",
+    "message_type": "AS2",
+    "sla_tier": "P2",
+    "owning_team": "Order Management Team",
+    "known_fragility_flags": [],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-030",
+    "name": "SAP-to-Concur-REST-030",
+    "source_system": "SAP CPI",
+    "target_system": "Concur Expense",
+    "message_type": "REST",
+    "sla_tier": "P3",
+    "owning_team": "HR Systems Team",
+    "known_fragility_flags": [
+      "cert_expires_soon"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-031",
+    "name": "SAP-to-IRS-SFTP-031",
+    "source_system": "SAP PO 7.5",
+    "target_system": "IRS FIRE System",
+    "message_type": "SFTP",
+    "sla_tier": "P1",
+    "owning_team": "Order Management Team",
+    "known_fragility_flags": [],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-032",
+    "name": "SAP-to-Global-SFTP-032",
+    "source_system": "SAP ERP ECC6",
+    "target_system": "Global Logistics Partner Portal",
+    "message_type": "SFTP",
+    "sla_tier": "P4",
+    "owning_team": "Order Management Team",
+    "known_fragility_flags": [
+      "legacy_adapter"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-033",
+    "name": "SAP-to-Global-SFTP-033",
+    "source_system": "SAP CPI",
+    "target_system": "Global Logistics Partner Portal",
+    "message_type": "SFTP",
+    "sla_tier": "P4",
+    "owning_team": "Integration COE",
+    "known_fragility_flags": [
+      "manual_failover_only",
+      "legacy_adapter"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-034",
+    "name": "SAP-to-Concur-SOAP-034",
+    "source_system": "SAP S/4HANA",
+    "target_system": "Concur Expense",
+    "message_type": "SOAP",
+    "sla_tier": "P3",
+    "owning_team": "HR Systems Team",
+    "known_fragility_flags": [
+      "single_node_no_ha"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-035",
+    "name": "SAP-to-DHL-SFTP-035",
+    "source_system": "SAP SuccessFactors EC",
+    "target_system": "DHL Shipment API",
+    "message_type": "SFTP",
+    "sla_tier": "P3",
+    "owning_team": "Finance Systems Team",
+    "known_fragility_flags": [
+      "manual_failover_only"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-036",
+    "name": "SAP-to-Partner-SFTP-036",
+    "source_system": "SAP SuccessFactors EC",
+    "target_system": "Partner Co-op EDI Hub",
+    "message_type": "SFTP",
+    "sla_tier": "P4",
+    "owning_team": "Finance Systems Team",
+    "known_fragility_flags": [
+      "single_node_no_ha"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-037",
+    "name": "SAP-to-Oracle-JDBC-037",
+    "source_system": "SAP S/4HANA",
+    "target_system": "Oracle Finance DB",
+    "message_type": "JDBC",
+    "sla_tier": "P2",
+    "owning_team": "SAP Basis Team",
+    "known_fragility_flags": [],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-038",
+    "name": "SAP-to-PostgreSQL-JDBC-038",
+    "source_system": "SAP PO 7.5",
+    "target_system": "PostgreSQL Analytics DB",
+    "message_type": "JDBC",
+    "sla_tier": "P3",
+    "owning_team": "Data Platform Team",
+    "known_fragility_flags": [],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-039",
+    "name": "SAP-to-DHL-SOAP-039",
+    "source_system": "SAP CPI",
+    "target_system": "DHL Shipment API",
+    "message_type": "SOAP",
+    "sla_tier": "P1",
+    "owning_team": "HR Systems Team",
+    "known_fragility_flags": [
+      "known_flaky_partner",
+      "deprecated_auth_scheme"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-040",
+    "name": "SAP-to-Workday-SOAP-040",
+    "source_system": "SAP S/4HANA",
+    "target_system": "Workday HCM",
+    "message_type": "SOAP",
+    "sla_tier": "P4",
+    "owning_team": "Data Platform Team",
+    "known_fragility_flags": [],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-041",
+    "name": "SAP-to-SQL-JDBC-041",
+    "source_system": "SAP CPI",
+    "target_system": "SQL Server Reporting DB",
+    "message_type": "JDBC",
+    "sla_tier": "P2",
+    "owning_team": "Partner Connectivity Team",
+    "known_fragility_flags": [],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-042",
+    "name": "SAP-to-IRS-AS2-042",
+    "source_system": "SAP SuccessFactors EC",
+    "target_system": "IRS FIRE System",
+    "message_type": "AS2",
+    "sla_tier": "P2",
+    "owning_team": "Integration COE",
+    "known_fragility_flags": [],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-043",
+    "name": "SAP-to-ADP-SFTP-043",
+    "source_system": "SAP SuccessFactors EC",
+    "target_system": "ADP Payroll",
+    "message_type": "SFTP",
+    "sla_tier": "P2",
+    "owning_team": "Finance Systems Team",
+    "known_fragility_flags": [],
+    "decommissioned": true
+  },
+  {
+    "interface_id": "IFACE-044",
+    "name": "SAP-to-Concur-SOAP-044",
+    "source_system": "SAP SuccessFactors EC",
+    "target_system": "Concur Expense",
+    "message_type": "SOAP",
+    "sla_tier": "P4",
+    "owning_team": "Data Platform Team",
+    "known_fragility_flags": [
+      "manual_failover_only"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-045",
+    "name": "SAP-to-Acme-SFTP-045",
+    "source_system": "SAP SuccessFactors EC",
+    "target_system": "Acme Freight EDI Gateway",
+    "message_type": "SFTP",
+    "sla_tier": "P2",
+    "owning_team": "Data Platform Team",
+    "known_fragility_flags": [
+      "known_flaky_partner"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-046",
+    "name": "SAP-to-Wells-SFTP-046",
+    "source_system": "SAP ERP ECC6",
+    "target_system": "Wells Fargo Lockbox SFTP",
+    "message_type": "SFTP",
+    "sla_tier": "P3",
+    "owning_team": "SAP Basis Team",
+    "known_fragility_flags": [
+      "cert_expires_soon"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-047",
+    "name": "SAP-to-DHL-SFTP-047",
+    "source_system": "SAP CPI",
+    "target_system": "DHL Shipment API",
+    "message_type": "SFTP",
+    "sla_tier": "P3",
+    "owning_team": "Order Management Team",
+    "known_fragility_flags": [],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-048",
+    "name": "SAP-to-Coupa-SFTP-048",
+    "source_system": "SAP SuccessFactors EC",
+    "target_system": "Coupa Procurement",
+    "message_type": "SFTP",
+    "sla_tier": "P3",
+    "owning_team": "Integration COE",
+    "known_fragility_flags": [],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-049",
+    "name": "SAP-to-Oracle-REST-049",
+    "source_system": "SAP ERP ECC6",
+    "target_system": "Oracle Finance DB",
+    "message_type": "REST",
+    "sla_tier": "P1",
+    "owning_team": "Integration COE",
+    "known_fragility_flags": [],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-050",
+    "name": "SAP-to-Customs-SFTP-050",
+    "source_system": "SAP ERP ECC6",
+    "target_system": "Customs Declaration System (ACE)",
+    "message_type": "SFTP",
+    "sla_tier": "P2",
+    "owning_team": "Partner Connectivity Team",
+    "known_fragility_flags": [
+      "deprecated_auth_scheme"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-101",
+    "name": "SAP-CPI-to-GlobalLogisticsPartner-REST-101",
+    "source_system": "SAP CPI",
+    "target_system": "Global Logistics Partner Portal",
+    "message_type": "REST",
+    "sla_tier": "P1",
+    "owning_team": "Partner Connectivity Team",
+    "known_fragility_flags": [
+      "known_flaky_partner",
+      "legacy_adapter"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-102",
+    "name": "SAP-CPI-to-Ariba-REST-102",
+    "source_system": "SAP CPI",
+    "target_system": "Ariba Network",
+    "message_type": "REST",
+    "sla_tier": "P1",
+    "owning_team": "Order Management Team",
+    "known_fragility_flags": [
+      "high_volume"
+    ],
+    "decommissioned": false
+  },
+  {
+    "interface_id": "IFACE-103",
+    "name": "SAP-ERP-to-Ariba-IDoc-103",
+    "source_system": "SAP ERP ECC6",
+    "target_system": "Ariba Network",
+    "message_type": "IDoc",
+    "sla_tier": "P2",
+    "owning_team": "Order Management Team",
+    "known_fragility_flags": [],
+    "decommissioned": false
+  }
+]

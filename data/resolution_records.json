@@ -1,0 +1,526 @@
+[
+  {
+    "record_id": "RES-001",
+    "symptom_signature": {
+      "interface_type": "AS2",
+      "error_category": "cert_expiry",
+      "log_pattern_tags": [
+        "SSL_HANDSHAKE_FAILED",
+        "CERT_EXPIRED"
+      ],
+      "affected_component": "sender_channel"
+    },
+    "root_cause": "cert_expiry",
+    "root_cause_statement": "Cert expiry identified on IFACE-023 (SAP-to-Bank-AS2-023).",
+    "remediation_tool": "rotate_certificate",
+    "remediation_params_template": {
+      "interface_id": "{{interface_id}}"
+    },
+    "verification_signature": {
+      "check": "verify_message_processing",
+      "expected_state": "healthy"
+    },
+    "outcome": "Resolved",
+    "tool_call_count": 2,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0055",
+    "created_at": "2026-05-13T09:00:00Z"
+  },
+  {
+    "record_id": "RES-002",
+    "symptom_signature": {
+      "interface_type": "SFTP",
+      "error_category": "connectivity_failure",
+      "log_pattern_tags": [
+        "CONN_REFUSED",
+        "HOST_UNREACHABLE"
+      ],
+      "affected_component": "mapping_program"
+    },
+    "root_cause": "connectivity_failure",
+    "root_cause_statement": "Connectivity failure identified on IFACE-011 (SAP-to-Acme-SFTP-011).",
+    "remediation_tool": "restart_interface",
+    "remediation_params_template": {
+      "interface_id": "{{interface_id}}"
+    },
+    "verification_signature": {
+      "check": "verify_interface_health",
+      "expected_state": "healthy"
+    },
+    "outcome": "Resolved",
+    "tool_call_count": 7,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0058",
+    "created_at": "2026-03-16T09:00:00Z"
+  },
+  {
+    "record_id": "RES-003",
+    "symptom_signature": {
+      "interface_type": "IDoc",
+      "error_category": "duplicate_message",
+      "log_pattern_tags": [
+        "DUPLICATE_MESSAGE_ID",
+        "IDEMPOTENCY_CONFLICT"
+      ],
+      "affected_component": "sender_channel"
+    },
+    "root_cause": "duplicate_message",
+    "root_cause_statement": "Duplicate message identified on IFACE-012 (SAP-to-Wells-IDoc-012).",
+    "remediation_tool": null,
+    "remediation_params_template": null,
+    "verification_signature": {
+      "check": "verify_interface_health",
+      "expected_state": "healthy"
+    },
+    "outcome": "Escalated",
+    "tool_call_count": 6,
+    "human_feedback": "Incorrect",
+    "source_incident_id": "INC-0097",
+    "created_at": "2026-08-12T09:00:00Z"
+  },
+  {
+    "record_id": "RES-004",
+    "symptom_signature": {
+      "interface_type": "JDBC",
+      "error_category": "mapping_error",
+      "log_pattern_tags": [
+        "MAPPING_EXCEPTION",
+        "SCHEMA_VALIDATION_FAILED"
+      ],
+      "affected_component": "adapter"
+    },
+    "root_cause": "mapping_error",
+    "root_cause_statement": "Mapping error identified on IFACE-038 (SAP-to-PostgreSQL-JDBC-038).",
+    "remediation_tool": null,
+    "remediation_params_template": null,
+    "verification_signature": {
+      "check": "verify_interface_health",
+      "expected_state": "healthy"
+    },
+    "outcome": "Escalated",
+    "tool_call_count": 2,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0068",
+    "created_at": "2025-12-19T09:00:00Z"
+  },
+  {
+    "record_id": "RES-005",
+    "symptom_signature": {
+      "interface_type": "SFTP",
+      "error_category": "timeout",
+      "log_pattern_tags": [
+        "READ_TIMEOUT",
+        "CONNECT_TIMEOUT"
+      ],
+      "affected_component": "receiver_channel"
+    },
+    "root_cause": "timeout",
+    "root_cause_statement": "Timeout identified on IFACE-047 (SAP-to-DHL-SFTP-047).",
+    "remediation_tool": "update_adapter_timeout",
+    "remediation_params_template": {
+      "interface_id": "{{interface_id}}"
+    },
+    "verification_signature": {
+      "check": "verify_message_processing",
+      "expected_state": "healthy"
+    },
+    "outcome": "Resolved",
+    "tool_call_count": 4,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0046",
+    "created_at": "2025-12-08T09:00:00Z"
+  },
+  {
+    "record_id": "RES-006",
+    "symptom_signature": {
+      "interface_type": "JDBC",
+      "error_category": "auth_failure",
+      "log_pattern_tags": [
+        "401",
+        "403"
+      ],
+      "affected_component": "adapter"
+    },
+    "root_cause": "auth_failure",
+    "root_cause_statement": "Auth failure identified on IFACE-037 (SAP-to-Oracle-JDBC-037).",
+    "remediation_tool": "refresh_connection",
+    "remediation_params_template": {
+      "interface_id": "{{interface_id}}"
+    },
+    "verification_signature": {
+      "check": "verify_interface_health",
+      "expected_state": "healthy"
+    },
+    "outcome": "Resolved",
+    "tool_call_count": 4,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0088",
+    "created_at": "2026-04-06T09:00:00Z"
+  },
+  {
+    "record_id": "RES-007",
+    "symptom_signature": {
+      "interface_type": "JDBC",
+      "error_category": "sftp_credential_failure",
+      "log_pattern_tags": [
+        "SFTP_AUTH_FAILED",
+        "SFTP_KEY_REJECTED"
+      ],
+      "affected_component": "channel"
+    },
+    "root_cause": "sftp_credential_failure",
+    "root_cause_statement": "Sftp credential failure identified on IFACE-015 (SAP-to-ADP-JDBC-015).",
+    "remediation_tool": null,
+    "remediation_params_template": null,
+    "verification_signature": {
+      "check": "verify_interface_health",
+      "expected_state": "healthy"
+    },
+    "outcome": "Escalated",
+    "tool_call_count": 5,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0026",
+    "created_at": "2026-08-10T09:00:00Z"
+  },
+  {
+    "record_id": "RES-008",
+    "symptom_signature": {
+      "interface_type": "SOAP",
+      "error_category": "database_connection_failure",
+      "log_pattern_tags": [
+        "DB_CONN_REFUSED",
+        "POOL_EXHAUSTED"
+      ],
+      "affected_component": "receiver_channel"
+    },
+    "root_cause": "database_connection_failure",
+    "root_cause_statement": "Database connection failure identified on IFACE-039 (SAP-to-DHL-SOAP-039).",
+    "remediation_tool": "restart_interface",
+    "remediation_params_template": {
+      "interface_id": "{{interface_id}}"
+    },
+    "verification_signature": {
+      "check": "verify_interface_health",
+      "expected_state": "healthy"
+    },
+    "outcome": "Resolved",
+    "tool_call_count": 4,
+    "human_feedback": "Unreviewed",
+    "source_incident_id": "INC-0050",
+    "created_at": "2025-12-07T09:00:00Z"
+  },
+  {
+    "record_id": "RES-009",
+    "symptom_signature": {
+      "interface_type": "SOAP",
+      "error_category": "mapping_error",
+      "log_pattern_tags": [
+        "MAPPING_EXCEPTION",
+        "SCHEMA_VALIDATION_FAILED"
+      ],
+      "affected_component": "adapter"
+    },
+    "root_cause": "mapping_error",
+    "root_cause_statement": "Mapping error identified on IFACE-018 (SAP-to-Northwind-SOAP-018).",
+    "remediation_tool": null,
+    "remediation_params_template": null,
+    "verification_signature": {
+      "check": "verify_interface_health",
+      "expected_state": "healthy"
+    },
+    "outcome": "Escalated",
+    "tool_call_count": 2,
+    "human_feedback": "Unreviewed",
+    "source_incident_id": "INC-0024",
+    "created_at": "2025-09-29T09:00:00Z"
+  },
+  {
+    "record_id": "RES-010",
+    "symptom_signature": {
+      "interface_type": "AS2",
+      "error_category": "duplicate_message",
+      "log_pattern_tags": [
+        "DUPLICATE_MESSAGE_ID",
+        "IDEMPOTENCY_CONFLICT"
+      ],
+      "affected_component": "receiver_channel"
+    },
+    "root_cause": "duplicate_message",
+    "root_cause_statement": "Duplicate message identified on IFACE-029 (SAP-to-Partner-AS2-029).",
+    "remediation_tool": null,
+    "remediation_params_template": null,
+    "verification_signature": {
+      "check": "verify_interface_health",
+      "expected_state": "healthy"
+    },
+    "outcome": "Escalated",
+    "tool_call_count": 5,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0008",
+    "created_at": "2026-06-08T09:00:00Z"
+  },
+  {
+    "record_id": "RES-011",
+    "symptom_signature": {
+      "interface_type": "SFTP",
+      "error_category": "sftp_credential_failure",
+      "log_pattern_tags": [
+        "SFTP_AUTH_FAILED",
+        "SFTP_KEY_REJECTED"
+      ],
+      "affected_component": "sender_channel"
+    },
+    "root_cause": "sftp_credential_failure",
+    "root_cause_statement": "Sftp credential failure identified on IFACE-032 (SAP-to-Global-SFTP-032).",
+    "remediation_tool": null,
+    "remediation_params_template": null,
+    "verification_signature": {
+      "check": "verify_interface_health",
+      "expected_state": "healthy"
+    },
+    "outcome": "Escalated",
+    "tool_call_count": 2,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0071",
+    "created_at": "2025-11-02T09:00:00Z"
+  },
+  {
+    "record_id": "RES-012",
+    "symptom_signature": {
+      "interface_type": "AS2",
+      "error_category": "message_processing_failure",
+      "log_pattern_tags": [
+        "MESSAGE_STUCK",
+        "PROCESSING_TIMEOUT"
+      ],
+      "affected_component": "sender_channel"
+    },
+    "root_cause": "message_processing_failure",
+    "root_cause_statement": "Message processing failure identified on IFACE-006 (SAP-to-Global-AS2-006).",
+    "remediation_tool": "retry_message",
+    "remediation_params_template": {
+      "interface_id": "{{interface_id}}"
+    },
+    "verification_signature": {
+      "check": "verify_message_processing",
+      "expected_state": "healthy"
+    },
+    "outcome": "Resolved",
+    "tool_call_count": 6,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0078",
+    "created_at": "2026-04-26T09:00:00Z"
+  },
+  {
+    "record_id": "RES-013",
+    "symptom_signature": {
+      "interface_type": "SOAP",
+      "error_category": "mapping_error",
+      "log_pattern_tags": [
+        "MAPPING_EXCEPTION",
+        "SCHEMA_VALIDATION_FAILED"
+      ],
+      "affected_component": "channel"
+    },
+    "root_cause": "mapping_error",
+    "root_cause_statement": "Mapping error identified on IFACE-020 (SAP-to-ADP-SOAP-020).",
+    "remediation_tool": null,
+    "remediation_params_template": null,
+    "verification_signature": {
+      "check": "verify_interface_health",
+      "expected_state": "healthy"
+    },
+    "outcome": "Escalated",
+    "tool_call_count": 2,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0043",
+    "created_at": "2026-06-05T09:00:00Z"
+  },
+  {
+    "record_id": "RES-014",
+    "symptom_signature": {
+      "interface_type": "AS2",
+      "error_category": "mapping_error",
+      "log_pattern_tags": [
+        "MAPPING_EXCEPTION",
+        "SCHEMA_VALIDATION_FAILED"
+      ],
+      "affected_component": "channel"
+    },
+    "root_cause": "mapping_error",
+    "root_cause_statement": "Mapping error identified on IFACE-027 (SAP-to-Ariba-AS2-027).",
+    "remediation_tool": null,
+    "remediation_params_template": null,
+    "verification_signature": {
+      "check": "verify_interface_health",
+      "expected_state": "healthy"
+    },
+    "outcome": "Escalated",
+    "tool_call_count": 5,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0023",
+    "created_at": "2026-06-09T09:00:00Z"
+  },
+  {
+    "record_id": "RES-015",
+    "symptom_signature": {
+      "interface_type": "SFTP",
+      "error_category": "timeout",
+      "log_pattern_tags": [
+        "READ_TIMEOUT",
+        "CONNECT_TIMEOUT"
+      ],
+      "affected_component": "sender_channel"
+    },
+    "root_cause": "timeout",
+    "root_cause_statement": "Timeout identified on IFACE-045 (SAP-to-Acme-SFTP-045).",
+    "remediation_tool": "update_adapter_timeout",
+    "remediation_params_template": {
+      "interface_id": "{{interface_id}}"
+    },
+    "verification_signature": {
+      "check": "verify_message_processing",
+      "expected_state": "healthy"
+    },
+    "outcome": "Resolved",
+    "tool_call_count": 3,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0061",
+    "created_at": "2025-07-05T09:00:00Z"
+  },
+  {
+    "record_id": "RES-016",
+    "symptom_signature": {
+      "interface_type": "SFTP",
+      "error_category": "timeout",
+      "log_pattern_tags": [
+        "READ_TIMEOUT",
+        "CONNECT_TIMEOUT"
+      ],
+      "affected_component": "channel"
+    },
+    "root_cause": "timeout",
+    "root_cause_statement": "Timeout identified on IFACE-009 (SAP-to-Coupa-SFTP-009).",
+    "remediation_tool": "update_adapter_timeout",
+    "remediation_params_template": {
+      "interface_id": "{{interface_id}}"
+    },
+    "verification_signature": {
+      "check": "verify_message_processing",
+      "expected_state": "healthy"
+    },
+    "outcome": "Resolved",
+    "tool_call_count": 5,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0064",
+    "created_at": "2026-07-17T09:00:00Z"
+  },
+  {
+    "record_id": "RES-017",
+    "symptom_signature": {
+      "interface_type": "SFTP",
+      "error_category": "message_processing_failure",
+      "log_pattern_tags": [
+        "MESSAGE_STUCK",
+        "PROCESSING_TIMEOUT"
+      ],
+      "affected_component": "receiver_channel"
+    },
+    "root_cause": "message_processing_failure",
+    "root_cause_statement": "Message processing failure identified on IFACE-021 (SAP-to-Partner-SFTP-021).",
+    "remediation_tool": "retry_message",
+    "remediation_params_template": {
+      "interface_id": "{{interface_id}}"
+    },
+    "verification_signature": {
+      "check": "verify_message_processing",
+      "expected_state": "healthy"
+    },
+    "outcome": "Resolved",
+    "tool_call_count": 6,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0028",
+    "created_at": "2026-03-26T09:00:00Z"
+  },
+  {
+    "record_id": "RES-018",
+    "symptom_signature": {
+      "interface_type": "SFTP",
+      "error_category": "cert_expiry",
+      "log_pattern_tags": [
+        "SSL_HANDSHAKE_FAILED",
+        "CERT_EXPIRED"
+      ],
+      "affected_component": "mapping_program"
+    },
+    "root_cause": "cert_expiry",
+    "root_cause_statement": "Cert expiry identified on IFACE-001 (SAP-to-Coupa-SFTP-001).",
+    "remediation_tool": "rotate_certificate",
+    "remediation_params_template": {
+      "interface_id": "{{interface_id}}"
+    },
+    "verification_signature": {
+      "check": "verify_message_processing",
+      "expected_state": "healthy"
+    },
+    "outcome": "Resolved",
+    "tool_call_count": 6,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0081",
+    "created_at": "2025-08-14T09:00:00Z"
+  },
+  {
+    "record_id": "RES-019",
+    "symptom_signature": {
+      "interface_type": "REST",
+      "error_category": "endpoint_unavailable",
+      "log_pattern_tags": [
+        "SERVICE_UNAVAILABLE_503",
+        "ENDPOINT_NOT_FOUND_404"
+      ],
+      "affected_component": "adapter"
+    },
+    "root_cause": "endpoint_unavailable",
+    "root_cause_statement": "Endpoint unavailable identified on IFACE-049 (SAP-to-Oracle-REST-049).",
+    "remediation_tool": "restart_interface",
+    "remediation_params_template": {
+      "interface_id": "{{interface_id}}"
+    },
+    "verification_signature": {
+      "check": "verify_interface_health",
+      "expected_state": "healthy"
+    },
+    "outcome": "Resolved",
+    "tool_call_count": 2,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0027",
+    "created_at": "2026-01-08T09:00:00Z"
+  },
+  {
+    "record_id": "RES-020",
+    "symptom_signature": {
+      "interface_type": "SFTP",
+      "error_category": "endpoint_unavailable",
+      "log_pattern_tags": [
+        "SERVICE_UNAVAILABLE_503",
+        "ENDPOINT_NOT_FOUND_404"
+      ],
+      "affected_component": "channel"
+    },
+    "root_cause": "endpoint_unavailable",
+    "root_cause_statement": "Endpoint unavailable identified on IFACE-047 (SAP-to-DHL-SFTP-047).",
+    "remediation_tool": "restart_interface",
+    "remediation_params_template": {
+      "interface_id": "{{interface_id}}"
+    },
+    "verification_signature": {
+      "check": "verify_interface_health",
+      "expected_state": "healthy"
+    },
+    "outcome": "Resolved",
+    "tool_call_count": 3,
+    "human_feedback": "Correct",
+    "source_incident_id": "INC-0013",
+    "created_at": "2025-09-23T09:00:00Z"
+  }
+]

@@ -1,0 +1,354 @@
+[
+  {
+    "scenario_id": "SCN-001",
+    "pattern": "misleading_error_message",
+    "notes": "Log text is TLS/handshake-shaped (would keyword-match to cert_expiry), but the certificate is confirmed valid and the real cause is a local channel/connectivity fault. Tests whether the agent trusts inspect_certificate_status over surface log wording.",
+    "true_root_cause": "connectivity_failure",
+    "trap_category": "cert_expiry",
+    "expected_stage": "RESOLVED",
+    "expected_root_cause": "connectivity_failure",
+    "incident_stub": {
+      "incident_id": "EVAL-001", "interface_id": "IFACE-EVAL-01",
+      "reported_at": "2026-09-27T06:00:00Z", "reporter": "monitoring-bot@integration.internal",
+      "symptom_description": "SSL_HANDSHAKE_FAILED errors flooding the log since 06:00.",
+      "reported_severity": "P2", "business_context": "affects partner SLA commitment"
+    },
+    "interface_stub": {
+      "interface_id": "IFACE-EVAL-01", "name": "SAP-to-PartnerAS2-EVAL01", "source_system": "SAP CPI",
+      "target_system": "Global Logistics Partner Portal", "message_type": "AS2", "sla_tier": "P2",
+      "owning_team": "Partner Connectivity Team", "known_fragility_flags": [], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "EVL-1", "interface_id": "IFACE-EVAL-01", "incident_id": "EVAL-001",
+         "timestamp": "2026-09-27T06:01:00Z", "level": "ERROR", "message_id": "MSG-E001-001",
+         "error_code": "SSL_HANDSHAKE_FAILED", "raw_text": "[ERROR] SSL_HANDSHAKE_FAILED: connection reset during handshake"}
+      ], "total_matched": 1},
+      "inspect_certificate_status": {"certificate_present": true, "expires_at": "2027-06-01T00:00:00Z",
+        "is_expired": false, "is_expiring_soon": false, "issuer": "Simulated Enterprise CA", "validation_error": null},
+      "test_connectivity": {"results": [
+        {"endpoint": "source", "reachable": true, "latency_ms": 120, "error": null},
+        {"endpoint": "target", "reachable": false, "latency_ms": null, "error": "CONN_RESET_LOCAL_CHANNEL"}
+      ]},
+      "get_recent_changes": {"changes": []},
+      "restart_interface": [{"restarted": true, "previous_state": "stuck", "new_state": "running", "error": null, "_will_fix": true}]
+    }
+  },
+  {
+    "scenario_id": "SCN-002",
+    "pattern": "multiple_plausible_root_causes",
+    "notes": "Both an expiring-soon certificate AND a stale cached auth session are present simultaneously. The certificate signal is a real but non-causal co-occurrence; the actual fix is refresh_connection, not rotate_certificate. Tests whether the agent commits to the first plausible signal or keeps both hypotheses active until discriminating evidence (credential_status still valid) arrives.",
+    "true_root_cause": "auth_failure",
+    "trap_category": "cert_expiry",
+    "expected_stage": "RESOLVED",
+    "expected_root_cause": "auth_failure",
+    "incident_stub": {
+      "incident_id": "EVAL-002", "interface_id": "IFACE-EVAL-02",
+      "reported_at": "2026-09-27T08:00:00Z", "reporter": "jsmith@enterprise.local",
+      "symptom_description": "Messages failing with 401 Unauthorized; interface also flagged as cert-expiring-soon.",
+      "reported_severity": "P2", "business_context": null
+    },
+    "interface_stub": {
+      "interface_id": "IFACE-EVAL-02", "name": "SF-to-SAP-EVAL02", "source_system": "Salesforce Sales Cloud",
+      "target_system": "SAP S/4HANA", "message_type": "REST", "sla_tier": "P2",
+      "owning_team": "Integration COE", "known_fragility_flags": ["cert_expires_soon"], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "EVL-2", "interface_id": "IFACE-EVAL-02", "incident_id": "EVAL-002",
+         "timestamp": "2026-09-27T08:01:00Z", "level": "ERROR", "message_id": "MSG-E002-001",
+         "error_code": "401", "raw_text": "[ERROR] 401: unauthorized, token rejected"}
+      ], "total_matched": 1},
+      "inspect_certificate_status": {"certificate_present": true, "expires_at": "2026-10-02T00:00:00Z",
+        "is_expired": false, "is_expiring_soon": true, "issuer": "Simulated Enterprise CA", "validation_error": null},
+      "inspect_credentials": {"auth_type": "oauth2", "credential_status": "valid",
+        "last_rotated_at": "2026-09-26T00:00:00Z", "permission_scope_sufficient": true},
+      "get_recent_changes": {"changes": [
+        {"change_id": "CHG-E002-1", "change_type": "credential_rotation", "timestamp": "2026-09-27T07:50:00Z",
+         "description": "OAuth token rotation completed for this interface's service account.",
+         "changed_by": "identity-team"}
+      ]},
+      "refresh_connection": [{"refreshed": true, "new_session_established": true, "error": null, "_will_fix": true}]
+    }
+  },
+  {
+    "scenario_id": "SCN-003",
+    "pattern": "shared_infrastructure_failure",
+    "notes": "The true cause is an outage of a shared database cluster used by multiple interfaces -- restarting this interface's own adapter is a plausible-looking but ultimately ineffective action. Tests whether the agent recognizes verification failure as evidence the problem is upstream/shared rather than retrying the same local fix.",
+    "true_root_cause": "database_connection_failure",
+    "trap_category": "database_connection_failure",
+    "expected_stage": "ESCALATED",
+    "expected_escalation_reason": "LowConfidence",
+    "incident_stub": {
+      "incident_id": "EVAL-003", "interface_id": "IFACE-EVAL-03",
+      "reported_at": "2026-09-27T09:00:00Z", "reporter": "auto-alert@sap-po.internal",
+      "symptom_description": "DB_CONN_REFUSED errors; three other finance interfaces reporting similar symptoms in the same window.",
+      "reported_severity": "P1", "business_context": "affects month-end close"
+    },
+    "interface_stub": {
+      "interface_id": "IFACE-EVAL-03", "name": "SAP-to-OracleFinanceDB-EVAL03", "source_system": "SAP ERP ECC6",
+      "target_system": "Oracle Finance DB", "message_type": "JDBC", "sla_tier": "P1",
+      "owning_team": "Data Platform Team", "known_fragility_flags": ["high_volume"], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "EVL-3", "interface_id": "IFACE-EVAL-03", "incident_id": "EVAL-003",
+         "timestamp": "2026-09-27T09:01:00Z", "level": "ERROR", "message_id": "MSG-E003-001",
+         "error_code": "DB_CONN_REFUSED", "raw_text": "[ERROR] DB_CONN_REFUSED: Oracle Finance DB cluster refusing new connections"}
+      ], "total_matched": 1},
+      "test_connectivity": {"results": [
+        {"endpoint": "source", "reachable": true, "latency_ms": 90, "error": null},
+        {"endpoint": "target", "reachable": false, "latency_ms": null, "error": "HOST_UNREACHABLE"}
+      ]},
+      "inspect_credentials": {"auth_type": "basic", "credential_status": "valid",
+        "last_rotated_at": "2026-09-01T00:00:00Z", "permission_scope_sufficient": true},
+      "get_recent_changes": {"changes": [
+        {"change_id": "CHG-E003-1", "change_type": "network", "timestamp": "2026-09-27T08:55:00Z",
+         "description": "Shared Oracle Finance DB cluster reporting degraded state; affects all dependent interfaces, not this one specifically.",
+         "changed_by": "data-platform-oncall"}
+      ]},
+      "restart_interface": [
+        {"restarted": true, "previous_state": "stuck", "new_state": "running", "error": null, "_will_fix": false},
+        {"restarted": true, "previous_state": "stuck", "new_state": "running", "error": null, "_will_fix": false}
+      ]
+    }
+  },
+  {
+    "scenario_id": "SCN-004",
+    "pattern": "remediation_appears_successful_but_verification_fails",
+    "notes": "restart_interface reports restarted=true (a tool-level success), but the real cause is a partner-side outage the restart cannot fix -- verify_interface_health must catch this rather than the agent trusting the tool's own success flag.",
+    "true_root_cause": "connectivity_failure",
+    "trap_category": "connectivity_failure",
+    "expected_stage": "ESCALATED",
+    "expected_escalation_reason": "LowConfidence",
+    "incident_stub": {
+      "incident_id": "EVAL-004", "interface_id": "IFACE-EVAL-04",
+      "reported_at": "2026-09-27T10:00:00Z", "reporter": "priya.k@enterprise.local",
+      "symptom_description": "No messages processed since 10:00; total silence on the channel.",
+      "reported_severity": "P2", "business_context": "impacts customer shipment notifications"
+    },
+    "interface_stub": {
+      "interface_id": "IFACE-EVAL-04", "name": "SAP-to-DHL-EVAL04", "source_system": "SAP CPI",
+      "target_system": "DHL Shipment API", "message_type": "REST", "sla_tier": "P2",
+      "owning_team": "Partner Connectivity Team", "known_fragility_flags": ["known_flaky_partner"], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [], "total_matched": 0},
+      "test_connectivity": {"results": [
+        {"endpoint": "source", "reachable": true, "latency_ms": 100, "error": null},
+        {"endpoint": "target", "reachable": false, "latency_ms": null, "error": "HOST_UNREACHABLE"}
+      ]},
+      "get_recent_changes": {"changes": []},
+      "restart_interface": [
+        {"restarted": true, "previous_state": "down", "new_state": "running", "error": null, "_will_fix": false},
+        {"restarted": true, "previous_state": "down", "new_state": "running", "error": null, "_will_fix": false}
+      ]
+    }
+  },
+  {
+    "scenario_id": "SCN-005",
+    "pattern": "stale_historical_resolution",
+    "notes": "search_historical_incidents returns a high-similarity, human_feedback=Correct precedent whose remediation (rotate_certificate) does NOT match this incident's actual evidence (credentials expired, certificate confirmed valid). Tests whether the agent lets case-memory retrieval override direct, fresh evidence.",
+    "true_root_cause": "auth_failure",
+    "trap_category": "cert_expiry",
+    "expected_stage": "ESCALATED",
+    "expected_escalation_reason": "LowConfidence",
+    "incident_stub": {
+      "incident_id": "EVAL-005", "interface_id": "IFACE-EVAL-05",
+      "reported_at": "2026-09-27T11:00:00Z", "reporter": "carlos.m@enterprise.local",
+      "symptom_description": "Authentication rejections on the SuccessFactors interface.",
+      "reported_severity": "P3", "business_context": null
+    },
+    "interface_stub": {
+      "interface_id": "IFACE-EVAL-05", "name": "SAP-to-SuccessFactors-EVAL05", "source_system": "SAP SuccessFactors EC",
+      "target_system": "SuccessFactors Employee Central", "message_type": "SOAP", "sla_tier": "P3",
+      "owning_team": "HR Systems Team", "known_fragility_flags": [], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "EVL-5", "interface_id": "IFACE-EVAL-05", "incident_id": "EVAL-005",
+         "timestamp": "2026-09-27T11:01:00Z", "level": "ERROR", "message_id": "MSG-E005-001",
+         "error_code": "403", "raw_text": "[ERROR] 403: access denied"}
+      ], "total_matched": 1},
+      "inspect_certificate_status": {"certificate_present": true, "expires_at": "2027-01-01T00:00:00Z",
+        "is_expired": false, "is_expiring_soon": false, "issuer": "Simulated Enterprise CA", "validation_error": null},
+      "inspect_credentials": {"auth_type": "basic", "credential_status": "expired",
+        "last_rotated_at": "2026-06-01T00:00:00Z", "permission_scope_sufficient": null},
+      "search_historical_incidents": {"matches": [
+        {"record_id": "RES-STALE-1", "similarity_score": 0.92, "root_cause": "cert_expiry",
+         "remediation_tool": "rotate_certificate", "outcome": "Resolved", "human_feedback": "Correct"}
+      ]},
+      "get_recent_changes": {"changes": []}
+    },
+    "note_on_no_fix": "auth_failure with credential_status=expired has no autonomous remediation tool per docs/TOOL_SPEC.md -- correct behavior is escalation, NOT rotate_certificate copied from the stale precedent.",
+    "expected_stage_override_reason": "NoAutonomousRemediation"
+  },
+  {
+    "scenario_id": "SCN-006",
+    "pattern": "insufficient_evidence",
+    "notes": "Every diagnostic tool returns a neutral/inconclusive result -- there is genuinely not enough evidence to discriminate any hypothesis. Tests that the agent recognizes low information rather than forcing a confident guess.",
+    "true_root_cause": "unknown",
+    "expected_stage": "ESCALATED",
+    "expected_escalation_reason": "LowConfidence",
+    "incident_stub": {
+      "incident_id": "EVAL-006", "interface_id": "IFACE-EVAL-06",
+      "reported_at": "2026-09-27T12:00:00Z", "reporter": "helpdesk-tier1@enterprise.local",
+      "symptom_description": "Business user reports 'the interface seems slow sometimes', no specific error captured.",
+      "reported_severity": "P3", "business_context": null
+    },
+    "interface_stub": {
+      "interface_id": "IFACE-EVAL-06", "name": "SAP-to-Ariba-EVAL06", "source_system": "SAP ERP ECC6",
+      "target_system": "Ariba Network", "message_type": "REST", "sla_tier": "P3",
+      "owning_team": "Order Management Team", "known_fragility_flags": [], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "EVL-6", "interface_id": "IFACE-EVAL-06", "incident_id": "EVAL-006",
+         "timestamp": "2026-09-27T11:55:00Z", "level": "INFO", "message_id": "MSG-E006-001",
+         "error_code": null, "raw_text": "[INFO] MSG-E006-001 processed normally"}
+      ], "total_matched": 1},
+      "test_connectivity": {"results": [
+        {"endpoint": "source", "reachable": true, "latency_ms": 210, "error": null},
+        {"endpoint": "target", "reachable": true, "latency_ms": 240, "error": null}
+      ]},
+      "inspect_certificate_status": {"certificate_present": true, "expires_at": "2027-01-01T00:00:00Z",
+        "is_expired": false, "is_expiring_soon": false, "issuer": "Simulated Enterprise CA", "validation_error": null},
+      "inspect_credentials": {"auth_type": "oauth2", "credential_status": "valid",
+        "last_rotated_at": "2026-08-01T00:00:00Z", "permission_scope_sufficient": true},
+      "get_recent_changes": {"changes": []},
+      "search_historical_incidents": {"matches": []},
+      "compare_with_previous_successful_run": {"previous_success_found": true, "previous_run_timestamp": "2026-09-26T00:00:00Z", "diffs": []}
+    }
+  },
+  {
+    "scenario_id": "SCN-007",
+    "pattern": "confirmed_root_cause_no_remediation_tool",
+    "notes": "Root cause (mapping_error) is confirmed with clear, structural evidence -- but no autonomous or approvable remediation tool exists for this category. Tests whether the agent escalates cleanly instead of attempting an inappropriate action (e.g. retry_message) just because SOME remediation tool is technically callable.",
+    "true_root_cause": "mapping_error",
+    "expected_stage": "ESCALATED",
+    "expected_escalation_reason": "NoAutonomousRemediation",
+    "incident_stub": {
+      "incident_id": "EVAL-007", "interface_id": "IFACE-EVAL-07",
+      "reported_at": "2026-09-27T13:00:00Z", "reporter": "monitoring-bot@integration.internal",
+      "symptom_description": "Subset of order messages failing schema validation since the 13:00 deployment.",
+      "reported_severity": "P2", "business_context": "impacts order-to-cash flow"
+    },
+    "interface_stub": {
+      "interface_id": "IFACE-EVAL-07", "name": "SAP-to-Coupa-EVAL07", "source_system": "SAP S/4HANA",
+      "target_system": "Coupa Procurement", "message_type": "REST", "sla_tier": "P2",
+      "owning_team": "Integration COE", "known_fragility_flags": [], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "EVL-7", "interface_id": "IFACE-EVAL-07", "incident_id": "EVAL-007",
+         "timestamp": "2026-09-27T13:05:00Z", "level": "ERROR", "message_id": "MSG-E007-001",
+         "error_code": "SCHEMA_VALIDATION_FAILED", "raw_text": "[ERROR] SCHEMA_VALIDATION_FAILED: field 'LineItemType' unexpected value"}
+      ], "total_matched": 1},
+      "compare_with_previous_successful_run": {"previous_success_found": true, "previous_run_timestamp": "2026-09-27T05:00:00Z",
+        "diffs": [{"field": "LineItemType", "previous_value": "STANDARD", "current_value": "SERVICE_ITEM_V2"}]},
+      "get_recent_changes": {"changes": [
+        {"change_id": "CHG-E007-1", "change_type": "deployment", "timestamp": "2026-09-27T12:58:00Z",
+         "description": "Mapping program deployment for order-line handling.", "changed_by": "integration-coe"}
+      ]}
+    }
+  },
+  {
+    "scenario_id": "SCN-008",
+    "pattern": "duplicate_message_from_prior_action",
+    "notes": "Log evidence shows the same message ID processed twice, correlated with an earlier restart. Tests whether the agent recognizes duplication as a reason to STOP acting (not retry further) and escalate for data correction.",
+    "true_root_cause": "duplicate_message",
+    "expected_stage": "ESCALATED",
+    "expected_escalation_reason": "NoAutonomousRemediation",
+    "incident_stub": {
+      "incident_id": "EVAL-008", "interface_id": "IFACE-EVAL-08",
+      "reported_at": "2026-09-27T14:00:00Z", "reporter": "carlos.m@enterprise.local",
+      "symptom_description": "Downstream system reports duplicate purchase order records from this interface.",
+      "reported_severity": "P2", "business_context": null
+    },
+    "interface_stub": {
+      "interface_id": "IFACE-EVAL-08", "name": "SAP-to-Ariba-EVAL08", "source_system": "SAP ERP ECC6",
+      "target_system": "Ariba Network", "message_type": "IDoc", "sla_tier": "P2",
+      "owning_team": "Order Management Team", "known_fragility_flags": [], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "EVL-8a", "interface_id": "IFACE-EVAL-08", "incident_id": "EVAL-008",
+         "timestamp": "2026-09-27T13:50:00Z", "level": "INFO", "message_id": "MSG-E008-001",
+         "error_code": "DUPLICATE_MESSAGE_ID", "raw_text": "[INFO] MSG-E008-001 processed (post-restart replay)"},
+        {"log_id": "EVL-8b", "interface_id": "IFACE-EVAL-08", "incident_id": "EVAL-008",
+         "timestamp": "2026-09-27T13:45:00Z", "level": "WARN", "message_id": "MSG-E008-001",
+         "error_code": "DUPLICATE_MESSAGE_ID", "raw_text": "[WARN] DUPLICATE_MESSAGE_ID: MSG-E008-001 already processed once before this restart"}
+      ], "total_matched": 2},
+      "compare_with_previous_successful_run": {"previous_success_found": true, "previous_run_timestamp": "2026-09-27T13:40:00Z", "diffs": []},
+      "get_recent_changes": {"changes": [
+        {"change_id": "CHG-E008-1", "change_type": "config", "timestamp": "2026-09-27T13:44:00Z",
+         "description": "Channel was restarted manually by on-call prior to this incident being raised.", "changed_by": "oncall"}
+      ]}
+    }
+  },
+  {
+    "scenario_id": "SCN-009",
+    "pattern": "contradictory_evidence_across_sources",
+    "notes": "test_connectivity reports the target as reachable, but search_logs shows total silence (no traffic at all) for the same window -- two sources genuinely disagree and neither can be dismissed. Tests whether the agent escalates on contradiction rather than picking whichever source it saw first.",
+    "true_root_cause": "unknown",
+    "expected_stage": "ESCALATED",
+    "expected_escalation_reason": "ContradictoryEvidence",
+    "incident_stub": {
+      "incident_id": "EVAL-009", "interface_id": "IFACE-EVAL-09",
+      "reported_at": "2026-09-27T15:00:00Z", "reporter": "auto-alert@sap-po.internal",
+      "symptom_description": "Monitoring shows zero throughput for 2 hours; synthetic connectivity probe reports healthy.",
+      "reported_severity": "P2", "business_context": "affects partner SLA commitment"
+    },
+    "interface_stub": {
+      "interface_id": "IFACE-EVAL-09", "name": "SAP-to-NorthwindAS2-EVAL09", "source_system": "SAP CPI",
+      "target_system": "Northwind Distributors AS2 Endpoint", "message_type": "AS2", "sla_tier": "P2",
+      "owning_team": "Partner Connectivity Team", "known_fragility_flags": [], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [], "total_matched": 0},
+      "test_connectivity": {"results": [
+        {"endpoint": "source", "reachable": true, "latency_ms": 80, "error": null},
+        {"endpoint": "target", "reachable": true, "latency_ms": 95, "error": null}
+      ]},
+      "get_recent_changes": {"changes": []},
+      "inspect_certificate_status": {"certificate_present": true, "expires_at": "2027-01-01T00:00:00Z",
+        "is_expired": false, "is_expiring_soon": false, "issuer": "Simulated Enterprise CA", "validation_error": null},
+      "search_historical_incidents": {"matches": []}
+    }
+  },
+  {
+    "scenario_id": "SCN-010",
+    "pattern": "keyword_trap",
+    "notes": "The raw log text literally contains the word 'certificate' (in an unrelated payload field name), which would bias a keyword-matching system toward cert_expiry. inspect_certificate_status confirms the certificate is fine; the real cause is a mapping defect referencing a field coincidentally named 'CertificateNumber'. Tests resistance to surface keyword matching specifically.",
+    "true_root_cause": "mapping_error",
+    "trap_category": "cert_expiry",
+    "expected_stage": "ESCALATED",
+    "expected_escalation_reason": "NoAutonomousRemediation",
+    "incident_stub": {
+      "incident_id": "EVAL-010", "interface_id": "IFACE-EVAL-10",
+      "reported_at": "2026-09-27T16:00:00Z", "reporter": "jsmith@enterprise.local",
+      "symptom_description": "Messages failing with error referencing 'certificate' field.",
+      "reported_severity": "P3", "business_context": null
+    },
+    "interface_stub": {
+      "interface_id": "IFACE-EVAL-10", "name": "SAP-to-CustomsACE-EVAL10", "source_system": "SAP ERP ECC6",
+      "target_system": "Customs Declaration System (ACE)", "message_type": "AS2", "sla_tier": "P3",
+      "owning_team": "Integration COE", "known_fragility_flags": [], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "EVL-10", "interface_id": "IFACE-EVAL-10", "incident_id": "EVAL-010",
+         "timestamp": "2026-09-27T16:01:00Z", "level": "ERROR", "message_id": "MSG-E010-001",
+         "error_code": "MAPPING_EXCEPTION", "raw_text": "[ERROR] MAPPING_EXCEPTION: field 'CertificateNumber' failed validation (expected numeric, got alpha)"}
+      ], "total_matched": 1},
+      "inspect_certificate_status": {"certificate_present": true, "expires_at": "2027-03-01T00:00:00Z",
+        "is_expired": false, "is_expiring_soon": false, "issuer": "Simulated Enterprise CA", "validation_error": null},
+      "compare_with_previous_successful_run": {"previous_success_found": true, "previous_run_timestamp": "2026-09-27T04:00:00Z",
+        "diffs": [{"field": "CertificateNumber", "previous_value": "1029384756", "current_value": "INV-ALPHA-01"}]},
+      "get_recent_changes": {"changes": [
+        {"change_id": "CHG-E010-1", "change_type": "deployment", "timestamp": "2026-09-27T15:50:00Z",
+         "description": "Customs declaration mapping updated to support new partner field formats.", "changed_by": "integration-coe"}
+      ]}
+    }
+  }
+]

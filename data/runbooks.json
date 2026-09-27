@@ -1,0 +1,220 @@
+[
+  {
+    "runbook_id": "RB-001",
+    "title": "Authentication Failure Triage",
+    "root_cause_category": "auth_failure",
+    "steps": [
+      "Check inspect_credentials for expiry/lock/revocation status.",
+      "Cross-reference recent credential_rotation changes.",
+      "If credential invalid, engage identity/owning team; do not attempt local fix.",
+      "If credential valid, attempt refresh_connection and verify with a follow-up message."
+    ],
+    "last_reviewed_at": "2026-04-30T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-002",
+    "title": "Certificate Expiry Response",
+    "root_cause_category": "cert_expiry",
+    "steps": [
+      "Run inspect_certificate_status to confirm expiry vs. other validation errors.",
+      "If genuinely expired, request approval for rotate_certificate.",
+      "After rotation, verify handshake success with a live message, not just tool success.",
+      "If partner trust store not updated post-rotation, escalate for partner coordination."
+    ],
+    "last_reviewed_at": "2026-08-06T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-003",
+    "title": "Connectivity Loss Triage",
+    "root_cause_category": "connectivity_failure",
+    "steps": [
+      "Run test_connectivity against both source and target.",
+      "Distinguish local channel-down from partner-side outage before acting.",
+      "For local channel issues, restart_interface; for partner outages, escalate.",
+      "Re-verify interface health after any action."
+    ],
+    "last_reviewed_at": "2026-05-18T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-004",
+    "title": "Timeout and Latency Investigation",
+    "root_cause_category": "timeout",
+    "steps": [
+      "Check latency_ms from test_connectivity separately from application timeouts.",
+      "Correlate with recent config/deployment changes.",
+      "Only propose timeout increases when latency is consistently borderline, not for hard failures.",
+      "Escalate suspected downstream degradation rather than masking with a longer timeout."
+    ],
+    "last_reviewed_at": "2026-02-05T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-005",
+    "title": "Mapping and Transformation Failure Response",
+    "root_cause_category": "mapping_error",
+    "steps": [
+      "Use compare_with_previous_successful_run to isolate the structural diff.",
+      "Correlate with recent mapping/schema deployments.",
+      "Do not retry a message against an unchanged, confirmed-defective mapping.",
+      "Escalate to the mapping-owning team with the specific diff evidence."
+    ],
+    "last_reviewed_at": "2025-09-19T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-006",
+    "title": "Malformed Payload Handling",
+    "root_cause_category": "malformed_payload",
+    "steps": [
+      "Confirm payload structure against the expected schema via comparison tooling.",
+      "Determine whether the issue is source-side data quality or a mapping defect.",
+      "Escalate source-side data issues to the originating system's owning team."
+    ],
+    "last_reviewed_at": "2025-11-17T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-007",
+    "title": "Endpoint Unavailability Response",
+    "root_cause_category": "endpoint_unavailable",
+    "steps": [
+      "Confirm unavailability with test_connectivity rather than assuming from log silence alone.",
+      "Check for scheduled maintenance windows via recent changes.",
+      "Escalate persistent unavailability rather than repeatedly retrying."
+    ],
+    "last_reviewed_at": "2026-09-17T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-008",
+    "title": "SFTP Credential Failure Triage",
+    "root_cause_category": "sftp_credential_failure",
+    "steps": [
+      "Check inspect_credentials for SFTP key/password specific status.",
+      "Confirm whether a recent key rotation occurred without corresponding update on this end.",
+      "SFTP credential resets are outside the agent's remediation surface; escalate."
+    ],
+    "last_reviewed_at": "2026-07-28T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-009",
+    "title": "Stuck Message Processing Response",
+    "root_cause_category": "message_processing_failure",
+    "steps": [
+      "Determine if this is a single stuck message or a broader channel-level backlog.",
+      "For single messages with no duplication evidence, retry_message.",
+      "For backlog/congestion, consider restart_interface at the channel level instead.",
+      "Re-scan the broader message set post-action, not just the originally flagged message."
+    ],
+    "last_reviewed_at": "2025-09-16T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-010",
+    "title": "Duplicate Message Investigation",
+    "root_cause_category": "duplicate_message",
+    "steps": [
+      "Check whether a recent restart or retry in this same incident could explain duplication.",
+      "Do not retry further once duplication is confirmed.",
+      "Escalate for downstream de-duplication/data correction."
+    ],
+    "last_reviewed_at": "2026-07-25T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-011",
+    "title": "Database Connectivity Failure Response",
+    "root_cause_category": "database_connection_failure",
+    "steps": [
+      "Run test_connectivity against the database endpoint.",
+      "Check inspect_credentials for the database service account.",
+      "Check for recent network/firewall changes affecting DB connectivity.",
+      "Escalate persistent DB-side outages to the Data Platform Team."
+    ],
+    "last_reviewed_at": "2026-04-18T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-012",
+    "title": "SFTP Key Rotation Standard Procedure",
+    "root_cause_category": "sftp_credential_failure",
+    "steps": [
+      "Confirm rotation schedule with partner before assuming failure is unplanned.",
+      "Validate new key fingerprint against configuration record."
+    ],
+    "last_reviewed_at": "2026-06-29T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-013",
+    "title": "AS2 Partner Onboarding Connectivity Checklist",
+    "root_cause_category": "connectivity_failure",
+    "steps": [
+      "Verify MDN acknowledgment settings match partner agreement.",
+      "Confirm firewall allowlisting for new partner IP ranges."
+    ],
+    "last_reviewed_at": "2026-04-03T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-014",
+    "title": "IDoc Status 51 Triage (Legacy)",
+    "root_cause_category": "mapping_error",
+    "steps": [
+      "Check IDoc status record for the specific error segment.",
+      "Cross-reference against ECC application log."
+    ],
+    "last_reviewed_at": "2026-07-02T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-015",
+    "title": "JDBC Pool Exhaustion Response",
+    "root_cause_category": "database_connection_failure",
+    "steps": [
+      "Check active connection count against configured pool size.",
+      "Restart the adapter connection pool only after confirming exhaustion, not on first symptom."
+    ],
+    "last_reviewed_at": "2026-07-21T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-016",
+    "title": "General P1 Escalation Fast-Path (Draft, Unreviewed)",
+    "root_cause_category": "auth_failure",
+    "steps": [
+      "Draft procedure \u2014 not yet validated by CoE.",
+      "Use with caution; prefer specific-category runbooks where available."
+    ],
+    "last_reviewed_at": null
+  },
+  {
+    "runbook_id": "RB-017",
+    "title": "REST/SOAP Endpoint Unavailability Checklist",
+    "root_cause_category": "endpoint_unavailable",
+    "steps": [
+      "Confirm HTTP status pattern (503 vs 404) before assuming outage type.",
+      "Check for a scheduled maintenance window on the target system."
+    ],
+    "last_reviewed_at": "2026-04-30T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-018",
+    "title": "Malformed Payload Source-Data Triage",
+    "root_cause_category": "malformed_payload",
+    "steps": [
+      "Determine whether the malformed field originates upstream or in transit.",
+      "Escalate persistent source-data-quality issues to the originating system owner."
+    ],
+    "last_reviewed_at": "2026-07-05T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-019",
+    "title": "Duplicate IDoc Detection Procedure (Legacy)",
+    "root_cause_category": "duplicate_message",
+    "steps": [
+      "Check IDoc control record for duplicate status flag.",
+      "Cross-reference with any recent channel restart in the same window."
+    ],
+    "last_reviewed_at": "2026-09-16T09:00:00Z"
+  },
+  {
+    "runbook_id": "RB-020",
+    "title": "Partner AS2 MDN Timeout Response",
+    "root_cause_category": "timeout",
+    "steps": [
+      "Confirm whether MDN acknowledgment itself is timing out vs. the underlying transfer.",
+      "Engage partner connectivity team if MDN delay is consistently on their side."
+    ],
+    "last_reviewed_at": "2026-03-20T09:00:00Z"
+  }
+]

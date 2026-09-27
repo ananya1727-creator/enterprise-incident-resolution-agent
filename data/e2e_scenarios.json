@@ -1,0 +1,359 @@
+[
+  {
+    "e2e_id": "E2E-01",
+    "requirement": "Authentication failure",
+    "adversarial": true,
+    "trap_category": "cert_expiry",
+    "true_root_cause": "auth_failure",
+    "expected_stage": "RESOLVED",
+    "expected_root_cause": ["auth_failure"],
+    "incident_stub": {
+      "incident_id": "E2E-INC-01", "interface_id": "E2E-IFACE-01",
+      "reported_at": "2026-09-27T06:00:00Z", "reporter": "monitoring-bot@integration.internal",
+      "symptom_description": "401 Unauthorized errors on the Salesforce interface; interface also flagged cert-expiring-soon.",
+      "reported_severity": "P2", "business_context": null
+    },
+    "interface_stub": {
+      "interface_id": "E2E-IFACE-01", "name": "SF-to-SAP-E2E01", "source_system": "Salesforce Sales Cloud",
+      "target_system": "SAP S/4HANA", "message_type": "REST", "sla_tier": "P2",
+      "owning_team": "Integration COE", "known_fragility_flags": ["cert_expires_soon"], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "E2E01-1", "interface_id": "E2E-IFACE-01", "incident_id": "E2E-INC-01",
+         "timestamp": "2026-09-27T06:01:00Z", "level": "ERROR", "message_id": "MSG-E01-001",
+         "error_code": "401", "raw_text": "[ERROR] 401: unauthorized, token rejected"}
+      ], "total_matched": 1},
+      "get_recent_changes": {"changes": [
+        {"change_id": "CHG-E01-1", "change_type": "credential_rotation", "timestamp": "2026-09-27T05:50:00Z",
+         "description": "OAuth token rotation completed for this interface's service account.",
+         "changed_by": "identity-team"}
+      ]},
+      "inspect_certificate_status": {"certificate_present": true, "expires_at": "2026-10-05T00:00:00Z",
+        "is_expired": false, "is_expiring_soon": true, "issuer": "Simulated Enterprise CA", "validation_error": null},
+      "inspect_credentials": {"auth_type": "oauth2", "credential_status": "valid",
+        "last_rotated_at": "2026-09-27T05:50:00Z", "permission_scope_sufficient": true},
+      "refresh_connection": [{"refreshed": true, "new_session_established": true, "error": null, "_will_fix": true}]
+    }
+  },
+  {
+    "e2e_id": "E2E-02",
+    "requirement": "Expired certificate",
+    "adversarial": false,
+    "true_root_cause": "cert_expiry",
+    "expected_stage": "RESOLVED",
+    "expected_root_cause": ["cert_expiry"],
+    "incident_stub": {
+      "incident_id": "E2E-INC-02", "interface_id": "E2E-IFACE-02",
+      "reported_at": "2026-09-27T07:00:00Z", "reporter": "auto-alert@sap-po.internal",
+      "symptom_description": "SSL_HANDSHAKE_FAILED errors on the partner AS2 interface.",
+      "reported_severity": "P2", "business_context": "affects partner SLA commitment"
+    },
+    "interface_stub": {
+      "interface_id": "E2E-IFACE-02", "name": "SAP-to-PartnerAS2-E2E02", "source_system": "SAP CPI",
+      "target_system": "Global Logistics Partner Portal", "message_type": "AS2", "sla_tier": "P2",
+      "owning_team": "Partner Connectivity Team", "known_fragility_flags": ["cert_expires_soon"], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "E2E02-1", "interface_id": "E2E-IFACE-02", "incident_id": "E2E-INC-02",
+         "timestamp": "2026-09-27T07:01:00Z", "level": "ERROR", "message_id": "MSG-E02-001",
+         "error_code": "SSL_HANDSHAKE_FAILED", "raw_text": "[ERROR] SSL_HANDSHAKE_FAILED: certificate expired"}
+      ], "total_matched": 1},
+      "inspect_certificate_status": {"certificate_present": true, "expires_at": "2026-09-25T00:00:00Z",
+        "is_expired": true, "is_expiring_soon": true, "issuer": "Simulated Enterprise CA",
+        "validation_error": "certificate has expired"},
+      "get_recent_changes": {"changes": []},
+      "rotate_certificate": [{"rotated": true, "new_expiry": "2027-09-27T00:00:00Z", "error": null, "_will_fix": true}]
+    }
+  },
+  {
+    "e2e_id": "E2E-03",
+    "requirement": "SFTP connectivity failure",
+    "adversarial": false,
+    "true_root_cause": "connectivity_failure",
+    "expected_stage": "RESOLVED",
+    "expected_root_cause": ["connectivity_failure", "endpoint_unavailable"],
+    "incident_stub": {
+      "incident_id": "E2E-INC-03", "interface_id": "E2E-IFACE-03",
+      "reported_at": "2026-09-27T08:00:00Z", "reporter": "jsmith@enterprise.local",
+      "symptom_description": "SFTP file transfer failing to connect to partner server; connection refused.",
+      "reported_severity": "P2", "business_context": null
+    },
+    "interface_stub": {
+      "interface_id": "E2E-IFACE-03", "name": "SAP-to-PartnerSFTP-E2E03", "source_system": "SAP CPI",
+      "target_system": "Northwind Distributors AS2 Endpoint", "message_type": "SFTP", "sla_tier": "P2",
+      "owning_team": "Partner Connectivity Team", "known_fragility_flags": [], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "E2E03-1", "interface_id": "E2E-IFACE-03", "incident_id": "E2E-INC-03",
+         "timestamp": "2026-09-27T08:01:00Z", "level": "ERROR", "message_id": "MSG-E03-001",
+         "error_code": "CONN_REFUSED", "raw_text": "[ERROR] CONN_REFUSED: SFTP connection refused by partner host"}
+      ], "total_matched": 1},
+      "test_connectivity": {"results": [
+        {"endpoint": "source", "reachable": true, "latency_ms": 90, "error": null},
+        {"endpoint": "target", "reachable": false, "latency_ms": null, "error": "CONN_REFUSED"}
+      ]},
+      "get_recent_changes": {"changes": []},
+      "restart_interface": [{"restarted": true, "previous_state": "stuck", "new_state": "running",
+                              "error": null, "_will_fix": true}]
+    }
+  },
+  {
+    "e2e_id": "E2E-04",
+    "requirement": "REST endpoint failure (verification fails, then escalate)",
+    "adversarial": false,
+    "true_root_cause": "endpoint_unavailable",
+    "expected_stage": "ESCALATED",
+    "expected_root_cause": ["endpoint_unavailable", "connectivity_failure"],
+    "incident_stub": {
+      "incident_id": "E2E-INC-04", "interface_id": "E2E-IFACE-04",
+      "reported_at": "2026-09-27T09:00:00Z", "reporter": "monitoring-bot@integration.internal",
+      "symptom_description": "REST endpoint returning 503 Service Unavailable consistently.",
+      "reported_severity": "P2", "business_context": "impacts customer shipment notifications"
+    },
+    "interface_stub": {
+      "interface_id": "E2E-IFACE-04", "name": "SAP-to-DHL-E2E04", "source_system": "SAP CPI",
+      "target_system": "DHL Shipment API", "message_type": "REST", "sla_tier": "P2",
+      "owning_team": "Partner Connectivity Team", "known_fragility_flags": ["known_flaky_partner"], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "E2E04-1", "interface_id": "E2E-IFACE-04", "incident_id": "E2E-INC-04",
+         "timestamp": "2026-09-27T09:01:00Z", "level": "ERROR", "message_id": "MSG-E04-001",
+         "error_code": "SERVICE_UNAVAILABLE_503", "raw_text": "[ERROR] SERVICE_UNAVAILABLE_503: endpoint returning 503"}
+      ], "total_matched": 1},
+      "test_connectivity": {"results": [
+        {"endpoint": "source", "reachable": true, "latency_ms": 100, "error": null},
+        {"endpoint": "target", "reachable": false, "latency_ms": null, "error": "SERVICE_UNAVAILABLE_503"}
+      ]},
+      "get_recent_changes": {"changes": []},
+      "restart_interface": [{"restarted": true, "previous_state": "down", "new_state": "running",
+                              "error": null, "_will_fix": false}]
+    }
+  },
+  {
+    "e2e_id": "E2E-05",
+    "requirement": "Mapping/data transformation failure",
+    "adversarial": false,
+    "true_root_cause": "mapping_error",
+    "expected_stage": "ESCALATED",
+    "expected_root_cause": ["mapping_error"],
+    "expected_escalation_reason": "NoAutonomousRemediation",
+    "incident_stub": {
+      "incident_id": "E2E-INC-05", "interface_id": "E2E-IFACE-05",
+      "reported_at": "2026-09-27T10:00:00Z", "reporter": "monitoring-bot@integration.internal",
+      "symptom_description": "Subset of order messages failing schema validation since the latest deployment.",
+      "reported_severity": "P2", "business_context": "impacts order-to-cash flow"
+    },
+    "interface_stub": {
+      "interface_id": "E2E-IFACE-05", "name": "SAP-to-Coupa-E2E05", "source_system": "SAP S/4HANA",
+      "target_system": "Coupa Procurement", "message_type": "REST", "sla_tier": "P2",
+      "owning_team": "Integration COE", "known_fragility_flags": [], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "E2E05-1", "interface_id": "E2E-IFACE-05", "incident_id": "E2E-INC-05",
+         "timestamp": "2026-09-27T10:01:00Z", "level": "ERROR", "message_id": "MSG-E05-001",
+         "error_code": "SCHEMA_VALIDATION_FAILED", "raw_text": "[ERROR] SCHEMA_VALIDATION_FAILED: field 'LineItemType' unexpected"}
+      ], "total_matched": 1},
+      "compare_with_previous_successful_run": {"previous_success_found": true,
+        "previous_run_timestamp": "2026-09-27T05:00:00Z",
+        "diffs": [{"field": "LineItemType", "previous_value": "STANDARD", "current_value": "SERVICE_ITEM_V2"}]},
+      "get_recent_changes": {"changes": [
+        {"change_id": "CHG-E05-1", "change_type": "deployment", "timestamp": "2026-09-27T09:58:00Z",
+         "description": "Mapping program deployment for order-line handling.", "changed_by": "integration-coe"}
+      ]}
+    }
+  },
+  {
+    "e2e_id": "E2E-06",
+    "requirement": "Timeout/performance issue",
+    "adversarial": false,
+    "true_root_cause": "timeout",
+    "expected_stage": "RESOLVED",
+    "expected_root_cause": ["timeout"],
+    "incident_stub": {
+      "incident_id": "E2E-INC-06", "interface_id": "E2E-IFACE-06",
+      "reported_at": "2026-09-27T11:00:00Z", "reporter": "auto-alert@sap-po.internal",
+      "symptom_description": "Increasing number of timeout errors; latency appears elevated but requests eventually succeed.",
+      "reported_severity": "P3", "business_context": null
+    },
+    "interface_stub": {
+      "interface_id": "E2E-IFACE-06", "name": "SAP-to-Ariba-E2E06", "source_system": "SAP ERP ECC6",
+      "target_system": "Ariba Network", "message_type": "REST", "sla_tier": "P3",
+      "owning_team": "Order Management Team", "known_fragility_flags": [], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "E2E06-1", "interface_id": "E2E-IFACE-06", "incident_id": "E2E-INC-06",
+         "timestamp": "2026-09-27T11:01:00Z", "level": "ERROR", "message_id": "MSG-E06-001",
+         "error_code": "READ_TIMEOUT", "raw_text": "[ERROR] READ_TIMEOUT: response exceeded configured timeout"}
+      ], "total_matched": 1},
+      "test_connectivity": {"results": [
+        {"endpoint": "source", "reachable": true, "latency_ms": 150, "error": null},
+        {"endpoint": "target", "reachable": true, "latency_ms": 9500, "error": null}
+      ]},
+      "get_recent_changes": {"changes": []},
+      "compare_with_previous_successful_run": {"previous_success_found": true,
+        "previous_run_timestamp": "2026-09-27T05:00:00Z", "diffs": []},
+      "update_adapter_timeout": [{"updated": true, "previous_timeout_ms": 10000, "new_timeout_ms": 30000,
+                                    "_will_fix": true}]
+    }
+  },
+  {
+    "e2e_id": "E2E-07",
+    "requirement": "Database connectivity failure",
+    "adversarial": true,
+    "trap_category": "connectivity_failure",
+    "true_root_cause": "database_connection_failure",
+    "expected_stage": "RESOLVED",
+    "expected_root_cause": ["database_connection_failure", "connectivity_failure"],
+    "notes": "Adversarial in a soft sense: test_connectivity's generic 'target unreachable' signal supports both connectivity_failure and database_connection_failure equally, and both map to the same remediation (restart_interface) -- see docs/EVALUATION.md known limitations. The test accepts either label as correct since the ACTION taken is verified correct either way.",
+    "incident_stub": {
+      "incident_id": "E2E-INC-07", "interface_id": "E2E-IFACE-07",
+      "reported_at": "2026-09-27T12:00:00Z", "reporter": "auto-alert@sap-po.internal",
+      "symptom_description": "DB_CONN_REFUSED errors on the finance database interface.",
+      "reported_severity": "P1", "business_context": "affects month-end close"
+    },
+    "interface_stub": {
+      "interface_id": "E2E-IFACE-07", "name": "SAP-to-OracleFinanceDB-E2E07", "source_system": "SAP ERP ECC6",
+      "target_system": "Oracle Finance DB", "message_type": "JDBC", "sla_tier": "P1",
+      "owning_team": "Data Platform Team", "known_fragility_flags": ["high_volume"], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "E2E07-1", "interface_id": "E2E-IFACE-07", "incident_id": "E2E-INC-07",
+         "timestamp": "2026-09-27T12:01:00Z", "level": "ERROR", "message_id": "MSG-E07-001",
+         "error_code": "DB_CONN_REFUSED", "raw_text": "[ERROR] DB_CONN_REFUSED: Oracle Finance DB refusing connections"}
+      ], "total_matched": 1},
+      "test_connectivity": {"results": [
+        {"endpoint": "source", "reachable": true, "latency_ms": 90, "error": null},
+        {"endpoint": "target", "reachable": false, "latency_ms": null, "error": "HOST_UNREACHABLE"}
+      ]},
+      "inspect_credentials": {"auth_type": "basic", "credential_status": "valid",
+        "last_rotated_at": "2026-09-01T00:00:00Z", "permission_scope_sufficient": true},
+      "get_recent_changes": {"changes": []},
+      "restart_interface": [{"restarted": true, "previous_state": "stuck", "new_state": "running",
+                              "error": null, "_will_fix": true}]
+    }
+  },
+  {
+    "e2e_id": "E2E-08",
+    "requirement": "Multiple interfaces affected by a shared dependency",
+    "adversarial": false,
+    "true_root_cause": "database_connection_failure",
+    "expected_stage": "ESCALATED",
+    "expected_root_cause": ["database_connection_failure", "connectivity_failure", "endpoint_unavailable"],
+    "notes": "The generic 'target unreachable' evidence bumps connectivity_failure/endpoint_unavailable/database_connection_failure together (agent/reasoning.py); whichever remains top-ranked after the failed restart_interface attempt is demoted can legitimately be any of the three -- see docs/EVALUATION.md known limitations.",
+    "incident_stub": {
+      "incident_id": "E2E-INC-08", "interface_id": "E2E-IFACE-08",
+      "reported_at": "2026-09-27T13:00:00Z", "reporter": "auto-alert@sap-po.internal",
+      "symptom_description": "DB_CONN_REFUSED errors; three other finance interfaces reporting the same symptom in the same window.",
+      "reported_severity": "P1", "business_context": "affects month-end close"
+    },
+    "interface_stub": {
+      "interface_id": "E2E-IFACE-08", "name": "SAP-to-OracleFinanceDB-E2E08", "source_system": "SAP ERP ECC6",
+      "target_system": "Oracle Finance DB", "message_type": "JDBC", "sla_tier": "P1",
+      "owning_team": "Data Platform Team", "known_fragility_flags": ["high_volume"], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "E2E08-1", "interface_id": "E2E-IFACE-08", "incident_id": "E2E-INC-08",
+         "timestamp": "2026-09-27T13:01:00Z", "level": "ERROR", "message_id": "MSG-E08-001",
+         "error_code": "DB_CONN_REFUSED", "raw_text": "[ERROR] DB_CONN_REFUSED: Oracle Finance DB cluster refusing new connections"}
+      ], "total_matched": 1},
+      "test_connectivity": {"results": [
+        {"endpoint": "source", "reachable": true, "latency_ms": 90, "error": null},
+        {"endpoint": "target", "reachable": false, "latency_ms": null, "error": "HOST_UNREACHABLE"}
+      ]},
+      "inspect_credentials": {"auth_type": "basic", "credential_status": "valid",
+        "last_rotated_at": "2026-09-01T00:00:00Z", "permission_scope_sufficient": true},
+      "get_recent_changes": {"changes": [
+        {"change_id": "CHG-E08-1", "change_type": "network", "timestamp": "2026-09-27T12:55:00Z",
+         "description": "Shared Oracle Finance DB cluster reporting degraded state; affects all dependent interfaces.",
+         "changed_by": "data-platform-oncall"}
+      ]},
+      "restart_interface": [
+        {"restarted": true, "previous_state": "stuck", "new_state": "running", "error": null, "_will_fix": false},
+        {"restarted": true, "previous_state": "stuck", "new_state": "running", "error": null, "_will_fix": false}
+      ]
+    }
+  },
+  {
+    "e2e_id": "E2E-09",
+    "requirement": "Ambiguous incident requiring further investigation",
+    "adversarial": false,
+    "true_root_cause": null,
+    "expected_stage": "ESCALATED",
+    "expected_root_cause": null,
+    "expected_escalation_reason": "LowConfidence",
+    "min_diagnostic_steps": 4,
+    "incident_stub": {
+      "incident_id": "E2E-INC-09", "interface_id": "E2E-IFACE-09",
+      "reported_at": "2026-09-27T14:00:00Z", "reporter": "helpdesk-tier1@enterprise.local",
+      "symptom_description": "Intermittent 403 errors alongside an expiring-soon certificate; neither signal is conclusive.",
+      "reported_severity": "P3", "business_context": null
+    },
+    "interface_stub": {
+      "interface_id": "E2E-IFACE-09", "name": "SAP-to-SuccessFactors-E2E09", "source_system": "SAP SuccessFactors EC",
+      "target_system": "SuccessFactors Employee Central", "message_type": "SOAP", "sla_tier": "P3",
+      "owning_team": "HR Systems Team", "known_fragility_flags": ["cert_expires_soon"], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "E2E09-1", "interface_id": "E2E-IFACE-09", "incident_id": "E2E-INC-09",
+         "timestamp": "2026-09-27T14:01:00Z", "level": "WARN", "message_id": "MSG-E09-001",
+         "error_code": "403", "raw_text": "[WARN] 403: intermittent access denied"}
+      ], "total_matched": 1},
+      "inspect_certificate_status": {"certificate_present": true, "expires_at": "2026-10-03T00:00:00Z",
+        "is_expired": false, "is_expiring_soon": true, "issuer": "Simulated Enterprise CA", "validation_error": null},
+      "inspect_credentials": {"auth_type": "basic", "credential_status": "unknown",
+        "last_rotated_at": null, "permission_scope_sufficient": null},
+      "get_recent_changes": {"changes": []},
+      "test_connectivity": {"results": [
+        {"endpoint": "source", "reachable": true, "latency_ms": 110, "error": null},
+        {"endpoint": "target", "reachable": true, "latency_ms": 130, "error": null}
+      ]},
+      "search_historical_incidents": {"matches": []}
+    }
+  },
+  {
+    "e2e_id": "E2E-10",
+    "requirement": "Incident that must be escalated because safe remediation is not possible",
+    "adversarial": true,
+    "trap_category": "message_processing_failure",
+    "true_root_cause": "duplicate_message",
+    "expected_stage": "ESCALATED",
+    "expected_root_cause": ["duplicate_message"],
+    "expected_escalation_reason": "NoAutonomousRemediation",
+    "incident_stub": {
+      "incident_id": "E2E-INC-10", "interface_id": "E2E-IFACE-10",
+      "reported_at": "2026-09-27T15:00:00Z", "reporter": "carlos.m@enterprise.local",
+      "symptom_description": "Messages appear stuck in processing; downstream system also reports duplicate purchase order records.",
+      "reported_severity": "P2", "business_context": null
+    },
+    "interface_stub": {
+      "interface_id": "E2E-IFACE-10", "name": "SAP-to-Ariba-E2E10", "source_system": "SAP ERP ECC6",
+      "target_system": "Ariba Network", "message_type": "IDoc", "sla_tier": "P2",
+      "owning_team": "Order Management Team", "known_fragility_flags": [], "decommissioned": false
+    },
+    "script": {
+      "search_logs": {"entries": [
+        {"log_id": "E2E10-1a", "interface_id": "E2E-IFACE-10", "incident_id": "E2E-INC-10",
+         "timestamp": "2026-09-27T14:50:00Z", "level": "INFO", "message_id": "MSG-E10-001",
+         "error_code": "MESSAGE_STUCK", "raw_text": "[INFO] MSG-E10-001 appears stuck in processing queue"},
+        {"log_id": "E2E10-1b", "interface_id": "E2E-IFACE-10", "incident_id": "E2E-INC-10",
+         "timestamp": "2026-09-27T14:52:00Z", "level": "WARN", "message_id": "MSG-E10-001",
+         "error_code": "DUPLICATE_MESSAGE_ID", "raw_text": "[WARN] DUPLICATE_MESSAGE_ID: MSG-E10-001 already processed once before this restart"}
+      ], "total_matched": 2},
+      "compare_with_previous_successful_run": {"previous_success_found": true,
+        "previous_run_timestamp": "2026-09-27T13:40:00Z", "diffs": []},
+      "get_recent_changes": {"changes": [
+        {"change_id": "CHG-E10-1", "change_type": "config", "timestamp": "2026-09-27T14:44:00Z",
+         "description": "Channel was restarted manually by on-call prior to this incident being raised.", "changed_by": "oncall"}
+      ]}
+    }
+  }
+]

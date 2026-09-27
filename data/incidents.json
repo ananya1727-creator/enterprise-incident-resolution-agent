@@ -1,0 +1,1842 @@
+[
+  {
+    "incident_id": "INC-0001",
+    "interface_id": "IFACE-023",
+    "reported_at": "2025-04-19T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "TLS handshake failures reported on interface, partner reporting rejected connections.",
+    "reported_severity": "P3",
+    "business_context": "regulatory filing deadline dependent",
+    "true_root_cause_category": "cert_expiry",
+    "related_log_ids": [
+      "LOG-0001",
+      "LOG-0002"
+    ],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0002",
+    "interface_id": "IFACE-041",
+    "reported_at": "2026-07-26T09:00:00Z",
+    "reporter": "auto-alert@sap-po.internal",
+    "symptom_description": "SFTP file transfer failing authentication against partner server.",
+    "reported_severity": "P2",
+    "business_context": "affects partner SLA commitment",
+    "true_root_cause_category": "sftp_credential_failure",
+    "related_log_ids": [
+      "LOG-0003",
+      "LOG-0004",
+      "LOG-0005",
+      "LOG-0006"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Escalated",
+    "resolution_summary": "Evidence was contradictory/ambiguous; resolution required additional human judgment.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0003",
+    "interface_id": "IFACE-022",
+    "reported_at": "2026-08-04T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "Downstream system reporting duplicate records from this interface.",
+    "reported_severity": "P3",
+    "business_context": "impacts order-to-cash flow",
+    "true_root_cause_category": "duplicate_message",
+    "related_log_ids": [
+      "LOG-0007",
+      "LOG-0008"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard duplicate message remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0004",
+    "interface_id": "IFACE-039",
+    "reported_at": "2025-10-20T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Increasing number of timeout errors, latency appears elevated.",
+    "reported_severity": "P3",
+    "business_context": null,
+    "true_root_cause_category": "timeout",
+    "related_log_ids": [
+      "LOG-0009",
+      "LOG-0010",
+      "LOG-0011"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Resolved",
+    "resolution_summary": "Eventually attributed to timeout despite initially conflicting signals.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0005",
+    "interface_id": "IFACE-014",
+    "reported_at": "2026-08-31T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "Downstream system reporting duplicate records from this interface.",
+    "reported_severity": "P2",
+    "business_context": "impacts order-to-cash flow",
+    "true_root_cause_category": "duplicate_message",
+    "related_log_ids": [
+      "LOG-0012"
+    ],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0006",
+    "interface_id": "IFACE-006",
+    "reported_at": "2026-09-20T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "Target endpoint returning unavailable/not-found errors intermittently.",
+    "reported_severity": "P2",
+    "business_context": "regulatory filing deadline dependent",
+    "true_root_cause_category": "endpoint_unavailable",
+    "related_log_ids": [
+      "LOG-0013",
+      "LOG-0014"
+    ],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0007",
+    "interface_id": "IFACE-033",
+    "reported_at": "2026-01-17T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "TLS handshake failures reported on interface, partner reporting rejected connections.",
+    "reported_severity": "P3",
+    "business_context": null,
+    "true_root_cause_category": "cert_expiry",
+    "related_log_ids": [
+      "LOG-0015",
+      "LOG-0016",
+      "LOG-0017"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was cert expiry, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0008",
+    "interface_id": "IFACE-029",
+    "reported_at": "2026-01-11T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Downstream system reporting duplicate records from this interface.",
+    "reported_severity": "P1",
+    "business_context": null,
+    "true_root_cause_category": "duplicate_message",
+    "related_log_ids": [
+      "LOG-0018",
+      "LOG-0019",
+      "LOG-0020"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was duplicate message, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0009",
+    "interface_id": "IFACE-033",
+    "reported_at": "2025-12-23T09:00:00Z",
+    "reporter": "auto-alert@sap-po.internal",
+    "symptom_description": "Database-bound interface failing to establish connection.",
+    "reported_severity": "P4",
+    "business_context": "blocks payroll run",
+    "true_root_cause_category": "database_connection_failure",
+    "related_log_ids": [
+      "LOG-0021"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard database connection failure remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0010",
+    "interface_id": "IFACE-013",
+    "reported_at": "2026-05-19T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "SFTP file transfer failing authentication against partner server.",
+    "reported_severity": "P1",
+    "business_context": "affects month-end close",
+    "true_root_cause_category": "sftp_credential_failure",
+    "related_log_ids": [
+      "LOG-0022",
+      "LOG-0023",
+      "LOG-0024"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was sftp credential failure, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0011",
+    "interface_id": "IFACE-020",
+    "reported_at": "2026-04-09T09:00:00Z",
+    "reporter": "auto-alert@sap-po.internal",
+    "symptom_description": "Source system sending payloads that fail structural validation.",
+    "reported_severity": "P4",
+    "business_context": "blocks payroll run",
+    "true_root_cause_category": "malformed_payload",
+    "related_log_ids": [
+      "LOG-0025",
+      "LOG-0026"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was malformed payload, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0012",
+    "interface_id": "IFACE-013",
+    "reported_at": "2025-09-18T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "Database-bound interface failing to establish connection.",
+    "reported_severity": "P2",
+    "business_context": "regulatory filing deadline dependent",
+    "true_root_cause_category": "database_connection_failure",
+    "related_log_ids": [
+      "LOG-0027",
+      "LOG-0028"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was database connection failure, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0013",
+    "interface_id": "IFACE-047",
+    "reported_at": "2026-09-08T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Target endpoint returning unavailable/not-found errors intermittently.",
+    "reported_severity": "P4",
+    "business_context": "impacts order-to-cash flow",
+    "true_root_cause_category": "endpoint_unavailable",
+    "related_log_ids": [
+      "LOG-0029",
+      "LOG-0030"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was endpoint unavailable, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0014",
+    "interface_id": "IFACE-036",
+    "reported_at": "2026-07-17T09:00:00Z",
+    "reporter": "auto-alert@sap-po.internal",
+    "symptom_description": "TLS handshake failures reported on interface, partner reporting rejected connections.",
+    "reported_severity": "P4",
+    "business_context": "affects month-end close",
+    "true_root_cause_category": "cert_expiry",
+    "related_log_ids": [
+      "LOG-0031",
+      "LOG-0032"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was cert expiry, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0015",
+    "interface_id": "IFACE-018",
+    "reported_at": "2026-02-16T09:00:00Z",
+    "reporter": "helpdesk-tier1@enterprise.local",
+    "symptom_description": "Database-bound interface failing to establish connection.",
+    "reported_severity": "P1",
+    "business_context": "regulatory filing deadline dependent",
+    "true_root_cause_category": "database_connection_failure",
+    "related_log_ids": [
+      "LOG-0033",
+      "LOG-0034",
+      "LOG-0035"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard database connection failure remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0016",
+    "interface_id": "IFACE-026",
+    "reported_at": "2026-02-18T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "TLS handshake failures reported on interface, partner reporting rejected connections.",
+    "reported_severity": "P2",
+    "business_context": null,
+    "true_root_cause_category": "cert_expiry",
+    "related_log_ids": [
+      "LOG-0036",
+      "LOG-0037"
+    ],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0017",
+    "interface_id": "IFACE-044",
+    "reported_at": "2026-06-19T09:00:00Z",
+    "reporter": "auto-alert@sap-po.internal",
+    "symptom_description": "Subset of messages failing with mapping/schema validation errors.",
+    "reported_severity": "P2",
+    "business_context": "blocks payroll run",
+    "true_root_cause_category": "mapping_error",
+    "related_log_ids": [
+      "LOG-0038",
+      "LOG-0039"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard mapping error remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0018",
+    "interface_id": "IFACE-050",
+    "reported_at": "2026-05-03T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "TLS handshake failures reported on interface, partner reporting rejected connections.",
+    "reported_severity": "P3",
+    "business_context": "affects partner SLA commitment",
+    "true_root_cause_category": "cert_expiry",
+    "related_log_ids": [
+      "LOG-0040",
+      "LOG-0041",
+      "LOG-0042"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard cert expiry remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0019",
+    "interface_id": "IFACE-048",
+    "reported_at": "2026-07-29T09:00:00Z",
+    "reporter": "auto-alert@sap-po.internal",
+    "symptom_description": "Database-bound interface failing to establish connection.",
+    "reported_severity": "P3",
+    "business_context": null,
+    "true_root_cause_category": "database_connection_failure",
+    "related_log_ids": [
+      "LOG-0043",
+      "LOG-0044"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard database connection failure remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0020",
+    "interface_id": "IFACE-042",
+    "reported_at": "2025-10-04T09:00:00Z",
+    "reporter": "auto-alert@sap-po.internal",
+    "symptom_description": "Source system sending payloads that fail structural validation.",
+    "reported_severity": "P1",
+    "business_context": "affects month-end close",
+    "true_root_cause_category": "malformed_payload",
+    "related_log_ids": [
+      "LOG-0045",
+      "LOG-0046",
+      "LOG-0047",
+      "LOG-0048"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was malformed payload, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0021",
+    "interface_id": "IFACE-006",
+    "reported_at": "2026-01-11T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "TLS handshake failures reported on interface, partner reporting rejected connections.",
+    "reported_severity": "P4",
+    "business_context": "impacts customer shipment notifications",
+    "true_root_cause_category": "cert_expiry",
+    "related_log_ids": [
+      "LOG-0049",
+      "LOG-0050",
+      "LOG-0051",
+      "LOG-0052",
+      "LOG-0053"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Resolved",
+    "resolution_summary": "Eventually attributed to cert expiry despite initially conflicting signals.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0022",
+    "interface_id": "IFACE-035",
+    "reported_at": "2025-08-13T09:00:00Z",
+    "reporter": "auto-alert@sap-po.internal",
+    "symptom_description": "Messages failing with authentication rejection since 2025-08-13T09:00:00Z.",
+    "reported_severity": "P3",
+    "business_context": "impacts customer shipment notifications",
+    "true_root_cause_category": "auth_failure",
+    "related_log_ids": [
+      "LOG-0054",
+      "LOG-0055",
+      "LOG-0056",
+      "LOG-0057"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was auth failure, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0023",
+    "interface_id": "IFACE-027",
+    "reported_at": "2025-10-07T09:00:00Z",
+    "reporter": "auto-alert@sap-po.internal",
+    "symptom_description": "Subset of messages failing with mapping/schema validation errors.",
+    "reported_severity": "P4",
+    "business_context": "impacts order-to-cash flow",
+    "true_root_cause_category": "mapping_error",
+    "related_log_ids": [
+      "LOG-0058",
+      "LOG-0059"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was mapping error, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0024",
+    "interface_id": "IFACE-018",
+    "reported_at": "2026-07-01T09:00:00Z",
+    "reporter": "helpdesk-tier1@enterprise.local",
+    "symptom_description": "Subset of messages failing with mapping/schema validation errors.",
+    "reported_severity": "P4",
+    "business_context": null,
+    "true_root_cause_category": "mapping_error",
+    "related_log_ids": [
+      "LOG-0060",
+      "LOG-0061"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was mapping error, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0025",
+    "interface_id": "IFACE-011",
+    "reported_at": "2025-08-21T09:00:00Z",
+    "reporter": "helpdesk-tier1@enterprise.local",
+    "symptom_description": "Target endpoint returning unavailable/not-found errors intermittently.",
+    "reported_severity": "P2",
+    "business_context": null,
+    "true_root_cause_category": "endpoint_unavailable",
+    "related_log_ids": [
+      "LOG-0062",
+      "LOG-0063"
+    ],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0026",
+    "interface_id": "IFACE-015",
+    "reported_at": "2025-06-17T09:00:00Z",
+    "reporter": "auto-alert@sap-po.internal",
+    "symptom_description": "SFTP file transfer failing authentication against partner server.",
+    "reported_severity": "P1",
+    "business_context": null,
+    "true_root_cause_category": "sftp_credential_failure",
+    "related_log_ids": [
+      "LOG-0064"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard sftp credential failure remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0027",
+    "interface_id": "IFACE-049",
+    "reported_at": "2025-04-10T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "Target endpoint returning unavailable/not-found errors intermittently.",
+    "reported_severity": "P3",
+    "business_context": "impacts order-to-cash flow",
+    "true_root_cause_category": "endpoint_unavailable",
+    "related_log_ids": [
+      "LOG-0065"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was endpoint unavailable, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0028",
+    "interface_id": "IFACE-021",
+    "reported_at": "2026-08-25T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Messages stuck in processing state, not completing.",
+    "reported_severity": "P4",
+    "business_context": null,
+    "true_root_cause_category": "message_processing_failure",
+    "related_log_ids": [
+      "LOG-0066",
+      "LOG-0067"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was message processing failure, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0029",
+    "interface_id": "IFACE-046",
+    "reported_at": "2026-05-09T09:00:00Z",
+    "reporter": "helpdesk-tier1@enterprise.local",
+    "symptom_description": "SFTP file transfer failing authentication against partner server.",
+    "reported_severity": "P4",
+    "business_context": "impacts customer shipment notifications",
+    "true_root_cause_category": "sftp_credential_failure",
+    "related_log_ids": [
+      "LOG-0068",
+      "LOG-0069"
+    ],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0030",
+    "interface_id": "IFACE-024",
+    "reported_at": "2026-01-17T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Target endpoint returning unavailable/not-found errors intermittently.",
+    "reported_severity": "P4",
+    "business_context": "regulatory filing deadline dependent",
+    "true_root_cause_category": "endpoint_unavailable",
+    "related_log_ids": [
+      "LOG-0070",
+      "LOG-0071"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard endpoint unavailable remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0031",
+    "interface_id": "IFACE-039",
+    "reported_at": "2025-04-08T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Increasing number of timeout errors, latency appears elevated.",
+    "reported_severity": "P4",
+    "business_context": "impacts order-to-cash flow",
+    "true_root_cause_category": "timeout",
+    "related_log_ids": [
+      "LOG-0072",
+      "LOG-0073"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard timeout remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0032",
+    "interface_id": "IFACE-007",
+    "reported_at": "2025-04-12T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "No messages processed since 2025-04-12T09:00:00Z; monitoring shows total silence.",
+    "reported_severity": "P4",
+    "business_context": null,
+    "true_root_cause_category": "connectivity_failure",
+    "related_log_ids": [
+      "LOG-0074"
+    ],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0033",
+    "interface_id": "IFACE-042",
+    "reported_at": "2025-06-20T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "Source system sending payloads that fail structural validation.",
+    "reported_severity": "P4",
+    "business_context": null,
+    "true_root_cause_category": "malformed_payload",
+    "related_log_ids": [
+      "LOG-0075",
+      "LOG-0076"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was malformed payload, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0034",
+    "interface_id": "IFACE-013",
+    "reported_at": "2025-06-04T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "Messages stuck in processing state, not completing.",
+    "reported_severity": "P2",
+    "business_context": "impacts customer shipment notifications",
+    "true_root_cause_category": "message_processing_failure",
+    "related_log_ids": [
+      "LOG-0077",
+      "LOG-0078",
+      "LOG-0079",
+      "LOG-0080"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was message processing failure, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0035",
+    "interface_id": "IFACE-029",
+    "reported_at": "2025-05-31T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "SFTP file transfer failing authentication against partner server.",
+    "reported_severity": "P1",
+    "business_context": null,
+    "true_root_cause_category": "sftp_credential_failure",
+    "related_log_ids": [
+      "LOG-0081"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard sftp credential failure remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0036",
+    "interface_id": "IFACE-029",
+    "reported_at": "2025-09-04T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Subset of messages failing with mapping/schema validation errors.",
+    "reported_severity": "P2",
+    "business_context": "blocks payroll run",
+    "true_root_cause_category": "mapping_error",
+    "related_log_ids": [
+      "LOG-0082",
+      "LOG-0083"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was mapping error, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0037",
+    "interface_id": "IFACE-038",
+    "reported_at": "2026-08-26T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Database-bound interface failing to establish connection.",
+    "reported_severity": "P3",
+    "business_context": null,
+    "true_root_cause_category": "database_connection_failure",
+    "related_log_ids": [
+      "LOG-0084",
+      "LOG-0085",
+      "LOG-0086"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Resolved",
+    "resolution_summary": "Eventually attributed to database connection failure despite initially conflicting signals.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0038",
+    "interface_id": "IFACE-023",
+    "reported_at": "2026-08-08T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Database-bound interface failing to establish connection.",
+    "reported_severity": "P2",
+    "business_context": "impacts customer shipment notifications",
+    "true_root_cause_category": "database_connection_failure",
+    "related_log_ids": [
+      "LOG-0087",
+      "LOG-0088"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was database connection failure, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0039",
+    "interface_id": "IFACE-025",
+    "reported_at": "2025-07-25T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "SFTP file transfer failing authentication against partner server.",
+    "reported_severity": "P3",
+    "business_context": "regulatory filing deadline dependent",
+    "true_root_cause_category": "sftp_credential_failure",
+    "related_log_ids": [
+      "LOG-0089",
+      "LOG-0090",
+      "LOG-0091"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Escalated",
+    "resolution_summary": "Evidence was contradictory/ambiguous; resolution required additional human judgment.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0040",
+    "interface_id": "IFACE-024",
+    "reported_at": "2026-08-20T09:00:00Z",
+    "reporter": "helpdesk-tier1@enterprise.local",
+    "symptom_description": "Messages stuck in processing state, not completing.",
+    "reported_severity": "P3",
+    "business_context": null,
+    "true_root_cause_category": "message_processing_failure",
+    "related_log_ids": [
+      "LOG-0092",
+      "LOG-0093"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Escalated",
+    "resolution_summary": "Evidence was contradictory/ambiguous; resolution required additional human judgment.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0041",
+    "interface_id": "IFACE-027",
+    "reported_at": "2025-07-04T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "Messages failing with authentication rejection since 2025-07-04T09:00:00Z.",
+    "reported_severity": "P1",
+    "business_context": "blocks payroll run",
+    "true_root_cause_category": "auth_failure",
+    "related_log_ids": [
+      "LOG-0094",
+      "LOG-0095"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard auth failure remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0042",
+    "interface_id": "IFACE-027",
+    "reported_at": "2025-12-19T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Downstream system reporting duplicate records from this interface.",
+    "reported_severity": "P3",
+    "business_context": "affects partner SLA commitment",
+    "true_root_cause_category": "duplicate_message",
+    "related_log_ids": [
+      "LOG-0096",
+      "LOG-0097",
+      "LOG-0098",
+      "LOG-0099"
+    ],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0043",
+    "interface_id": "IFACE-020",
+    "reported_at": "2026-09-13T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Subset of messages failing with mapping/schema validation errors.",
+    "reported_severity": "P3",
+    "business_context": "impacts order-to-cash flow",
+    "true_root_cause_category": "mapping_error",
+    "related_log_ids": [
+      "LOG-0100"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was mapping error, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0044",
+    "interface_id": "IFACE-020",
+    "reported_at": "2026-02-28T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Database-bound interface failing to establish connection.",
+    "reported_severity": "P3",
+    "business_context": "regulatory filing deadline dependent",
+    "true_root_cause_category": "database_connection_failure",
+    "related_log_ids": [
+      "LOG-0101",
+      "LOG-0102"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was database connection failure, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0045",
+    "interface_id": "IFACE-039",
+    "reported_at": "2025-06-09T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Source system sending payloads that fail structural validation.",
+    "reported_severity": "P1",
+    "business_context": null,
+    "true_root_cause_category": "malformed_payload",
+    "related_log_ids": [
+      "LOG-0103",
+      "LOG-0104"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard malformed payload remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0046",
+    "interface_id": "IFACE-047",
+    "reported_at": "2026-04-22T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Increasing number of timeout errors, latency appears elevated.",
+    "reported_severity": "P3",
+    "business_context": null,
+    "true_root_cause_category": "timeout",
+    "related_log_ids": [
+      "LOG-0105",
+      "LOG-0106",
+      "LOG-0107"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Resolved",
+    "resolution_summary": "Eventually attributed to timeout despite initially conflicting signals.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0047",
+    "interface_id": "IFACE-048",
+    "reported_at": "2025-06-21T09:00:00Z",
+    "reporter": "auto-alert@sap-po.internal",
+    "symptom_description": "Messages failing with authentication rejection since 2025-06-21T09:00:00Z.",
+    "reported_severity": "P3",
+    "business_context": null,
+    "true_root_cause_category": "auth_failure",
+    "related_log_ids": [
+      "LOG-0108",
+      "LOG-0109"
+    ],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0048",
+    "interface_id": "IFACE-029",
+    "reported_at": "2026-07-07T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Increasing number of timeout errors, latency appears elevated.",
+    "reported_severity": "P2",
+    "business_context": "impacts customer shipment notifications",
+    "true_root_cause_category": "timeout",
+    "related_log_ids": [
+      "LOG-0110",
+      "LOG-0111",
+      "LOG-0112"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Escalated",
+    "resolution_summary": "Evidence was contradictory/ambiguous; resolution required additional human judgment.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0049",
+    "interface_id": "IFACE-007",
+    "reported_at": "2025-10-08T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "TLS handshake failures reported on interface, partner reporting rejected connections.",
+    "reported_severity": "P1",
+    "business_context": "impacts customer shipment notifications",
+    "true_root_cause_category": "cert_expiry",
+    "related_log_ids": [
+      "LOG-0113"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was cert expiry, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0050",
+    "interface_id": "IFACE-039",
+    "reported_at": "2026-06-05T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "Database-bound interface failing to establish connection.",
+    "reported_severity": "P3",
+    "business_context": null,
+    "true_root_cause_category": "database_connection_failure",
+    "related_log_ids": [
+      "LOG-0114",
+      "LOG-0115",
+      "LOG-0116"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard database connection failure remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0051",
+    "interface_id": "IFACE-029",
+    "reported_at": "2026-07-21T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Messages failing with authentication rejection since 2026-07-21T09:00:00Z.",
+    "reported_severity": "P4",
+    "business_context": "affects month-end close",
+    "true_root_cause_category": "auth_failure",
+    "related_log_ids": [
+      "LOG-0117",
+      "LOG-0118"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard auth failure remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0052",
+    "interface_id": "IFACE-038",
+    "reported_at": "2026-05-29T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "No messages processed since 2026-05-29T09:00:00Z; monitoring shows total silence.",
+    "reported_severity": "P4",
+    "business_context": "affects partner SLA commitment",
+    "true_root_cause_category": "connectivity_failure",
+    "related_log_ids": [
+      "LOG-0119",
+      "LOG-0120",
+      "LOG-0121",
+      "LOG-0122"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard connectivity failure remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0053",
+    "interface_id": "IFACE-030",
+    "reported_at": "2025-04-10T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Source system sending payloads that fail structural validation.",
+    "reported_severity": "P1",
+    "business_context": null,
+    "true_root_cause_category": "malformed_payload",
+    "related_log_ids": [
+      "LOG-0123",
+      "LOG-0124"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard malformed payload remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0054",
+    "interface_id": "IFACE-038",
+    "reported_at": "2025-08-23T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "Messages failing with authentication rejection since 2025-08-23T09:00:00Z.",
+    "reported_severity": "P1",
+    "business_context": null,
+    "true_root_cause_category": "auth_failure",
+    "related_log_ids": [
+      "LOG-0125",
+      "LOG-0126",
+      "LOG-0127",
+      "LOG-0128"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Resolved",
+    "resolution_summary": "Eventually attributed to auth failure despite initially conflicting signals.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0055",
+    "interface_id": "IFACE-023",
+    "reported_at": "2026-06-01T09:00:00Z",
+    "reporter": "helpdesk-tier1@enterprise.local",
+    "symptom_description": "TLS handshake failures reported on interface, partner reporting rejected connections.",
+    "reported_severity": "P1",
+    "business_context": null,
+    "true_root_cause_category": "cert_expiry",
+    "related_log_ids": [
+      "LOG-0129",
+      "LOG-0130",
+      "LOG-0131",
+      "LOG-0132"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard cert expiry remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0056",
+    "interface_id": "IFACE-039",
+    "reported_at": "2025-12-04T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Database-bound interface failing to establish connection.",
+    "reported_severity": "P3",
+    "business_context": null,
+    "true_root_cause_category": "database_connection_failure",
+    "related_log_ids": [
+      "LOG-0133",
+      "LOG-0134",
+      "LOG-0135"
+    ],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0057",
+    "interface_id": "IFACE-018",
+    "reported_at": "2025-07-30T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "No messages processed since 2025-07-30T09:00:00Z; monitoring shows total silence.",
+    "reported_severity": "P1",
+    "business_context": null,
+    "true_root_cause_category": "connectivity_failure",
+    "related_log_ids": [
+      "LOG-0136",
+      "LOG-0137"
+    ],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0058",
+    "interface_id": "IFACE-011",
+    "reported_at": "2025-05-25T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "No messages processed since 2025-05-25T09:00:00Z; monitoring shows total silence.",
+    "reported_severity": "P2",
+    "business_context": "blocks payroll run",
+    "true_root_cause_category": "connectivity_failure",
+    "related_log_ids": [
+      "LOG-0138",
+      "LOG-0139",
+      "LOG-0140",
+      "LOG-0141"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was connectivity failure, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0059",
+    "interface_id": "IFACE-012",
+    "reported_at": "2026-04-17T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Source system sending payloads that fail structural validation.",
+    "reported_severity": "P4",
+    "business_context": "affects partner SLA commitment",
+    "true_root_cause_category": "malformed_payload",
+    "related_log_ids": [
+      "LOG-0142",
+      "LOG-0143"
+    ],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0060",
+    "interface_id": "IFACE-016",
+    "reported_at": "2026-02-03T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Messages stuck in processing state, not completing.",
+    "reported_severity": "P1",
+    "business_context": "regulatory filing deadline dependent",
+    "true_root_cause_category": "message_processing_failure",
+    "related_log_ids": [
+      "LOG-0144",
+      "LOG-0145",
+      "LOG-0146",
+      "LOG-0147"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Resolved",
+    "resolution_summary": "Eventually attributed to message processing failure despite initially conflicting signals.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0061",
+    "interface_id": "IFACE-045",
+    "reported_at": "2025-07-17T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Increasing number of timeout errors, latency appears elevated.",
+    "reported_severity": "P1",
+    "business_context": null,
+    "true_root_cause_category": "timeout",
+    "related_log_ids": [
+      "LOG-0148"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard timeout remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0062",
+    "interface_id": "IFACE-023",
+    "reported_at": "2025-11-13T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "Target endpoint returning unavailable/not-found errors intermittently.",
+    "reported_severity": "P4",
+    "business_context": "blocks payroll run",
+    "true_root_cause_category": "endpoint_unavailable",
+    "related_log_ids": [
+      "LOG-0149",
+      "LOG-0150",
+      "LOG-0151"
+    ],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0063",
+    "interface_id": "IFACE-038",
+    "reported_at": "2025-04-25T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Source system sending payloads that fail structural validation.",
+    "reported_severity": "P1",
+    "business_context": "regulatory filing deadline dependent",
+    "true_root_cause_category": "malformed_payload",
+    "related_log_ids": [
+      "LOG-0152",
+      "LOG-0153",
+      "LOG-0154",
+      "LOG-0155"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Escalated",
+    "resolution_summary": "Evidence was contradictory/ambiguous; resolution required additional human judgment.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0064",
+    "interface_id": "IFACE-009",
+    "reported_at": "2025-11-12T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "Increasing number of timeout errors, latency appears elevated.",
+    "reported_severity": "P2",
+    "business_context": "affects partner SLA commitment",
+    "true_root_cause_category": "timeout",
+    "related_log_ids": [
+      "LOG-0156",
+      "LOG-0157",
+      "LOG-0158",
+      "LOG-0159"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard timeout remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0065",
+    "interface_id": "IFACE-002",
+    "reported_at": "2026-03-23T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "Database-bound interface failing to establish connection.",
+    "reported_severity": "P2",
+    "business_context": "impacts customer shipment notifications",
+    "true_root_cause_category": "database_connection_failure",
+    "related_log_ids": [
+      "LOG-0160",
+      "LOG-0161"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Escalated",
+    "resolution_summary": "Evidence was contradictory/ambiguous; resolution required additional human judgment.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0066",
+    "interface_id": "IFACE-026",
+    "reported_at": "2025-06-21T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Database-bound interface failing to establish connection.",
+    "reported_severity": "P4",
+    "business_context": "impacts order-to-cash flow",
+    "true_root_cause_category": "database_connection_failure",
+    "related_log_ids": [
+      "LOG-0162",
+      "LOG-0163"
+    ],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0067",
+    "interface_id": "IFACE-036",
+    "reported_at": "2026-05-08T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Messages stuck in processing state, not completing.",
+    "reported_severity": "P2",
+    "business_context": "affects month-end close",
+    "true_root_cause_category": "message_processing_failure",
+    "related_log_ids": [
+      "LOG-0164",
+      "LOG-0165"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard message processing failure remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0068",
+    "interface_id": "IFACE-038",
+    "reported_at": "2025-05-05T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "Subset of messages failing with mapping/schema validation errors.",
+    "reported_severity": "P1",
+    "business_context": "blocks payroll run",
+    "true_root_cause_category": "mapping_error",
+    "related_log_ids": [
+      "LOG-0166"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard mapping error remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0069",
+    "interface_id": "IFACE-030",
+    "reported_at": "2026-03-03T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "No messages processed since 2026-03-03T09:00:00Z; monitoring shows total silence.",
+    "reported_severity": "P4",
+    "business_context": "affects partner SLA commitment",
+    "true_root_cause_category": "connectivity_failure",
+    "related_log_ids": [
+      "LOG-0167",
+      "LOG-0168"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Escalated",
+    "resolution_summary": "Evidence was contradictory/ambiguous; resolution required additional human judgment.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0070",
+    "interface_id": "IFACE-009",
+    "reported_at": "2025-12-23T09:00:00Z",
+    "reporter": "helpdesk-tier1@enterprise.local",
+    "symptom_description": "Increasing number of timeout errors, latency appears elevated.",
+    "reported_severity": "P4",
+    "business_context": null,
+    "true_root_cause_category": "timeout",
+    "related_log_ids": [
+      "LOG-0169",
+      "LOG-0170"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard timeout remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0071",
+    "interface_id": "IFACE-032",
+    "reported_at": "2025-08-26T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "SFTP file transfer failing authentication against partner server.",
+    "reported_severity": "P3",
+    "business_context": "affects month-end close",
+    "true_root_cause_category": "sftp_credential_failure",
+    "related_log_ids": [
+      "LOG-0171",
+      "LOG-0172",
+      "LOG-0173",
+      "LOG-0174"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard sftp credential failure remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0072",
+    "interface_id": "IFACE-049",
+    "reported_at": "2026-06-26T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "Subset of messages failing with mapping/schema validation errors.",
+    "reported_severity": "P3",
+    "business_context": null,
+    "true_root_cause_category": "mapping_error",
+    "related_log_ids": [
+      "LOG-0175"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was mapping error, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0073",
+    "interface_id": "IFACE-044",
+    "reported_at": "2025-08-04T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Source system sending payloads that fail structural validation.",
+    "reported_severity": "P2",
+    "business_context": "regulatory filing deadline dependent",
+    "true_root_cause_category": "malformed_payload",
+    "related_log_ids": [
+      "LOG-0176",
+      "LOG-0177"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was malformed payload, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0074",
+    "interface_id": "IFACE-015",
+    "reported_at": "2026-01-30T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "Downstream system reporting duplicate records from this interface.",
+    "reported_severity": "P4",
+    "business_context": "affects partner SLA commitment",
+    "true_root_cause_category": "duplicate_message",
+    "related_log_ids": [
+      "LOG-0178"
+    ],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0075",
+    "interface_id": "IFACE-011",
+    "reported_at": "2026-04-20T09:00:00Z",
+    "reporter": "helpdesk-tier1@enterprise.local",
+    "symptom_description": "Target endpoint returning unavailable/not-found errors intermittently.",
+    "reported_severity": "P4",
+    "business_context": "impacts customer shipment notifications",
+    "true_root_cause_category": "endpoint_unavailable",
+    "related_log_ids": [
+      "LOG-0179",
+      "LOG-0180",
+      "LOG-0181",
+      "LOG-0182"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Escalated",
+    "resolution_summary": "Evidence was contradictory/ambiguous; resolution required additional human judgment.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0076",
+    "interface_id": "IFACE-013",
+    "reported_at": "2025-08-14T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Target endpoint returning unavailable/not-found errors intermittently.",
+    "reported_severity": "P1",
+    "business_context": null,
+    "true_root_cause_category": "endpoint_unavailable",
+    "related_log_ids": [
+      "LOG-0183",
+      "LOG-0184"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard endpoint unavailable remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0077",
+    "interface_id": "IFACE-034",
+    "reported_at": "2025-04-11T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Database-bound interface failing to establish connection.",
+    "reported_severity": "P2",
+    "business_context": "impacts order-to-cash flow",
+    "true_root_cause_category": "database_connection_failure",
+    "related_log_ids": [
+      "LOG-0185",
+      "LOG-0186"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Escalated",
+    "resolution_summary": "Evidence was contradictory/ambiguous; resolution required additional human judgment.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0078",
+    "interface_id": "IFACE-006",
+    "reported_at": "2026-07-12T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "Messages stuck in processing state, not completing.",
+    "reported_severity": "P2",
+    "business_context": "blocks payroll run",
+    "true_root_cause_category": "message_processing_failure",
+    "related_log_ids": [
+      "LOG-0187",
+      "LOG-0188"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard message processing failure remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0079",
+    "interface_id": "IFACE-020",
+    "reported_at": "2026-04-15T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "Messages failing with authentication rejection since 2026-04-15T09:00:00Z.",
+    "reported_severity": "P1",
+    "business_context": null,
+    "true_root_cause_category": "auth_failure",
+    "related_log_ids": [
+      "LOG-0189",
+      "LOG-0190",
+      "LOG-0191"
+    ],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0080",
+    "interface_id": "IFACE-006",
+    "reported_at": "2026-06-21T09:00:00Z",
+    "reporter": "auto-alert@sap-po.internal",
+    "symptom_description": "Messages failing with authentication rejection since 2026-06-21T09:00:00Z.",
+    "reported_severity": "P3",
+    "business_context": "regulatory filing deadline dependent",
+    "true_root_cause_category": "auth_failure",
+    "related_log_ids": [
+      "LOG-0192",
+      "LOG-0193",
+      "LOG-0194"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was auth failure, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0081",
+    "interface_id": "IFACE-001",
+    "reported_at": "2025-10-01T09:00:00Z",
+    "reporter": "helpdesk-tier1@enterprise.local",
+    "symptom_description": "TLS handshake failures reported on interface, partner reporting rejected connections.",
+    "reported_severity": "P1",
+    "business_context": null,
+    "true_root_cause_category": "cert_expiry",
+    "related_log_ids": [
+      "LOG-0195",
+      "LOG-0196",
+      "LOG-0197"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was cert expiry, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0082",
+    "interface_id": "IFACE-022",
+    "reported_at": "2025-06-21T09:00:00Z",
+    "reporter": "auto-alert@sap-po.internal",
+    "symptom_description": "Subset of messages failing with mapping/schema validation errors.",
+    "reported_severity": "P1",
+    "business_context": "regulatory filing deadline dependent",
+    "true_root_cause_category": "mapping_error",
+    "related_log_ids": [
+      "LOG-0198",
+      "LOG-0199"
+    ],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was mapping error, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0083",
+    "interface_id": "IFACE-032",
+    "reported_at": "2025-06-29T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Source system sending payloads that fail structural validation.",
+    "reported_severity": "P2",
+    "business_context": "impacts customer shipment notifications",
+    "true_root_cause_category": "malformed_payload",
+    "related_log_ids": [
+      "LOG-0200"
+    ],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard malformed payload remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0084",
+    "interface_id": "IFACE-049",
+    "reported_at": "2025-05-24T09:00:00Z",
+    "reporter": "helpdesk-tier1@enterprise.local",
+    "symptom_description": "Downstream system reporting duplicate records from this interface.",
+    "reported_severity": "P4",
+    "business_context": null,
+    "true_root_cause_category": "duplicate_message",
+    "related_log_ids": [],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard duplicate message remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0085",
+    "interface_id": "IFACE-050",
+    "reported_at": "2025-09-09T09:00:00Z",
+    "reporter": "helpdesk-tier1@enterprise.local",
+    "symptom_description": "Downstream system reporting duplicate records from this interface.",
+    "reported_severity": "P3",
+    "business_context": "affects partner SLA commitment",
+    "true_root_cause_category": "duplicate_message",
+    "related_log_ids": [],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Escalated",
+    "resolution_summary": "Evidence was contradictory/ambiguous; resolution required additional human judgment.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0086",
+    "interface_id": "IFACE-015",
+    "reported_at": "2026-05-05T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Increasing number of timeout errors, latency appears elevated.",
+    "reported_severity": "P2",
+    "business_context": "affects partner SLA commitment",
+    "true_root_cause_category": "timeout",
+    "related_log_ids": [],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard timeout remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0087",
+    "interface_id": "IFACE-033",
+    "reported_at": "2026-05-04T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Downstream system reporting duplicate records from this interface.",
+    "reported_severity": "P4",
+    "business_context": null,
+    "true_root_cause_category": "duplicate_message",
+    "related_log_ids": [],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was duplicate message, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0088",
+    "interface_id": "IFACE-037",
+    "reported_at": "2025-05-13T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Messages failing with authentication rejection since 2025-05-13T09:00:00Z.",
+    "reported_severity": "P2",
+    "business_context": "affects partner SLA commitment",
+    "true_root_cause_category": "auth_failure",
+    "related_log_ids": [],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard auth failure remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0089",
+    "interface_id": "IFACE-047",
+    "reported_at": "2026-06-19T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Database-bound interface failing to establish connection.",
+    "reported_severity": "P4",
+    "business_context": null,
+    "true_root_cause_category": "database_connection_failure",
+    "related_log_ids": [],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was database connection failure, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0090",
+    "interface_id": "IFACE-023",
+    "reported_at": "2025-04-22T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Messages failing with authentication rejection since 2025-04-22T09:00:00Z.",
+    "reported_severity": "P3",
+    "business_context": "impacts order-to-cash flow",
+    "true_root_cause_category": "auth_failure",
+    "related_log_ids": [],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Escalated",
+    "resolution_summary": "Evidence was contradictory/ambiguous; resolution required additional human judgment.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0091",
+    "interface_id": "IFACE-025",
+    "reported_at": "2025-04-08T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "Source system sending payloads that fail structural validation.",
+    "reported_severity": "P2",
+    "business_context": "impacts order-to-cash flow",
+    "true_root_cause_category": "malformed_payload",
+    "related_log_ids": [],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was malformed payload, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0092",
+    "interface_id": "IFACE-046",
+    "reported_at": "2025-04-26T09:00:00Z",
+    "reporter": "priya.k@enterprise.local",
+    "symptom_description": "Database-bound interface failing to establish connection.",
+    "reported_severity": "P3",
+    "business_context": null,
+    "true_root_cause_category": "database_connection_failure",
+    "related_log_ids": [],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0093",
+    "interface_id": "IFACE-029",
+    "reported_at": "2025-10-27T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "Messages failing with authentication rejection since 2025-10-27T09:00:00Z.",
+    "reported_severity": "P4",
+    "business_context": null,
+    "true_root_cause_category": "auth_failure",
+    "related_log_ids": [],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0094",
+    "interface_id": "IFACE-044",
+    "reported_at": "2025-09-25T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Target endpoint returning unavailable/not-found errors intermittently.",
+    "reported_severity": "P1",
+    "business_context": null,
+    "true_root_cause_category": "endpoint_unavailable",
+    "related_log_ids": [],
+    "outcome_bucket": "resolved_known_precedent",
+    "status": "Resolved",
+    "resolution_summary": "Resolved via standard endpoint unavailable remediation; matched prior precedent.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0095",
+    "interface_id": "IFACE-007",
+    "reported_at": "2025-05-21T09:00:00Z",
+    "reporter": "helpdesk-tier1@enterprise.local",
+    "symptom_description": "SFTP file transfer failing authentication against partner server.",
+    "reported_severity": "P4",
+    "business_context": "impacts order-to-cash flow",
+    "true_root_cause_category": "sftp_credential_failure",
+    "related_log_ids": [],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0096",
+    "interface_id": "IFACE-016",
+    "reported_at": "2026-04-20T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "Target endpoint returning unavailable/not-found errors intermittently.",
+    "reported_severity": "P4",
+    "business_context": null,
+    "true_root_cause_category": "endpoint_unavailable",
+    "related_log_ids": [],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Resolved",
+    "resolution_summary": "Eventually attributed to endpoint unavailable despite initially conflicting signals.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0097",
+    "interface_id": "IFACE-012",
+    "reported_at": "2026-08-07T09:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "Downstream system reporting duplicate records from this interface.",
+    "reported_severity": "P4",
+    "business_context": null,
+    "true_root_cause_category": "duplicate_message",
+    "related_log_ids": [],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Resolved",
+    "resolution_summary": "Eventually attributed to duplicate message despite initially conflicting signals.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0098",
+    "interface_id": "IFACE-002",
+    "reported_at": "2025-10-11T09:00:00Z",
+    "reporter": "jsmith@enterprise.local",
+    "symptom_description": "Subset of messages failing with mapping/schema validation errors.",
+    "reported_severity": "P4",
+    "business_context": "regulatory filing deadline dependent",
+    "true_root_cause_category": "mapping_error",
+    "related_log_ids": [],
+    "outcome_bucket": "no_known_resolution",
+    "status": "Escalated",
+    "resolution_summary": "Root cause not conclusively determined; escalated to owning team, no resolution recorded.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0099",
+    "interface_id": "IFACE-017",
+    "reported_at": "2026-01-22T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "TLS handshake failures reported on interface, partner reporting rejected connections.",
+    "reported_severity": "P1",
+    "business_context": "impacts customer shipment notifications",
+    "true_root_cause_category": "cert_expiry",
+    "related_log_ids": [],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Resolved",
+    "resolution_summary": "Eventually attributed to cert expiry despite initially conflicting signals.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0100",
+    "interface_id": "IFACE-025",
+    "reported_at": "2026-01-05T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "TLS handshake failures reported on interface, partner reporting rejected connections.",
+    "reported_severity": "P2",
+    "business_context": null,
+    "true_root_cause_category": "cert_expiry",
+    "related_log_ids": [],
+    "outcome_bucket": "resolved_novel",
+    "status": "Resolved",
+    "resolution_summary": "Resolved after investigation; root cause was cert expiry, no direct precedent existed at the time.",
+    "has_known_resolution": true
+  },
+  {
+    "incident_id": "INC-0101",
+    "interface_id": "IFACE-101",
+    "reported_at": "2026-09-27T07:00:00Z",
+    "reporter": "monitoring-bot@integration.internal",
+    "symptom_description": "Multiple downstream order confirmations failing intermittently since ~07:00. Partner endpoint returns a mix of connection timeouts and occasional 200-OK responses with incomplete payload data. On-call is unsure whether this is a network/partner-side outage or a recent mapping deployment issue -- both a connectivity error and a schema validation warning appear in the logs around the same time.",
+    "reported_severity": "P1",
+    "business_context": "affects live customer order fulfillment",
+    "true_root_cause_category": "connectivity_failure",
+    "related_log_ids": [
+      "LOG-0201",
+      "LOG-0202",
+      "LOG-0203"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Escalated",
+    "resolution_summary": "Complex, deliberately ambiguous case for live demonstration -- see docs/DASHBOARD.md.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0102",
+    "interface_id": "IFACE-102",
+    "reported_at": "2026-09-27T08:00:00Z",
+    "reporter": "auto-alert@sap-po.internal",
+    "symptom_description": "Increasing response latency across order confirmation calls since ~08:00 -- some requests eventually succeed after long delays, others time out entirely. On-call is unsure if this is a genuine backend performance issue, since a stray authentication warning also appeared in the logs around the same time.",
+    "reported_severity": "P1",
+    "business_context": "impacts real-time order confirmation SLAs",
+    "true_root_cause_category": "timeout",
+    "related_log_ids": [
+      "LOG-0204",
+      "LOG-0205",
+      "LOG-0206"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Escalated",
+    "resolution_summary": "Complex, approval-requiring case for live demonstration -- see docs/DASHBOARD.md.",
+    "has_known_resolution": false
+  },
+  {
+    "incident_id": "INC-0103",
+    "interface_id": "IFACE-103",
+    "reported_at": "2026-09-27T09:00:00Z",
+    "reporter": "carlos.m@enterprise.local",
+    "symptom_description": "Purchase order messages appear stuck in processing, but the downstream Ariba system is also reporting duplicate purchase order records for at least one of them. On-call flagged both symptoms together and is not sure whether this is a simple stuck-message issue or something that needs more care.",
+    "reported_severity": "P2",
+    "business_context": "affects vendor purchase order confirmations",
+    "true_root_cause_category": "duplicate_message",
+    "related_log_ids": [
+      "LOG-0207",
+      "LOG-0208",
+      "LOG-0209"
+    ],
+    "outcome_bucket": "ambiguous_evidence",
+    "status": "Escalated",
+    "resolution_summary": "Complex, no-safe-remediation case for live demonstration -- see docs/DASHBOARD.md.",
+    "has_known_resolution": false
+  }
+]

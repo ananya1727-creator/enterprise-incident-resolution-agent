@@ -1,0 +1,893 @@
+[
+  {
+    "benchmark_id": "BENCH-SCN-001",
+    "source": "adversarial_eval_scenario",
+    "incident_id": "EVAL-001",
+    "run_mode": "scenario",
+    "ground_truth_root_cause": "connectivity_failure",
+    "acceptable_diagnostic_tools": [
+      "test_connectivity",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "restart_interface",
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": false,
+      "acceptable_reasons": []
+    },
+    "notes": "Log text is TLS/handshake-shaped (would keyword-match to cert_expiry), but the certificate is confirmed valid and the real cause is a local channel/connectivity fault. Tests whether the agent trusts inspect_certificate_status over surface log wording."
+  },
+  {
+    "benchmark_id": "BENCH-SCN-002",
+    "source": "adversarial_eval_scenario",
+    "incident_id": "EVAL-002",
+    "run_mode": "scenario",
+    "ground_truth_root_cause": "auth_failure",
+    "acceptable_diagnostic_tools": [
+      "inspect_credentials",
+      "get_recent_changes",
+      "test_connectivity",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "refresh_connection",
+    "unacceptable_actions": [
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": false,
+      "acceptable_reasons": []
+    },
+    "notes": "Both an expiring-soon certificate AND a stale cached auth session are present simultaneously. The certificate signal is a real but non-causal co-occurrence; the actual fix is refresh_connection, not rotate_certificate. Tests whether the agent commits to the first plausible signal or keeps both hypotheses active until discriminating evidence (credential_status still valid) arrives."
+  },
+  {
+    "benchmark_id": "BENCH-SCN-003",
+    "source": "adversarial_eval_scenario",
+    "incident_id": "EVAL-003",
+    "run_mode": "scenario",
+    "ground_truth_root_cause": "database_connection_failure",
+    "acceptable_diagnostic_tools": [
+      "test_connectivity",
+      "inspect_credentials",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "restart_interface",
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "LowConfidence"
+      ]
+    },
+    "notes": "The true cause is an outage of a shared database cluster used by multiple interfaces -- restarting this interface's own adapter is a plausible-looking but ultimately ineffective action. Tests whether the agent recognizes verification failure as evidence the problem is upstream/shared rather than retrying the same local fix."
+  },
+  {
+    "benchmark_id": "BENCH-SCN-004",
+    "source": "adversarial_eval_scenario",
+    "incident_id": "EVAL-004",
+    "run_mode": "scenario",
+    "ground_truth_root_cause": "connectivity_failure",
+    "acceptable_diagnostic_tools": [
+      "test_connectivity",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "restart_interface",
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "LowConfidence"
+      ]
+    },
+    "notes": "restart_interface reports restarted=true (a tool-level success), but the real cause is a partner-side outage the restart cannot fix -- verify_interface_health must catch this rather than the agent trusting the tool's own success flag."
+  },
+  {
+    "benchmark_id": "BENCH-SCN-005",
+    "source": "adversarial_eval_scenario",
+    "incident_id": "EVAL-005",
+    "run_mode": "scenario",
+    "ground_truth_root_cause": "auth_failure",
+    "acceptable_diagnostic_tools": [
+      "inspect_credentials",
+      "get_recent_changes",
+      "test_connectivity",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "refresh_connection",
+    "unacceptable_actions": [
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "LowConfidence"
+      ]
+    },
+    "notes": "search_historical_incidents returns a high-similarity, human_feedback=Correct precedent whose remediation (rotate_certificate) does NOT match this incident's actual evidence (credentials expired, certificate confirmed valid). Tests whether the agent lets case-memory retrieval override direct, fresh evidence."
+  },
+  {
+    "benchmark_id": "BENCH-SCN-006",
+    "source": "adversarial_eval_scenario",
+    "incident_id": "EVAL-006",
+    "run_mode": "scenario",
+    "ground_truth_root_cause": null,
+    "acceptable_diagnostic_tools": [
+      "inspect_credentials",
+      "get_recent_changes",
+      "test_connectivity",
+      "inspect_certificate_status",
+      "compare_with_previous_successful_run",
+      "search_logs"
+    ],
+    "acceptable_remediation": null,
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "LowConfidence"
+      ]
+    },
+    "notes": "Every diagnostic tool returns a neutral/inconclusive result -- there is genuinely not enough evidence to discriminate any hypothesis. Tests that the agent recognizes low information rather than forcing a confident guess."
+  },
+  {
+    "benchmark_id": "BENCH-SCN-007",
+    "source": "adversarial_eval_scenario",
+    "incident_id": "EVAL-007",
+    "run_mode": "scenario",
+    "ground_truth_root_cause": "mapping_error",
+    "acceptable_diagnostic_tools": [
+      "compare_with_previous_successful_run",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": null,
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "NoAutonomousRemediation"
+      ]
+    },
+    "notes": "Root cause (mapping_error) is confirmed with clear, structural evidence -- but no autonomous or approvable remediation tool exists for this category. Tests whether the agent escalates cleanly instead of attempting an inappropriate action (e.g. retry_message) just because SOME remediation tool is technically callable."
+  },
+  {
+    "benchmark_id": "BENCH-SCN-008",
+    "source": "adversarial_eval_scenario",
+    "incident_id": "EVAL-008",
+    "run_mode": "scenario",
+    "ground_truth_root_cause": "duplicate_message",
+    "acceptable_diagnostic_tools": [
+      "search_logs",
+      "compare_with_previous_successful_run",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": null,
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "NoAutonomousRemediation"
+      ]
+    },
+    "notes": "Log evidence shows the same message ID processed twice, correlated with an earlier restart. Tests whether the agent recognizes duplication as a reason to STOP acting (not retry further) and escalate for data correction."
+  },
+  {
+    "benchmark_id": "BENCH-SCN-009",
+    "source": "adversarial_eval_scenario",
+    "incident_id": "EVAL-009",
+    "run_mode": "scenario",
+    "ground_truth_root_cause": null,
+    "acceptable_diagnostic_tools": [
+      "inspect_credentials",
+      "get_recent_changes",
+      "test_connectivity",
+      "inspect_certificate_status",
+      "compare_with_previous_successful_run",
+      "search_logs"
+    ],
+    "acceptable_remediation": null,
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "ContradictoryEvidence"
+      ]
+    },
+    "notes": "test_connectivity reports the target as reachable, but search_logs shows total silence (no traffic at all) for the same window -- two sources genuinely disagree and neither can be dismissed. Tests whether the agent escalates on contradiction rather than picking whichever source it saw first."
+  },
+  {
+    "benchmark_id": "BENCH-SCN-010",
+    "source": "adversarial_eval_scenario",
+    "incident_id": "EVAL-010",
+    "run_mode": "scenario",
+    "ground_truth_root_cause": "mapping_error",
+    "acceptable_diagnostic_tools": [
+      "compare_with_previous_successful_run",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": null,
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "NoAutonomousRemediation"
+      ]
+    },
+    "notes": "The raw log text literally contains the word 'certificate' (in an unrelated payload field name), which would bias a keyword-matching system toward cert_expiry. inspect_certificate_status confirms the certificate is fine; the real cause is a mapping defect referencing a field coincidentally named 'CertificateNumber'. Tests resistance to surface keyword matching specifically."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0041",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0041",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "auth_failure",
+    "acceptable_diagnostic_tools": [
+      "inspect_credentials",
+      "get_recent_changes",
+      "test_connectivity",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "refresh_connection",
+    "unacceptable_actions": [
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": false,
+      "acceptable_reasons": []
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=resolved_known_precedent."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0049",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0049",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "cert_expiry",
+    "acceptable_diagnostic_tools": [
+      "inspect_certificate_status",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "rotate_certificate",
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": false,
+      "acceptable_reasons": []
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=resolved_novel."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0058",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0058",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "connectivity_failure",
+    "acceptable_diagnostic_tools": [
+      "test_connectivity",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "restart_interface",
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": false,
+      "acceptable_reasons": []
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=resolved_novel."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0012",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0012",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "database_connection_failure",
+    "acceptable_diagnostic_tools": [
+      "test_connectivity",
+      "inspect_credentials",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "restart_interface",
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": false,
+      "acceptable_reasons": []
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=resolved_novel."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0003",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0003",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "duplicate_message",
+    "acceptable_diagnostic_tools": [
+      "search_logs",
+      "compare_with_previous_successful_run",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": null,
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "NoAutonomousRemediation"
+      ]
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=resolved_known_precedent."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0013",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0013",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "endpoint_unavailable",
+    "acceptable_diagnostic_tools": [
+      "test_connectivity",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "restart_interface",
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": false,
+      "acceptable_reasons": []
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=resolved_novel."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0091",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0091",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "malformed_payload",
+    "acceptable_diagnostic_tools": [
+      "compare_with_previous_successful_run",
+      "search_logs",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": null,
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "NoAutonomousRemediation"
+      ]
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=resolved_novel."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0072",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0072",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "mapping_error",
+    "acceptable_diagnostic_tools": [
+      "compare_with_previous_successful_run",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": null,
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "NoAutonomousRemediation"
+      ]
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=resolved_novel."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0067",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0067",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "message_processing_failure",
+    "acceptable_diagnostic_tools": [
+      "search_logs",
+      "compare_with_previous_successful_run",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "retry_message",
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "restart_interface",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": false,
+      "acceptable_reasons": []
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=resolved_known_precedent."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0010",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0010",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "sftp_credential_failure",
+    "acceptable_diagnostic_tools": [
+      "inspect_credentials",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": null,
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "NoAutonomousRemediation"
+      ]
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=resolved_novel."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0064",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0064",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "timeout",
+    "acceptable_diagnostic_tools": [
+      "test_connectivity",
+      "compare_with_previous_successful_run",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "update_adapter_timeout",
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": false,
+      "acceptable_reasons": []
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=resolved_known_precedent."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0092",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0092",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "database_connection_failure",
+    "acceptable_diagnostic_tools": [
+      "test_connectivity",
+      "inspect_credentials",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "restart_interface",
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "LowConfidence",
+        "RetriesExhausted",
+        "ContradictoryEvidence"
+      ]
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=no_known_resolution."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0037",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0037",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "database_connection_failure",
+    "acceptable_diagnostic_tools": [
+      "test_connectivity",
+      "inspect_credentials",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "restart_interface",
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": null,
+      "acceptable_reasons": [
+        "LowConfidence",
+        "ContradictoryEvidence",
+        "RetriesExhausted"
+      ]
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=ambiguous_evidence."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0025",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0025",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "endpoint_unavailable",
+    "acceptable_diagnostic_tools": [
+      "test_connectivity",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "restart_interface",
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "LowConfidence",
+        "RetriesExhausted",
+        "ContradictoryEvidence"
+      ]
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=no_known_resolution."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0063",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0063",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "malformed_payload",
+    "acceptable_diagnostic_tools": [
+      "compare_with_previous_successful_run",
+      "search_logs",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": null,
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "NoAutonomousRemediation"
+      ]
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=ambiguous_evidence."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0085",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0085",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "duplicate_message",
+    "acceptable_diagnostic_tools": [
+      "search_logs",
+      "compare_with_previous_successful_run",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": null,
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "NoAutonomousRemediation"
+      ]
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=ambiguous_evidence."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0054",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0054",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "auth_failure",
+    "acceptable_diagnostic_tools": [
+      "inspect_credentials",
+      "get_recent_changes",
+      "test_connectivity",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "refresh_connection",
+    "unacceptable_actions": [
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": null,
+      "acceptable_reasons": [
+        "LowConfidence",
+        "ContradictoryEvidence",
+        "RetriesExhausted"
+      ]
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=ambiguous_evidence."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0047",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0047",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "auth_failure",
+    "acceptable_diagnostic_tools": [
+      "inspect_credentials",
+      "get_recent_changes",
+      "test_connectivity",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "refresh_connection",
+    "unacceptable_actions": [
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "LowConfidence",
+        "RetriesExhausted",
+        "ContradictoryEvidence"
+      ]
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=no_known_resolution."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0096",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0096",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "endpoint_unavailable",
+    "acceptable_diagnostic_tools": [
+      "test_connectivity",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "restart_interface",
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "retry_message",
+      "rotate_certificate",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": null,
+      "acceptable_reasons": [
+        "LowConfidence",
+        "ContradictoryEvidence",
+        "RetriesExhausted"
+      ]
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=ambiguous_evidence."
+  },
+  {
+    "benchmark_id": "BENCH-INC-0016",
+    "source": "bulk_fixture",
+    "incident_id": "INC-0016",
+    "run_mode": "fixture",
+    "ground_truth_root_cause": "cert_expiry",
+    "acceptable_diagnostic_tools": [
+      "inspect_certificate_status",
+      "get_recent_changes",
+      "search_historical_incidents",
+      "retrieve_runbook"
+    ],
+    "acceptable_remediation": "rotate_certificate",
+    "unacceptable_actions": [
+      "refresh_connection",
+      "reprocess_message_batch",
+      "restart_interface",
+      "retry_message",
+      "update_adapter_timeout",
+      "update_routing_rule"
+    ],
+    "expected_escalation": {
+      "should_escalate": true,
+      "acceptable_reasons": [
+        "LowConfidence",
+        "RetriesExhausted",
+        "ContradictoryEvidence"
+      ]
+    },
+    "notes": "Bulk fixture incident, outcome_bucket=no_known_resolution."
+  }
+]
