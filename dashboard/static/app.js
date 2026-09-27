@@ -551,4 +551,19 @@ setInterval(() => {
   if (state.view === "investigation") pollingRerender(renderInvestigation);
 }, 700);
 
+// Minimal deep-linking: ?incident=INC-0001#investigation opens straight to
+// that incident's Investigation view (used for documentation screenshots
+// and handy for sharing a link to a specific view/incident).
+(function applyInitialDeepLink() {
+  const validViews = ["queue", "investigation", "approvals", "analytics", "performance"];
+  const hashView = location.hash.replace("#", "");
+  const incidentParam = new URLSearchParams(location.search).get("incident");
+  if (incidentParam) state.selectedIncident = incidentParam;
+  if (validViews.includes(hashView)) {
+    document.querySelectorAll("nav button").forEach(b => b.classList.toggle("active", b.dataset.view === hashView));
+    document.querySelectorAll(".view").forEach(v => v.classList.toggle("active", v.id === "view-" + hashView));
+    state.view = hashView;
+  }
+})();
+
 render();

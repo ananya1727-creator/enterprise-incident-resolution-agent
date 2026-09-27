@@ -2,6 +2,30 @@
 
 Docs: [PROJECT_SPEC.md](docs/PROJECT_SPEC.md) · [AGENT_ARCHITECTURE.md](docs/AGENT_ARCHITECTURE.md) · [TOOL_SPEC.md](docs/TOOL_SPEC.md) · [MCP_ARCHITECTURE.md](docs/MCP_ARCHITECTURE.md) · [RISK_POLICY.md](docs/RISK_POLICY.md) · [EVALUATION.md](docs/EVALUATION.md) · [DASHBOARD.md](docs/DASHBOARD.md) · [skills/](docs/skills/README.md)
 
+## Dashboard walkthrough
+
+The dashboard (`python -m dashboard.server`, then `http://127.0.0.1:5050/`) is an operational console for launching real agent runs, approving/rejecting gated actions live, and reviewing analytics — it never reimplements agent logic, only reads and drives it. It requires a running Python process, so it can't be viewed as a static GitHub page; the screenshots below show it in action.
+
+**Incident Queue** — every real agent run this dashboard has seen, plus not-yet-launched fixture incidents, with filter tabs (unresolved sorted to the top):
+
+![Incident Queue](docs/screenshots/01_incident_queue.png)
+
+**Incident Investigation** — full chronological trace for a selected incident: hypotheses with confidence bars, evidence, evidence-based decisions (no hidden reasoning), verification results, final resolution:
+
+![Incident Investigation](docs/screenshots/02_investigation.png)
+
+**Human Approval Center** — a real pending approval from a live, currently-blocked agent thread; Approve/Reject here genuinely unblocks or redirects that thread:
+
+![Human Approval Center](docs/screenshots/03_human_approval_center.png)
+
+**Analytics** — real operational metrics (computed live from actual runs) kept explicitly separate from simulated benchmark metrics (from `docs/EVALUATION.md`'s 30-case benchmark):
+
+![Analytics](docs/screenshots/04_analytics.png)
+
+**Agent Performance** — tool usage, escalation rate, and root-cause distribution across every real run, plus benchmark-derived accuracy figures:
+
+![Agent Performance](docs/screenshots/05_agent_performance.png)
+
 ## Run
 
 ```bash
@@ -58,7 +82,7 @@ python scripts/generate_fixtures.py
 - `data/benchmark_incidents.json` + `scripts/build_benchmark.py` + `scripts/run_benchmark.py` — 30-case evaluation benchmark (10 adversarial + 20 bulk-fixture, covering all 11 root-cause categories) and the harness that computes the 12 metrics in `docs/EVALUATION.md`, writing `reports/EVALUATION_REPORT.md`.
 - `agent/observability.py` — renders an `IncidentState` into a concise, human-readable timeline (incident, current state, skills engaged, tools called + results, hypotheses, confidence changes, decisions, actions, verification, escalation, final resolution). Shows only evidence-cited rationale (the same `DecisionLogEntry`/`confidence_history` structures used everywhere else in the codebase) — there is no separate hidden chain-of-thought to redact, since `agent/reasoning.py` never produces one.
 - `data/e2e_scenarios.json` + `tests/e2e_lib.py` + `tests/test_e2e_agent.py` + `scripts/run_e2e_tests.py` — the pre-dashboard end-to-end validation suite: 10 scenarios (auth failure, expired cert, SFTP connectivity, REST endpoint failure, mapping error, timeout, database connectivity, shared-dependency multi-interface failure, a genuinely ambiguous incident, and an escalate-only case), 3 of them adversarial. Checks 14 capabilities per scenario plus cross-scenario proof the agent isn't following a fixed workflow (7 distinct tool-call sequences across 10 scenarios) and a structural no-approval-bypass check. `pytest tests/test_e2e_agent.py -v` for CI-style pass/fail; `python scripts/run_e2e_tests.py` for the full narrative report (`reports/E2E_TEST_REPORT.md`).
-- `dashboard/` — the operational dashboard (Flask + vanilla JS, no build step). `registry.py` launches real `Orchestrator` instances in background threads and bridges Human Approval Center decisions to the real, blocking `approval_callback`; `data_sources.py`/`serializer.py` only read existing agent state and generated reports, never reimplement agent logic. See `docs/DASHBOARD.md`.
+- `dashboard/` — the operational dashboard (Flask + vanilla JS, no build step). `registry.py` launches real `Orchestrator` instances in background threads and bridges Human Approval Center decisions to the real, blocking `approval_callback`; `data_sources.py`/`serializer.py` only read existing agent state and generated reports, never reimplement agent logic. Supports deep links (`?incident=INC-0001#investigation`). See `docs/DASHBOARD.md` and the screenshots above.
 
 ## Note on the agent's "reasoning"
 
