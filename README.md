@@ -4,7 +4,7 @@ Docs: [PROJECT_SPEC.md](docs/PROJECT_SPEC.md) · [AGENT_ARCHITECTURE.md](docs/AG
 
 ## Dashboard walkthrough
 
-The dashboard (`python -m dashboard.server`, then `http://127.0.0.1:5050/`) is an operational console for launching real agent runs, approving/rejecting gated actions live, and reviewing analytics — it never reimplements agent logic, only reads and drives it. It requires a running Python process, so it can't be viewed as a static GitHub page; the screenshots below show it in action.
+The dashboard (`python -m dashboard.server`, then `http://127.0.0.1:5050/`) is an operational console for launching real agent runs, approving/rejecting gated actions live, and reviewing analytics — it never reimplements agent logic, only reads and drives it. It requires a running Python process, so it can't be viewed as a static GitHub page; the screenshots below show it in action, and there's a full **[video walkthrough](docs/media/dashboard_demo.mp4)** (click through to GitHub's file view, which plays it inline).
 
 **Incident Queue** — every real agent run this dashboard has seen, plus not-yet-launched fixture incidents, with filter tabs (unresolved sorted to the top):
 
